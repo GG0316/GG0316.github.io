@@ -3,280 +3,1421 @@
 	Escape Velocity by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+	Edited for COMP60019 Robotic Modelling and Drone Skin Design Portfolio
+	Project: Servo-Actuated Pterodactyl Dinosaur Prototype
 -->
 <html>
 	<head>
-		<title>Escape Velocity by HTML5 UP</title>
+		<title>Pterodactyl Flapping-Wing Prototype Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Individual portfolio for a servo-actuated Pterodactyl dinosaur prototype developed for robotic modelling and drone skin design." />
 		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<!-- Optional 3D model viewer -->
+		<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+		<!-- Extra styling added inside same template -->
+		<style>
+			html {
+				scroll-behavior: smooth;
+			}
+
+			#progressBar {
+				position: fixed;
+				top: 0;
+				left: 0;
+				height: 5px;
+				width: 0%;
+				background: linear-gradient(90deg, #e97770, #f6bd60, #84a59d);
+				z-index: 9999;
+				transition: width 0.1s ease-out;
+			}
+
+			.badge-row {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.75rem;
+				justify-content: center;
+				margin: 1.75rem 0;
+			}
+
+			.project-badge {
+				display: inline-block;
+				background: rgba(255,255,255,0.14);
+				border: 1px solid rgba(255,255,255,0.25);
+				border-radius: 999px;
+				padding: 0.65rem 1rem;
+				color: #fff;
+				font-weight: 600;
+				letter-spacing: 0.02em;
+				box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+				transition: transform 0.25s ease, background 0.25s ease;
+			}
+
+			.project-badge:hover {
+				transform: translateY(-4px);
+				background: rgba(255,255,255,0.22);
+			}
+
+			.callout-box {
+				background: #fff;
+				border-radius: 14px;
+				padding: 1.5rem;
+				box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+				border-left: 6px solid #e97770;
+				margin: 1.5rem 0;
+			}
+
+			.callout-box.dark {
+				background: rgba(0,0,0,0.08);
+				color: inherit;
+				border-left-color: #84a59d;
+			}
+
+			.mini-grid {
+				display: grid;
+				grid-template-columns: repeat(4, minmax(0, 1fr));
+				gap: 1rem;
+				margin: 2rem 0;
+			}
+
+			.metric-card {
+				background: #fff;
+				border-radius: 14px;
+				padding: 1.25rem;
+				text-align: center;
+				box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+				transition: transform 0.25s ease, box-shadow 0.25s ease;
+			}
+
+			.metric-card:hover {
+				transform: translateY(-6px);
+				box-shadow: 0 16px 35px rgba(0,0,0,0.12);
+			}
+
+			.metric-card strong {
+				display: block;
+				font-size: 1.85rem;
+				color: #e97770;
+				margin-bottom: 0.25rem;
+			}
+
+			.timeline {
+				display: grid;
+				grid-template-columns: 280px 1fr;
+				gap: 1.5rem;
+				margin: 2rem 0;
+			}
+
+			.timeline-buttons {
+				display: flex;
+				flex-direction: column;
+				gap: 0.6rem;
+			}
+
+			.timeline-btn {
+				border: 0;
+				border-radius: 10px;
+				background: #f4f4f4;
+				padding: 0.85rem 1rem;
+				text-align: left;
+				font-weight: 700;
+				cursor: pointer;
+				transition: background 0.25s ease, transform 0.25s ease;
+			}
+
+			.timeline-btn:hover,
+			.timeline-btn.active {
+				background: #e97770;
+				color: #fff;
+				transform: translateX(5px);
+			}
+
+			.timeline-panel {
+				background: #fff;
+				border-radius: 14px;
+				padding: 1.5rem;
+				box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+				min-height: 260px;
+			}
+
+			.wing-simulator {
+				background: #f7f7f7;
+				border-radius: 16px;
+				padding: 2rem;
+				margin: 2rem 0;
+				box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+			}
+
+			.dino-stage {
+				position: relative;
+				height: 230px;
+				background: linear-gradient(180deg, #dff3ff, #ffffff);
+				border-radius: 16px;
+				overflow: hidden;
+				margin-bottom: 1.5rem;
+				border: 1px solid rgba(0,0,0,0.08);
+			}
+
+			.dino-body {
+				position: absolute;
+				top: 100px;
+				left: 50%;
+				width: 170px;
+				height: 50px;
+				transform: translateX(-50%);
+				background: #5f6f52;
+				border-radius: 55% 45% 45% 55%;
+				box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+			}
+
+			.dino-head {
+				position: absolute;
+				top: 82px;
+				left: calc(50% + 75px);
+				width: 75px;
+				height: 35px;
+				background: #5f6f52;
+				border-radius: 40% 70% 70% 40%;
+				transform: rotate(-6deg);
+			}
+
+			.dino-beak {
+				position: absolute;
+				top: 88px;
+				left: calc(50% + 135px);
+				width: 0;
+				height: 0;
+				border-top: 10px solid transparent;
+				border-bottom: 10px solid transparent;
+				border-left: 65px solid #8a7f55;
+			}
+
+			.wing {
+				position: absolute;
+				top: 95px;
+				width: 185px;
+				height: 42px;
+				background: #84a59d;
+				transform-origin: right center;
+				border-radius: 80% 10% 80% 10%;
+				box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+				transition: transform 0.25s ease;
+			}
+
+			.wing.left {
+				left: calc(50% - 260px);
+				transform-origin: right center;
+				transform: rotate(0deg);
+			}
+
+			.wing.right {
+				left: calc(50% + 75px);
+				transform-origin: left center;
+				transform: rotate(0deg) scaleX(-1);
+			}
+
+			.wing::after {
+				content: "";
+				position: absolute;
+				inset: 8px 14px;
+				border-top: 2px solid rgba(255,255,255,0.6);
+				border-bottom: 2px solid rgba(0,0,0,0.08);
+				border-radius: inherit;
+			}
+
+			.slider-wrap {
+				display: grid;
+				grid-template-columns: 1fr auto;
+				gap: 1rem;
+				align-items: center;
+			}
+
+			.slider-wrap input {
+				width: 100%;
+			}
+
+			.angle-readout {
+				font-weight: 800;
+				color: #e97770;
+			}
+
+			.gallery-grid {
+				display: grid;
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+				gap: 1rem;
+				margin: 2rem 0;
+			}
+
+			.gallery-item {
+				position: relative;
+				border: 0;
+				padding: 0;
+				background: transparent;
+				cursor: pointer;
+				overflow: hidden;
+				border-radius: 14px;
+				box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+			}
+
+			.gallery-item img {
+				width: 100%;
+				height: 220px;
+				object-fit: cover;
+				display: block;
+				transition: transform 0.3s ease;
+			}
+
+			.gallery-item:hover img {
+				transform: scale(1.06);
+			}
+
+			.gallery-item span {
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				padding: 0.75rem;
+				background: rgba(0,0,0,0.65);
+				color: #fff;
+				font-weight: 700;
+			}
+
+			#lightbox {
+				display: none;
+				position: fixed;
+				inset: 0;
+				background: rgba(0,0,0,0.86);
+				z-index: 10000;
+				align-items: center;
+				justify-content: center;
+				padding: 2rem;
+			}
+
+			#lightbox.active {
+				display: flex;
+			}
+
+			#lightbox img {
+				max-width: 92vw;
+				max-height: 82vh;
+				border-radius: 12px;
+				box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+			}
+
+			#lightbox button {
+				position: absolute;
+				top: 1.25rem;
+				right: 1.25rem;
+				border: 0;
+				border-radius: 999px;
+				width: 46px;
+				height: 46px;
+				font-size: 1.3rem;
+				cursor: pointer;
+				background: #fff;
+			}
+
+			.tab-buttons {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.6rem;
+				margin: 1.5rem 0;
+			}
+
+			.tab-btn {
+				border: 0;
+				border-radius: 999px;
+				padding: 0.75rem 1.1rem;
+				font-weight: 800;
+				background: #eeeeee;
+				cursor: pointer;
+				transition: background 0.25s ease, color 0.25s ease;
+			}
+
+			.tab-btn.active,
+			.tab-btn:hover {
+				background: #e97770;
+				color: #fff;
+			}
+
+			.tab-panel {
+				display: none;
+				background: #fff;
+				border-radius: 14px;
+				padding: 1.5rem;
+				box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+			}
+
+			.tab-panel.active {
+				display: block;
+			}
+
+			.accordion {
+				margin: 2rem 0;
+			}
+
+			.accordion-item {
+				background: #fff;
+				border-radius: 12px;
+				margin-bottom: 0.8rem;
+				box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+				overflow: hidden;
+			}
+
+			.accordion-title {
+				width: 100%;
+				border: 0;
+				background: #fff;
+				padding: 1rem 1.25rem;
+				text-align: left;
+				font-weight: 900;
+				cursor: pointer;
+				color: #484d55;
+			}
+
+			.accordion-content {
+				display: none;
+				padding: 0 1.25rem 1.2rem;
+			}
+
+			.accordion-item.active .accordion-content {
+				display: block;
+			}
+
+			model-viewer {
+				width: 100%;
+				height: 420px;
+				background: #f4f4f4;
+				border-radius: 16px;
+				box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+			}
+
+			.reference-list {
+				font-size: 0.95rem;
+				line-height: 1.7;
+			}
+
+			.reference-list li {
+				margin-bottom: 0.8rem;
+			}
+
+			#backToTop {
+				position: fixed;
+				right: 1rem;
+				bottom: 1rem;
+				width: 46px;
+				height: 46px;
+				border-radius: 999px;
+				border: 0;
+				background: #e97770;
+				color: #fff;
+				font-size: 1.3rem;
+				cursor: pointer;
+				display: none;
+				z-index: 9998;
+				box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+			}
+
+			#backToTop.show {
+				display: block;
+			}
+
+			@media screen and (max-width: 980px) {
+				.mini-grid,
+				.gallery-grid {
+					grid-template-columns: repeat(2, minmax(0, 1fr));
+				}
+
+				.timeline {
+					grid-template-columns: 1fr;
+				}
+			}
+
+			@media screen and (max-width: 736px) {
+				.mini-grid,
+				.gallery-grid {
+					grid-template-columns: 1fr;
+				}
+
+				.gallery-item img {
+					height: 200px;
+				}
+
+				.dino-stage {
+					height: 200px;
+				}
+
+				.wing {
+					width: 120px;
+				}
+
+				.wing.left {
+					left: calc(50% - 190px);
+				}
+
+				.wing.right {
+					left: calc(50% + 65px);
+				}
+			}
+		</style>
 	</head>
+
 	<body class="homepage is-preload">
+		<div id="progressBar"></div>
 		<div id="page-wrapper">
 
 			<!-- Header -->
-				<section id="header" class="wrapper">
+			<section id="header" class="wrapper">
 
-					<!-- Logo -->
-						<div id="logo">
-							<h1><a href="index.html">Escape Velocity</a></h1>
-							<p>A free responsive site template by HTML5 UP</p>
-						</div>
+				<!-- Logo -->
+				<div id="logo">
+					<h1><a href="index.html">Pterodactyl Flapping-Wing Prototype</a></h1>
+					<p>Individual Portfolio | Robotic Modelling and Drone Skin Design | COMP60019</p>
+				</div>
 
-					<!-- Nav -->
-						<nav id="nav">
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li class="current"><a href="#intro">Home</a></li>
+						<li>
+							<a href="#development">Development</a>
 							<ul>
-								<li class="current"><a href="index.html">Home</a></li>
-								<li>
-									<a href="#">Dropdown</a>
-									<ul>
-										<li><a href="#">Lorem ipsum</a></li>
-										<li><a href="#">Magna veroeros</a></li>
-										<li><a href="#">Etiam nisl</a></li>
-										<li>
-											<a href="#">Sed consequat</a>
-											<ul>
-												<li><a href="#">Lorem dolor</a></li>
-												<li><a href="#">Amet consequat</a></li>
-												<li><a href="#">Magna phasellus</a></li>
-												<li><a href="#">Etiam nisl</a></li>
-												<li><a href="#">Sed feugiat</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Nisl tempus</a></li>
-									</ul>
-								</li>
-								<li><a href="left-sidebar.html">Left Sidebar</a></li>
-								<li><a href="right-sidebar.html">Right Sidebar</a></li>
-								<li><a href="no-sidebar.html">No Sidebar</a></li>
+								<li><a href="#overview">Project Overview</a></li>
+								<li><a href="#virtual">Virtual Prototype</a></li>
+								<li><a href="#physical">Physical Prototype</a></li>
+								<li><a href="#servo">Servo Mechanism</a></li>
 							</ul>
-						</nav>
+						</li>
+						<li><a href="#artefacts">Artefacts</a></li>
+						<li><a href="#appraisal">Critical Appraisal</a></li>
+						<li><a href="#reflection">Reflection</a></li>
+						<li><a href="#references">References</a></li>
+					</ul>
+				</nav>
 
-				</section>
+			</section>
 
 			<!-- Intro -->
-				<section id="intro" class="wrapper style1">
-					<div class="title">The Introduction</div>
-					<div class="container">
-						<p class="style1">So in case you were wondering what this is all about ...</p>
-						<p class="style2">
-							Escape Velocity is a free responsive<br class="mobile-hide" />
-							site template by <a href="http://html5up.net" class="nobr">HTML5 UP</a>
-						</p>
-						<p class="style3">It's <strong>responsive</strong>, built on <strong>HTML5</strong> and <strong>CSS3</strong>, and released for
-						free under the <a href="http://html5up.net/license">Creative Commons Attribution 3.0 license</a>, so use it for any of
-						your personal or commercial projects &ndash; just be sure to credit us!</p>
-						<ul class="actions">
-							<li><a href="#" class="button style3 large">Proceed</a></li>
-						</ul>
+			<section id="intro" class="wrapper style1">
+				<div class="title">The Portfolio</div>
+				<div class="container">
+					<p class="style1">A reflective individual portfolio based on a group prototype.</p>
+					<p class="style2">
+						Servo-Actuated Pterodactyl<br class="mobile-hide" />
+						Flapping-Wing Dinosaur Prototype
+					</p>
+					<p class="style3">
+						This portfolio records my individual learning and reflection from a group product development project.
+						The artefact is a Pterodactyl-inspired robotic skin/prototype that demonstrates wing-flapping movement
+						using a servo-driven mechanism. The purpose of this page is not only to show the final model, but to
+						explain how virtual prototyping, material decisions, physical assembly, testing, and critical appraisal
+						informed the development of the final artefact.
+					</p>
+
+					<div class="badge-row">
+						<span class="project-badge">Virtual Prototype</span>
+						<span class="project-badge">Servo Motion</span>
+						<span class="project-badge">Physical Artefact</span>
+						<span class="project-badge">3D / 2D Assets</span>
+						<span class="project-badge">Reflective Narrative</span>
 					</div>
-				</section>
+
+					<ul class="actions">
+						<li><a href="#overview" class="button style3 large">Explore Portfolio</a></li>
+					</ul>
+				</div>
+			</section>
 
 			<!-- Main -->
-				<section id="main" class="wrapper style2">
-					<div class="title">The Details</div>
-					<div class="container">
+			<section id="main" class="wrapper style2">
+				<div class="title">The Product Development Journey</div>
+				<div class="container">
 
-						<!-- Image -->
-							<a href="#" class="image featured">
-								<img src="images/pic01.jpg" alt="" />
-							</a>
+					<!-- Image -->
+					<a href="#artefacts" class="image featured">
+						<img src="images/pterodactyl-hero.jpg" alt="Final Pterodactyl flapping-wing prototype" />
+					</a>
 
-						<!-- Features -->
-							<section id="features">
-								<header class="style1">
-									<h2>Dolor consequat feugiat amet veroeros</h2>
-									<p>Feugiat dolor nullam orci pretium phasellus justo</p>
-								</header>
-								<div class="feature-list">
-									<div class="row">
-										<div class="col-6 col-12-medium">
-											<section>
-												<h3 class="icon fa-comment">Mattis velit diam vulputate</h3>
-												<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate et magna feugiat laoreet vel velit lorem.</p>
-											</section>
-										</div>
-										<div class="col-6 col-12-medium">
-											<section>
-												<h3 class="icon solid fa-sync">Lorem ipsum dolor sit veroeros</h3>
-												<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate et magna feugiat laoreet vel velit lorem.</p>
-											</section>
-										</div>
-										<div class="col-6 col-12-medium">
-											<section>
-												<h3 class="icon fa-image">Pretium phasellus justo lorem</h3>
-												<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate et magna feugiat laoreet vel velit lorem.</p>
-											</section>
-										</div>
-										<div class="col-6 col-12-medium">
-											<section>
-												<h3 class="icon solid fa-cog">Tempus sed pretium orci</h3>
-												<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate et magna feugiat laoreet vel velit lorem.</p>
-											</section>
-										</div>
-										<div class="col-6 col-12-medium">
-											<section>
-												<h3 class="icon solid fa-wrench">Aliquam consequat et feugiat</h3>
-												<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate et magna feugiat laoreet vel velit lorem.</p>
-											</section>
-										</div>
-										<div class="col-6 col-12-medium">
-											<section>
-												<h3 class="icon solid fa-check">Dolore laoreet aliquam mattis</h3>
-												<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate et magna feugiat laoreet vel velit lorem.</p>
-											</section>
-										</div>
-									</div>
+					<!-- Overview -->
+					<section id="overview">
+						<header class="style1">
+							<h2>Project Overview and Individual Context</h2>
+							<p>A group artefact, presented through my individual product development reflection.</p>
+						</header>
+
+						<p>
+							The project involved the design and development of a Pterodactyl dinosaur prototype with wings that
+							could flap using a servo motor. Although the artefact was produced as part of a group project, this
+							portfolio is written from my individual perspective. My reflection focuses on how the concept moved
+							from an initial design idea into a virtual prototype and then into a physical artefact, while also
+							considering the suitability of the tools and methods explored during the module.
+						</p>
+
+						<p>
+							The Pterodactyl was chosen because its wing structure gave the group a clear movement challenge.
+							Unlike a static dinosaur model, a Pterodactyl has large wings, a recognisable body form, and a natural
+							connection to flight. This made it suitable for a robotic modelling and drone skin design context, where
+							the external form, lightweight structure, and movement mechanism all had to be considered together. The
+							prototype did not aim to create a flying drone. Instead, it aimed to demonstrate how a biologically
+							inspired outer body could be connected with a simple mechanical actuation system.
+						</p>
+
+						<div class="mini-grid">
+							<div class="metric-card">
+								<strong>01</strong>
+								Concept and research
+							</div>
+							<div class="metric-card">
+								<strong>02</strong>
+								Virtual design
+							</div>
+							<div class="metric-card">
+								<strong>03</strong>
+								Physical build
+							</div>
+							<div class="metric-card">
+								<strong>04</strong>
+								Testing and reflection
+							</div>
+						</div>
+
+						<div class="callout-box">
+							<h3>Individual Position Statement</h3>
+							<p>
+								My individual focus was to understand how the design decisions affected the final prototype. I
+								considered the balance between visual appearance, mechanical movement, weight, material suitability,
+								and ease of assembly. This meant thinking beyond the final model and asking whether the workflow would
+								be practical if the artefact had to be improved, reproduced, or developed into a more production-ready
+								robotic skin.
+							</p>
+							<p>
+								<strong>Edit this sentence if needed:</strong> My practical contribution included supporting the
+								concept development, reviewing the wing movement idea, helping to evaluate prototyping methods, and
+								reflecting on the strengths and weaknesses of the final design.
+							</p>
+						</div>
+					</section>
+
+					<!-- Features -->
+					<section id="features">
+						<header class="style1">
+							<h2>Design Requirements and Success Criteria</h2>
+							<p>The prototype needed to be visually recognisable, mechanically simple, and suitable for demonstration.</p>
+						</header>
+
+						<div class="feature-list">
+							<div class="row">
+								<div class="col-6 col-12-medium">
+									<section>
+										<h3 class="icon fa-comment">Recognisable Pterodactyl Form</h3>
+										<p>
+											The outer shape needed to clearly communicate the dinosaur concept. This influenced the
+											long wing span, body profile, head shape, and overall silhouette. The visual design was
+											important because the artefact needed to work as a portfolio piece as well as a mechanical
+											prototype.
+										</p>
+									</section>
 								</div>
-								<ul class="actions special">
-									<li><a href="#" class="button style1 large">Get Started</a></li>
-									<li><a href="#" class="button style2 large">More Info</a></li>
+
+								<div class="col-6 col-12-medium">
+									<section>
+										<h3 class="icon solid fa-sync">Servo-Based Wing Movement</h3>
+										<p>
+											The main functional requirement was that the wings should flap using a servo. A servo was
+											appropriate because it can move to controlled angles rather than spinning continuously. This
+											made it easier to create repeated up-and-down wing movement.
+										</p>
+									</section>
+								</div>
+
+								<div class="col-6 col-12-medium">
+									<section>
+										<h3 class="icon fa-image">Virtual-to-Physical Workflow</h3>
+										<p>
+											The project needed to show a journey from digital or conceptual design into a physical
+											artefact. This meant that sketches, CAD screenshots, model images, and build photos were
+											important evidence of development rather than decoration.
+										</p>
+									</section>
+								</div>
+
+								<div class="col-6 col-12-medium">
+									<section>
+										<h3 class="icon solid fa-cog">Material and Weight Awareness</h3>
+										<p>
+											Wing movement is affected by weight. Heavy wings would demand more torque from the servo and
+											increase stress on the joints. Therefore, lightweight materials and a simple linkage were
+											more appropriate than a heavy, highly detailed sculptural model.
+										</p>
+									</section>
+								</div>
+
+								<div class="col-6 col-12-medium">
+									<section>
+										<h3 class="icon solid fa-wrench">Assembly and Maintenance</h3>
+										<p>
+											The model needed to be assembled in a way that allowed the servo and wing joints to remain
+											accessible. If the mechanism failed during testing, it would be difficult to repair if the
+											servo was fully hidden inside a sealed body.
+										</p>
+									</section>
+								</div>
+
+								<div class="col-6 col-12-medium">
+									<section>
+										<h3 class="icon solid fa-check">Reflective Evaluation</h3>
+										<p>
+											The final success of the project was not measured only by whether the wings moved. It was
+											also measured by how well the development decisions could be justified and how clearly the
+											limitations could be identified for future improvement.
+										</p>
+									</section>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- Development Timeline -->
+					<section id="development">
+						<header class="style1">
+							<h2>Interactive Product Development Timeline</h2>
+							<p>Click each stage to see how the prototype developed.</p>
+						</header>
+
+						<div class="timeline">
+							<div class="timeline-buttons">
+								<button class="timeline-btn active" data-stage="concept">1. Concept Selection</button>
+								<button class="timeline-btn" data-stage="virtual">2. Virtual Prototype</button>
+								<button class="timeline-btn" data-stage="mechanism">3. Servo Mechanism</button>
+								<button class="timeline-btn" data-stage="physical">4. Physical Build</button>
+								<button class="timeline-btn" data-stage="testing">5. Testing and Revision</button>
+							</div>
+
+							<div class="timeline-panel">
+								<h3 id="timelineTitle">1. Concept Selection</h3>
+								<p id="timelineText">
+									The group selected a Pterodactyl because it provided a strong visual identity and a clear
+									mechanical challenge. The large wings allowed the project to demonstrate movement, while the
+									dinosaur form connected the artefact to biomimicry and exoskeletal design. From my perspective,
+									this was a suitable concept because it required both creative modelling and engineering judgement.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<!-- Virtual Prototype -->
+					<section id="virtual">
+						<header class="style1">
+							<h2>Virtual Prototyping</h2>
+							<p>Using digital design to reduce uncertainty before physical construction.</p>
+						</header>
+
+						<a href="#artefacts" class="image featured">
+							<img src="images/cad-model.jpg" alt="CAD or 3D model screenshot of the Pterodactyl prototype" />
+						</a>
+
+						<p>
+							The virtual prototype stage was important because it allowed the group to think through the form of the
+							Pterodactyl before committing to physical materials. Computer Aided Design and 3D modelling are valuable
+							in product development because they support visualisation, proportion checking, and technical planning.
+							In this project, the virtual stage helped identify the main areas that would affect the physical build:
+							wing span, body size, servo location, joint clearance, and the relationship between the decorative skin
+							and the moving internal mechanism.
+						</p>
+
+						<p>
+							From my individual perspective, the most important value of the digital model was not simply that it
+							looked like a Pterodactyl. Its value came from allowing the group to check whether the wings could move
+							without colliding with the body. A visually attractive wing shape would have been unsuccessful if it
+							blocked the servo linkage or placed too much load on the moving joint. This showed me that virtual
+							prototyping is strongest when it is used as a decision-making tool rather than only as a presentation
+							image.
+						</p>
+
+						<p>
+							One limitation of the virtual stage was that it could not fully predict the behaviour of the physical
+							materials. For example, the stiffness of the wing, the looseness of the joint, and the actual strength of
+							adhesive connections could only be understood properly during assembly and testing. This created a need
+							for iteration. The digital prototype provided a useful plan, but it did not remove the need for physical
+							experimentation.
+						</p>
+
+						<div class="callout-box dark">
+							<h3>Design Decision</h3>
+							<p>
+								The group prioritised a simple flapping mechanism over a complex multi-joint wing. This decision was
+								appropriate because the project required a demonstrable prototype within limited time and resources.
+								A more realistic wing mechanism may have improved biological accuracy, but it would also have increased
+								the risk of mechanical failure, weight problems, and assembly difficulty.
+							</p>
+						</div>
+					</section>
+
+					<!-- Physical Prototype -->
+					<section id="physical">
+						<header class="style1">
+							<h2>Physical Prototyping and Assembly</h2>
+							<p>Turning the digital idea into a working physical artefact.</p>
+						</header>
+
+						<a href="#artefacts" class="image featured">
+							<img src="images/prototype-build.jpg" alt="Physical build process of the Pterodactyl prototype" />
+						</a>
+
+						<p>
+							The physical prototype stage changed the project from a design concept into an artefact that could be
+							handled, tested, and demonstrated. This stage revealed practical issues that were less obvious in the
+							virtual model. These included the strength of joints, the effect of wing weight, the alignment between
+							the servo horn and the wing pivot, and the need to keep the body stable while the wings moved.
+						</p>
+
+						<p>
+							The prototype needed a balance between appearance and function. If the body was made too detailed or too
+							heavy, it could make the model more attractive but reduce the reliability of the wing motion. If it was
+							made too simple, it would be easier to build but less convincing as a Pterodactyl. This trade-off is a
+							common issue in product development because prototypes often need to demonstrate function before they
+							can be refined aesthetically.
+						</p>
+
+						<p>
+							In my view, the physical build was the stage where the product development process became most reflective.
+							Small decisions had a visible effect on the model. For example, changing the wing angle or reducing wing
+							weight could improve movement more effectively than adding more power. This showed that mechanical
+							efficiency is not only about the actuator; it is also about designing the surrounding structure so the
+							actuator is not overloaded.
+						</p>
+					</section>
+
+					<!-- Servo Mechanism -->
+					<section id="servo">
+						<header class="style1">
+							<h2>Interactive Servo Wing-Flapping Demonstration</h2>
+							<p>Move the slider to simulate how servo angle affects wing position.</p>
+						</header>
+
+						<div class="wing-simulator">
+							<div class="dino-stage">
+								<div class="wing left" id="leftWing"></div>
+								<div class="wing right" id="rightWing"></div>
+								<div class="dino-body"></div>
+								<div class="dino-head"></div>
+								<div class="dino-beak"></div>
+							</div>
+
+							<div class="slider-wrap">
+								<input type="range" id="wingSlider" min="-35" max="35" value="0" />
+								<span class="angle-readout"><span id="angleValue">0</span>°</span>
+							</div>
+						</div>
+
+						<p>
+							The servo mechanism is the functional centre of the prototype. A standard hobby servo is suitable for
+							this kind of demonstrator because it can rotate to controlled positions. In the Pterodactyl model, this
+							controlled angular movement can be translated into wing motion through a direct connection, linkage, or
+							pivot arrangement. The most important mechanical aim is to create repeated movement without placing
+							excessive stress on the servo shaft or the wing joint.
+						</p>
+
+						<p>
+							The wing simulator above is a simplified visual representation. It does not calculate actual torque or
+							material stress, but it helps communicate the design principle: as the servo angle changes, the wings
+							move up and down around a pivot. This makes the portfolio more interactive and helps the viewer understand
+							the relationship between control input and mechanical output.
+						</p>
+
+						<p>
+							In the real prototype, smooth flapping depends on the alignment of the mechanism. If the servo is not
+							centred, the wings may move unevenly. If the linkage is too short, movement may become sharp and
+							uncontrolled. If the linkage is too long, the wing movement may become weak or limited. Therefore, the
+							mechanism required testing rather than only theoretical planning.
+						</p>
+					</section>
+
+				</div>
+			</section>
+
+			<!-- Artefacts -->
+			<section id="artefacts" class="wrapper style3">
+				<div class="title">Designs and Artefacts</div>
+				<div class="container">
+					<header class="style1">
+						<h2>2D, 3D and Physical Evidence</h2>
+						<p>Visual artefacts are included to support the development narrative.</p>
+					</header>
+
+					<div class="gallery-grid">
+						<button class="gallery-item" data-img="images/concept-sketch.jpg">
+							<img src="images/concept-sketch.jpg" alt="Pterodactyl concept sketch" />
+							<span>Concept Sketch</span>
+						</button>
+
+						<button class="gallery-item" data-img="images/cad-model.jpg">
+							<img src="images/cad-model.jpg" alt="CAD model of Pterodactyl" />
+							<span>CAD / 3D Model</span>
+						</button>
+
+						<button class="gallery-item" data-img="images/servo-mechanism.jpg">
+							<img src="images/servo-mechanism.jpg" alt="Servo wing mechanism" />
+							<span>Servo Mechanism</span>
+						</button>
+
+						<button class="gallery-item" data-img="images/prototype-build.jpg">
+							<img src="images/prototype-build.jpg" alt="Prototype assembly" />
+							<span>Physical Build</span>
+						</button>
+
+						<button class="gallery-item" data-img="images/testing.jpg">
+							<img src="images/testing.jpg" alt="Testing the flapping wing prototype" />
+							<span>Testing</span>
+						</button>
+
+						<button class="gallery-item" data-img="images/pterodactyl-hero.jpg">
+							<img src="images/pterodactyl-hero.jpg" alt="Final Pterodactyl prototype" />
+							<span>Final Artefact</span>
+						</button>
+					</div>
+
+					<div class="callout-box">
+						<h3>Interactive 3D Model Placeholder</h3>
+						<p>
+							If a 3D model is available, it should be exported as a <strong>.glb</strong> file and placed in
+							<strong>assets/3d/pterodactyl-model.glb</strong>. The viewer below allows the model to be rotated and
+							inspected directly in the portfolio. This supports the assessment requirement for interactive display of
+							2D and 3D design work.
+						</p>
+
+						<model-viewer
+							src="assets/3d/pterodactyl-model.glb"
+							alt="Interactive 3D model of the Pterodactyl prototype"
+							camera-controls
+							auto-rotate
+							shadow-intensity="1"
+							exposure="0.8">
+						</model-viewer>
+					</div>
+				</div>
+			</section>
+
+			<!-- Critical Appraisal -->
+			<section id="appraisal" class="wrapper style2">
+				<div class="title">Critical Appraisal</div>
+				<div class="container">
+					<header class="style1">
+						<h2>Appraisal of Prototyping Techniques</h2>
+						<p>Techniques used and not used are evaluated for this project and wider industrial use.</p>
+					</header>
+
+					<div class="tab-buttons">
+						<button class="tab-btn active" data-tab="cad">CAD / 3D Modelling</button>
+						<button class="tab-btn" data-tab="printing">3D Printing</button>
+						<button class="tab-btn" data-tab="laser">Laser Cutting</button>
+						<button class="tab-btn" data-tab="scan">3D Scanning</button>
+						<button class="tab-btn" data-tab="mocap">Motion Capture</button>
+						<button class="tab-btn" data-tab="resin">Resin / Composites</button>
+					</div>
+
+					<div class="tab-panel active" id="tab-cad">
+						<h3>CAD and 3D Modelling</h3>
+						<p>
+							CAD and 3D modelling were highly suitable for the Pterodactyl project because they allowed the group to
+							visualise the body and wings before making the physical artefact. A digital model can be inspected,
+							scaled, revised, and presented more easily than a hand-built prototype. For this project, CAD thinking
+							was especially useful for checking the relationship between the body, wings, and servo mechanism.
+						</p>
+						<p>
+							The weakness of CAD is that it can create a false sense of certainty. A digital part may look accurate
+							on screen but still fail physically if the material is weak, the joint is loose, or the servo lacks
+							enough torque. Therefore, CAD was suitable as an early development method, but it needed to be supported
+							by physical testing.
+						</p>
+						<p>
+							In industry, CAD is essential because it supports precision, collaboration, technical documentation, and
+							manufacturing preparation. However, the level of CAD detail should match the prototype stage. Early
+							concepts may benefit from quick, simple models, while production-ready designs require more accurate
+							tolerances, assemblies, and simulation.
+						</p>
+					</div>
+
+					<div class="tab-panel" id="tab-printing">
+						<h3>3D Printing / Additive Manufacturing</h3>
+						<p>
+							3D printing is useful when a project requires custom forms that would be difficult to cut by hand. For
+							the Pterodactyl, it could be suitable for the head, body shell, wing joints, servo mounts, or decorative
+							features. Its main advantage is that complex geometry can be produced directly from digital files.
+						</p>
+						<p>
+							The main limitation is material behaviour. FDM printed parts can show layer lines and may be weak in
+							certain directions depending on print orientation. Thin wing sections may flex or snap if not designed
+							carefully. Printing can also take time, especially if multiple iterations are needed. For this reason, 3D
+							printing is effective for custom parts but may not be the best method for every part of a lightweight
+							flapping-wing model.
+						</p>
+						<p>
+							In industrial product development, additive manufacturing is valuable for rapid prototyping, design
+							iteration, tooling, and low-volume production. However, it must be selected with awareness of cost,
+							material performance, surface finish, print time, and post-processing.
+						</p>
+					</div>
+
+					<div class="tab-panel" id="tab-laser">
+						<h3>Laser Cutting</h3>
+						<p>
+							Laser cutting was suitable to consider for flat wing ribs, body panels, or lightweight structural pieces.
+							It is accurate, repeatable, and efficient for sheet materials. If the Pterodactyl wings were designed as
+							flat layered components, laser cutting could produce consistent left and right wing profiles.
+						</p>
+						<p>
+							The limitation is that laser cutting mainly works with flat sheet geometry. It is less suitable for
+							organic curved surfaces such as a dinosaur head or body unless the design is built from layers or
+							interlocking panels. It can also create burnt edges on some materials and requires safe ventilation.
+						</p>
+						<p>
+							In industry, laser cutting is useful for signage, packaging, sheet-metal prototyping, architectural
+							models, and manufacturing fixtures. For this project, it was more suitable for structural and flat parts
+							than for sculptural dinosaur details.
+						</p>
+					</div>
+
+					<div class="tab-panel" id="tab-scan">
+						<h3>3D Scanning</h3>
+						<p>
+							3D scanning was explored as a module technique, but it was not essential for this prototype because the
+							Pterodactyl was a designed object rather than an existing object that needed to be copied. If the group
+							had built a clay model first, scanning could have helped convert the hand-made shape into a digital file.
+						</p>
+						<p>
+							The advantage of 3D scanning is that it captures real-world geometry quickly. It is useful when a designer
+							needs to reverse engineer an object or preserve organic detail. The limitation is that scan data often
+							requires cleaning, smoothing, and retopology before it can be used for manufacturing.
+						</p>
+						<p>
+							In industry, scanning is valuable in heritage preservation, medical modelling, manufacturing inspection,
+							reverse engineering, and custom-fit products. In this project, it was less suitable than CAD because the
+							design needed to be created and controlled rather than captured from an existing object.
+						</p>
+					</div>
+
+					<div class="tab-panel" id="tab-mocap">
+						<h3>Motion Capture</h3>
+						<p>
+							Motion capture was also not a primary method for the Pterodactyl prototype. The wing motion was simple
+							and servo-driven, so it did not require capturing complex biological movement. However, motion capture
+							could be useful in a more advanced version of the project if the goal was to compare the prototype wing
+							motion with bird or bat wing movement.
+						</p>
+						<p>
+							The strength of motion capture is its ability to record movement accurately over time. It can help
+							engineers analyse motion paths, joint behaviour, and performance. Its limitation is that it requires
+							special equipment, calibration, controlled space, and data processing.
+						</p>
+						<p>
+							In industrial and research contexts, motion capture is useful for robotics, animation, biomechanics,
+							sports science, and autonomous systems testing. For this project, it was valuable as a concept to
+							appraise, but not necessary for the basic flapping-wing demonstrator.
+						</p>
+					</div>
+
+					<div class="tab-panel" id="tab-resin">
+						<h3>Resin Production and Composite Methods</h3>
+						<p>
+							Resin printing and composite methods could improve the quality and strength of a more advanced
+							Pterodactyl prototype. Resin printing can produce fine surface detail, which would suit the head, claws,
+							and decorative dinosaur features. Composite methods could create lightweight but strong wing skins or
+							body shells.
+						</p>
+						<p>
+							The limitations are cost, safety, time, and post-processing. Resin parts often require washing and curing,
+							while composite methods require careful handling, mould preparation, and workshop control. These methods
+							may be too time-consuming for an early educational prototype unless the final surface quality is a major
+							priority.
+						</p>
+						<p>
+							In industry, resin and composites are important where lightweight strength, surface finish, and durability
+							are required. In this project, they are more appropriate as future development methods than as the first
+							choice for a simple servo-driven demonstrator.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Reflection -->
+			<section id="reflection" class="wrapper style3">
+				<div class="title">Reflection and Improvements</div>
+				<div class="container">
+					<div class="row aln-center">
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#physical" class="image featured"><img src="images/servo-mechanism.jpg" alt="Servo mechanism close-up" /></a>
+								<h3><a href="#physical">What Worked Well</a></h3>
+								<p>
+									The project worked well as a demonstrator because the moving wings made the prototype more engaging
+									than a static model. The Pterodactyl theme gave the artefact a clear identity, and the servo
+									mechanism provided a simple way to show controlled robotic movement.
+								</p>
+							</section>
+						</div>
+
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#servo" class="image featured"><img src="images/testing.jpg" alt="Testing the moving wings" /></a>
+								<h3><a href="#servo">Main Limitations</a></h3>
+								<p>
+									The main limitations were mechanical accuracy, wing balance, and material strength. A simple
+									mechanism can demonstrate movement, but it may not produce natural flapping. The prototype also
+									depends heavily on careful alignment between the servo and the wing joints.
+								</p>
+							</section>
+						</div>
+
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#appraisal" class="image featured"><img src="images/cad-model.jpg" alt="CAD model for future improvements" /></a>
+								<h3><a href="#appraisal">Future Improvements</a></h3>
+								<p>
+									Future improvements could include lighter wing materials, stronger pivot joints, a better servo
+									mount, smoother linkage geometry, and a more refined body shell. A second prototype could also use
+									CAD simulation or motion analysis to improve the wing path.
+								</p>
+							</section>
+						</div>
+					</div>
+
+					<div class="accordion">
+						<div class="accordion-item active">
+							<button class="accordion-title">Reflection: What I learned about virtual-to-physical development</button>
+							<div class="accordion-content">
+								<p>
+									This project helped me understand that virtual and physical prototypes should not be treated as
+									separate stages. The virtual model helps with planning, but the physical prototype reveals real
+									constraints. The most useful workflow is iterative: design, build, test, revise, and then improve
+									the design again. I learned that a prototype does not need to be perfect to be valuable; it needs
+									to reveal information that helps the next decision.
+								</p>
+							</div>
+						</div>
+
+						<div class="accordion-item">
+							<button class="accordion-title">Reflection: Why the servo choice was appropriate</button>
+							<div class="accordion-content">
+								<p>
+									The servo was appropriate because the prototype required controlled angular motion rather than
+									continuous rotation. This made the wing movement easier to demonstrate. However, the servo also
+									introduced limits. If the wing was too heavy or the joint too stiff, the servo could struggle. This
+									showed that actuator selection must be considered alongside material and structural decisions.
+								</p>
+							</div>
+						</div>
+
+						<div class="accordion-item">
+							<button class="accordion-title">Reflection: How I would improve the workflow</button>
+							<div class="accordion-content">
+								<p>
+									If I repeated the project, I would create a clearer test plan earlier. I would test a small wing
+									and servo linkage before finalising the body. This would reduce the risk of designing a visually
+									successful model that is difficult to animate. I would also document each design change with photos,
+									short notes, and version numbers so that the development process is easier to explain in the final
+									portfolio.
+								</p>
+							</div>
+						</div>
+
+						<div class="accordion-item">
+							<button class="accordion-title">Conclusion</button>
+							<div class="accordion-content">
+								<p>
+									The Pterodactyl prototype successfully connected creative modelling with a simple robotic movement
+									system. The project demonstrated how a virtual design can be developed into a physical artefact, but
+									it also showed that physical testing is essential for understanding movement, material behaviour,
+									and assembly constraints. From my individual perspective, the most important learning outcome was
+									understanding how design choices must be justified in relation to function, manufacturing method,
+									cost, time, and future improvement.
+								</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<!-- Footer -->
+			<section id="footer" class="wrapper">
+				<div class="title">References and Submission</div>
+				<div class="container">
+
+					<header class="style1">
+						<h2>Harvard References and Portfolio Notes</h2>
+						<p>
+							This section provides the reference list and final submission checklist for the GitHub Pages portfolio.
+						</p>
+					</header>
+
+					<div class="row">
+						<div class="col-6 col-12-medium">
+
+							<section id="references">
+								<h3>Reference List</h3>
+								<ul class="reference-list">
+									<li>
+										Arduino (2026) <em>Servo Library</em>. Available at:
+										https://www.arduino.cc/en/reference/servo (Accessed: 13 May 2026).
+									</li>
+									<li>
+										Artec 3D (2025) <em>What is laser 3D scanning?</em> Available at:
+										https://www.artec3d.com/learning-center/laser-3d-scanning (Accessed: 13 May 2026).
+									</li>
+									<li>
+										Autodesk (2024) <em>CAD Software: 2D and 3D Computer-Aided Design</em>. Available at:
+										https://www.autodesk.com/uk/solutions/cad-software (Accessed: 13 May 2026).
+									</li>
+									<li>
+										Formlabs (2026) <em>Guide to Post-Processing and Finishing SLA Resin 3D Prints</em>.
+										Available at: https://formlabs.com/blog/post-processing-and-finishing-sla-prints/
+										(Accessed: 13 May 2026).
+									</li>
+									<li>
+										GitHub Docs (2026) <em>Getting started with GitHub Pages</em>. Available at:
+										https://docs.github.com/en/pages/getting-started-with-github-pages
+										(Accessed: 13 May 2026).
+									</li>
+									<li>
+										ISO/ASTM (2021) <em>ISO/ASTM 52900:2021 Additive manufacturing — General principles —
+										Fundamentals and vocabulary</em>. Available at: https://www.iso.org/obp/ui/
+										(Accessed: 13 May 2026).
+									</li>
+									<li>
+										TWI (2026) <em>What is Laser Cutting? A Definitive Guide to the Process</em>. Available at:
+										https://www.twi-global.com/technical-knowledge/faqs/what-is-laser-cutting
+										(Accessed: 13 May 2026).
+									</li>
+									<li>
+										Vicon (2026) <em>Vicon Motion Capture for Engineering</em>. Available at:
+										https://www.vicon.com/ (Accessed: 13 May 2026).
+									</li>
 								</ul>
 							</section>
 
-					</div>
-				</section>
+						</div>
 
-			<!-- Highlights -->
-				<section id="highlights" class="wrapper style3">
-					<div class="title">The Endorsements</div>
-					<div class="container">
-						<div class="row aln-center">
-							<div class="col-4 col-12-medium">
-								<section class="highlight">
-									<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-									<h3><a href="#">Aliquam diam consequat</a></h3>
-									<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
-									<ul class="actions">
-										<li><a href="#" class="button style1">Learn More</a></li>
-									</ul>
-								</section>
-							</div>
-							<div class="col-4 col-12-medium">
-								<section class="highlight">
-									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-									<h3><a href="#">Nisl adipiscing sed lorem</a></h3>
-									<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
-									<ul class="actions">
-										<li><a href="#" class="button style1">Learn More</a></li>
-									</ul>
-								</section>
-							</div>
-							<div class="col-4 col-12-medium">
-								<section class="highlight">
-									<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-									<h3><a href="#">Mattis tempus lorem</a></h3>
-									<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
-									<ul class="actions">
-										<li><a href="#" class="button style1">Learn More</a></li>
-									</ul>
-								</section>
-							</div>
+						<div class="col-6 col-12-medium">
+
+							<section class="feature-list small">
+								<div class="row">
+									<div class="col-12">
+										<section>
+											<h3 class="icon solid fa-check">Submission Checklist</h3>
+											<p>
+												Before submitting, check that the GitHub Pages website opens correctly, all images load,
+												the navigation links work, the 3D model is included if available, and the repository is
+												not modified after the final submission.
+											</p>
+										</section>
+									</div>
+
+									<div class="col-12">
+										<section>
+											<h3 class="icon solid fa-folder">Folder Contents</h3>
+											<p>
+												Submit the complete website folder as a Windows-compressed ZIP file. It should include
+												this index.html file, the assets folder, the images folder, optional 3D files, and a
+												text file named Links containing the live portfolio link and GitHub repository link.
+											</p>
+										</section>
+									</div>
+
+									<div class="col-12">
+										<section>
+											<h3 class="icon solid fa-user">Student Details</h3>
+											<p>
+												<strong>Name:</strong> Replace with your name<br />
+												<strong>Module:</strong> COMP60019 Robotic Modelling and Drone Skin Design<br />
+												<strong>Project:</strong> Servo-Actuated Pterodactyl Dinosaur Prototype
+											</p>
+										</section>
+									</div>
+
+									<div class="col-12">
+										<section>
+											<h3 class="icon solid fa-link">Links.txt Content</h3>
+											<p>
+												Portfolio link: paste your GitHub Pages URL here<br />
+												Repository link: paste your GitHub repository URL here
+											</p>
+										</section>
+									</div>
+								</div>
+							</section>
+
 						</div>
 					</div>
-				</section>
 
-			<!-- Footer -->
-				<section id="footer" class="wrapper">
-					<div class="title">The Rest Of It</div>
-					<div class="container">
-						<header class="style1">
-							<h2>Ipsum sapien elementum portitor?</h2>
-							<p>
-								Sed turpis tortor, tincidunt sed ornare in metus porttitor mollis nunc in aliquet.<br />
-								Nam pharetra laoreet imperdiet volutpat etiam feugiat.
-							</p>
-						</header>
-						<div class="row">
-							<div class="col-6 col-12-medium">
-
-								<!-- Contact Form -->
-									<section>
-										<form method="post" action="#">
-											<div class="row gtr-50">
-												<div class="col-6 col-12-small">
-													<input type="text" name="name" id="contact-name" placeholder="Name" />
-												</div>
-												<div class="col-6 col-12-small">
-													<input type="text" name="email" id="contact-email" placeholder="Email" />
-												</div>
-												<div class="col-12">
-													<textarea name="message" id="contact-message" placeholder="Message" rows="4"></textarea>
-												</div>
-												<div class="col-12">
-													<ul class="actions">
-														<li><input type="submit" class="style1" value="Send" /></li>
-														<li><input type="reset" class="style2" value="Reset" /></li>
-													</ul>
-												</div>
-											</div>
-										</form>
-									</section>
-
-							</div>
-							<div class="col-6 col-12-medium">
-
-								<!-- Contact -->
-									<section class="feature-list small">
-										<div class="row">
-											<div class="col-6 col-12-small">
-												<section>
-													<h3 class="icon solid fa-home">Mailing Address</h3>
-													<p>
-														Untitled Corp<br />
-														1234 Somewhere Rd<br />
-														Nashville, TN 00000
-													</p>
-												</section>
-											</div>
-											<div class="col-6 col-12-small">
-												<section>
-													<h3 class="icon solid fa-comment">Social</h3>
-													<p>
-														<a href="#">@untitled-corp</a><br />
-														<a href="#">linkedin.com/untitled</a><br />
-														<a href="#">facebook.com/untitled</a>
-													</p>
-												</section>
-											</div>
-											<div class="col-6 col-12-small">
-												<section>
-													<h3 class="icon solid fa-envelope">Email</h3>
-													<p>
-														<a href="#">info@untitled.tld</a>
-													</p>
-												</section>
-											</div>
-											<div class="col-6 col-12-small">
-												<section>
-													<h3 class="icon solid fa-phone">Phone</h3>
-													<p>
-														(000) 555-0000
-													</p>
-												</section>
-											</div>
-										</div>
-									</section>
-
-							</div>
-						</div>
-						<div id="copyright">
-							<ul>
-								<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
+					<div id="copyright">
+						<ul>
+							<li>&copy; Your Name. Individual academic portfolio.</li>
+							<li>Design base: <a href="http://html5up.net">HTML5 UP</a></li>
+							<li>Edited for COMP60019 portfolio submission.</li>
+						</ul>
 					</div>
-				</section>
+				</div>
+			</section>
 
 		</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<!-- Lightbox -->
+		<div id="lightbox">
+			<button id="lightboxClose" aria-label="Close image preview">&times;</button>
+			<img id="lightboxImage" src="" alt="Expanded project artefact" />
+		</div>
+
+		<!-- Back to top -->
+		<button id="backToTop" aria-label="Back to top">&#8593;</button>
+
+		<!-- Scripts from original template -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<!-- Extra interactivity added inside same template -->
+		<script>
+			// Scroll progress bar
+			const progressBar = document.getElementById("progressBar");
+			const backToTop = document.getElementById("backToTop");
+
+			window.addEventListener("scroll", function () {
+				const scrollTop = window.scrollY;
+				const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+				const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+				progressBar.style.width = scrollPercent + "%";
+
+				if (scrollTop > 500) {
+					backToTop.classList.add("show");
+				} else {
+					backToTop.classList.remove("show");
+				}
+			});
+
+			backToTop.addEventListener("click", function () {
+				window.scrollTo({ top: 0, behavior: "smooth" });
+			});
+
+			// Timeline content
+			const timelineContent = {
+				concept: {
+					title: "1. Concept Selection",
+					text: "The group selected a Pterodactyl because it provided a strong visual identity and a clear mechanical challenge. The large wings allowed the project to demonstrate movement, while the dinosaur form connected the artefact to biomimicry and exoskeletal design. From my perspective, this was a suitable concept because it required both creative modelling and engineering judgement."
+				},
+				virtual: {
+					title: "2. Virtual Prototype",
+					text: "The virtual prototype helped the group plan the body shape, wing size, and possible servo position before building the physical model. This stage reduced uncertainty because it allowed the team to think about proportions, clearance, and movement path before committing to materials."
+				},
+				mechanism: {
+					title: "3. Servo Mechanism",
+					text: "The servo mechanism was selected because it could provide controlled angular motion for the wings. The key challenge was transferring the servo movement into a visible flapping action without overloading the servo or causing the wing joints to become unstable."
+				},
+				physical: {
+					title: "4. Physical Build",
+					text: "The physical build revealed practical issues such as material weight, joint strength, servo alignment, and assembly access. This stage showed that a successful prototype depends on both visual design and mechanical reliability."
+				},
+				testing: {
+					title: "5. Testing and Revision",
+					text: "Testing allowed the group to observe how the wings moved in practice. Any stiffness, imbalance, or weak connection became visible during this stage. The testing process supported reflection because it showed what should be improved in a future version."
+				}
+			};
+
+			const timelineButtons = document.querySelectorAll(".timeline-btn");
+			const timelineTitle = document.getElementById("timelineTitle");
+			const timelineText = document.getElementById("timelineText");
+
+			timelineButtons.forEach(function (button) {
+				button.addEventListener("click", function () {
+					timelineButtons.forEach(function (btn) {
+						btn.classList.remove("active");
+					});
+
+					button.classList.add("active");
+
+					const stage = button.getAttribute("data-stage");
+					timelineTitle.textContent = timelineContent[stage].title;
+					timelineText.textContent = timelineContent[stage].text;
+				});
+			});
+
+			// Wing simulator
+			const wingSlider = document.getElementById("wingSlider");
+			const angleValue = document.getElementById("angleValue");
+			const leftWing = document.getElementById("leftWing");
+			const rightWing = document.getElementById("rightWing");
+
+			function updateWings() {
+				const angle = parseInt(wingSlider.value, 10);
+				angleValue.textContent = angle;
+				leftWing.style.transform = "rotate(" + angle + "deg)";
+				rightWing.style.transform = "rotate(" + (-angle) + "deg) scaleX(-1)";
+			}
+
+			wingSlider.addEventListener("input", updateWings);
+			updateWings();
+
+			// Gallery lightbox
+			const galleryItems = document.querySelectorAll(".gallery-item");
+			const lightbox = document.getElementById("lightbox");
+			const lightboxImage = document.getElementById("lightboxImage");
+			const lightboxClose = document.getElementById("lightboxClose");
+
+			galleryItems.forEach(function (item) {
+				item.addEventListener("click", function () {
+					const imgSrc = item.getAttribute("data-img");
+					lightboxImage.src = imgSrc;
+					lightbox.classList.add("active");
+				});
+			});
+
+			lightboxClose.addEventListener("click", function () {
+				lightbox.classList.remove("active");
+			});
+
+			lightbox.addEventListener("click", function (event) {
+				if (event.target === lightbox) {
+					lightbox.classList.remove("active");
+				}
+			});
+
+			// Critical appraisal tabs
+			const tabButtons = document.querySelectorAll(".tab-btn");
+			const tabPanels = document.querySelectorAll(".tab-panel");
+
+			tabButtons.forEach(function (button) {
+				button.addEventListener("click", function () {
+					tabButtons.forEach(function (btn) {
+						btn.classList.remove("active");
+					});
+
+					tabPanels.forEach(function (panel) {
+						panel.classList.remove("active");
+					});
+
+					button.classList.add("active");
+					const tabName = button.getAttribute("data-tab");
+					document.getElementById("tab-" + tabName).classList.add("active");
+				});
+			});
+
+			// Reflection accordion
+			const accordionItems = document.querySelectorAll(".accordion-item");
+
+			accordionItems.forEach(function (item) {
+				const title = item.querySelector(".accordion-title");
+
+				title.addEventListener("click", function () {
+					item.classList.toggle("active");
+				});
+			});
+		</script>
 
 	</body>
 </html>
