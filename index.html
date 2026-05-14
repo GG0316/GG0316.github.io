@@ -126,7 +126,9 @@
 				transition: transform 0.3s ease;
 			}
 
-			.gallery-item:hover img { transform: scale(1.06); }
+			.gallery-item:hover img {
+				transform: scale(1.06);
+			}
 
 			.gallery-item span {
 				position: absolute;
@@ -150,7 +152,9 @@
 				padding: 2rem;
 			}
 
-			#lightbox.active { display: flex; }
+			#lightbox.active {
+				display: flex;
+			}
 
 			#lightbox img {
 				max-width: 92vw;
@@ -218,7 +222,9 @@
 				box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 			}
 
-			.tab-panel.active { display: block; }
+			.tab-panel.active {
+				display: block;
+			}
 
 			.wing-simulator {
 				background: #f7f7f7;
@@ -250,7 +256,9 @@
 				align-items: center;
 			}
 
-			.slider-wrap input { width: 100%; }
+			.slider-wrap input {
+				width: 100%;
+			}
 
 			.angle-readout {
 				font-weight: 800;
@@ -386,7 +394,9 @@
 				line-height: 1.7;
 			}
 
-			.reference-list li { margin-bottom: 0.8rem; }
+			.reference-list li {
+				margin-bottom: 0.8rem;
+			}
 
 			#backToTop {
 				position: fixed;
@@ -405,7 +415,9 @@
 				box-shadow: 0 12px 24px rgba(0,0,0,0.25);
 			}
 
-			#backToTop.show { display: block; }
+			#backToTop.show {
+				display: block;
+			}
 
 			@media screen and (max-width: 980px) {
 				.phase-grid,
@@ -424,7 +436,9 @@
 					grid-template-columns: 1fr;
 				}
 
-				.gallery-item img { height: 200px; }
+				.gallery-item img {
+					height: 200px;
+				}
 			}
 		</style>
 	</head>
@@ -470,14 +484,14 @@
 						Our group discussed several possible ideas before selecting the Pterodactyl. I felt this was a suitable
 						direction because its wing structure connected naturally to the assignment theme of robotic skin, movement
 						and physical prototyping. It allowed me to think about flexible membrane materials, internal support,
-						roller-guided string movement and future servo actuation. This individual reflection portfolio explains
+						string routing, roller-guided movement and future servo actuation. This individual reflection portfolio explains
 						what I explored, what decisions made sense, and what I learned during the process.
 					</p>
 
 					<div class="badge-row">
 						<span class="project-badge">Blender / CAD</span>
 						<span class="project-badge">PETG 3D Print</span>
-						<span class="project-badge">Roller-Guided String System</span>
+						<span class="project-badge">String and Roller Routing</span>
 						<span class="project-badge">Spandex Membrane</span>
 						<span class="project-badge">Future Servo Actuation</span>
 					</div>
@@ -632,36 +646,53 @@
 							</p>
 						</div>
 
-						<h3>Movement Development: Motors, Strings and Roller Guidance</h3>
+						<h3>Movement Development: String, Roller Routing and Future Servo Actuation</h3>
 
 						<p>
-							My main contribution was researching possible ways to make the wings move. I compared a DC motor, servo motor,
-							simple string pulling and elastic thread support. A DC motor could provide continuous rotation, but the
-							disadvantage is that it would need an additional crank or linkage to convert rotation into a wing flap. This
-							would add more parts, more alignment issues and more chances for friction or failure.
+							The movement idea started with the need to make the wings move in a simple but controllable way. A string-based
+							system was explored because it could transfer pulling force to the wings without making the prototype too complex
+							at this stage. As the design developed, rollers became important because they could guide the string through the
+							body more smoothly and reduce friction.
 						</p>
 
 						<p>
-							A servo motor was more suitable for controlled wing movement because it can rotate between set angles. That
-							matches the idea of moving a wing through an upstroke and downstroke. However, servo actuation would still need
-							proper testing. The required torque would depend on wing size, membrane resistance, pivot friction and the weight
-							of the structure. This made me realise that choosing a servo is not enough by itself; the whole wing assembly
-							must be tested around it.
+							My main contribution was researching possible ways to support this wing movement, especially through motors,
+							servo actuation, strings and elastic thread. A DC motor was considered as one possible actuator, but it would
+							need an additional crank or linkage to convert continuous rotation into a wing-flapping motion. This would add
+							more parts, more alignment issues and more chances for friction or failure.
 						</p>
 
 						<p>
-							Simple string movement was also considered because it was easier to demonstrate within the available development
-							time. The advantage of strings is that they are lightweight, low-complexity and suitable for testing movement
-							ideas quickly. The disadvantage is that a direct string pull can create friction, uneven movement or poor
-							alignment if the string rubs against the body or wing frame.
+							A servo motor was more suitable for the future version because it can move between set angles, which matches
+							the upstroke and downstroke of a wing. However, the servo should not be treated as separate from the string and
+							roller system. The stronger idea was that a future servo could pull or control the string through the guided
+							roller path, rather than forcing the wing directly.
 						</p>
 
 						<p>
-							The roller-guided string system was developed as a refinement of the basic string idea. The sketches helped me
-							understand why this was a better direction: rollers can guide the string path, reduce friction and make the
-							movement smoother than pulling a string directly across the printed body. This made the current movement concept
-							feel more like a designed mechanism rather than just a temporary pulling method.
+							Several ways of routing and controlling the string were considered, including the eye system, the locking cuff
+							method and the roller system. The eye system could keep the string in position, but it may create more rubbing
+							at the guide points. The locking cuff method could secure the string, but it may make adjustment harder if the
+							tension needs to be changed. The roller system was selected because it gave the string a smoother and more
+							practical path, while still allowing a servo to be added in a future version to control the pulling movement.
 						</p>
+
+						<div class="gallery-grid">
+							<button class="gallery-item" data-img="images/eye-system-sketch.jpg">
+								<img src="images/eye-system-sketch.jpg" alt="Eye system roller routing sketch" />
+								<span>Eye System Roller Idea</span>
+							</button>
+
+							<button class="gallery-item" data-img="images/locking-cuff-sketch.png">
+								<img src="images/locking-cuff-sketch.png" alt="Locking cuff sketch for string movement" />
+								<span>Locking Cuff Method</span>
+							</button>
+
+							<button class="gallery-item" data-img="images/roller-system-sketch.png">
+								<img src="images/roller-system-sketch.png" alt="Final roller-guided string system sketch" />
+								<span>Selected Roller System</span>
+							</button>
+						</div>
 
 						<div class="gallery-grid">
 							<button class="gallery-item" data-img="images/mechanism-layout-front.webp">
@@ -674,31 +705,20 @@
 								<span>Pivot and Rail Exploration</span>
 							</button>
 
-							<button class="gallery-item" data-img="images/roller-system-sketch.png">
-								<img src="images/roller-system-sketch.png" alt="Roller-guided string system sketch" />
-								<span>Roller System Sketch</span>
-							</button>
-						</div>
-
-						<div class="gallery-grid">
-							<button class="gallery-item" data-img="images/locking-cuff-sketch.png">
-								<img src="images/locking-cuff-sketch.png" alt="Locking cuff sketch for string movement" />
-								<span>Locking Cuff Sketch</span>
-							</button>
-
 							<button class="gallery-item" data-img="images/internal-rollers-sketch.png">
 								<img src="images/internal-rollers-sketch.png" alt="Internal rollers sketch for guided string path" />
-								<span>Internal Rollers Sketch</span>
+								<span>Internal Roller Path</span>
 							</button>
 						</div>
 
 						<div class="callout-box dark">
 							<h3>My Reflection</h3>
 							<p>
-								This was one of my main learning points. At first, I thought the most important decision was simply choosing
-								between a motor and a servo. I later realised that wing movement also depends on string routing, roller
-								alignment, friction, attachment points and membrane tension. The final current direction was a roller-guided
-								string system, while servo actuation remains a stronger future improvement once more testing time is available.
+								This was one of my main learning points. At first, I focused mainly on the actuator, such as whether a motor
+								or servo would be suitable. I then realised that the actuator is only one part of the movement system. The
+								string path, roller position, friction, tension and attachment points all affect whether the wing can move
+								smoothly. The final roller system made more sense because it improved the string route first, which is
+								important before adding servo control in a future version.
 							</p>
 						</div>
 
@@ -728,9 +748,9 @@
 						<div class="callout-box dark">
 							<h3>My Reflection</h3>
 							<p>
-								This helped me understand that small material choices can affect mechanical performance. The motor or string
-								system is only one part of the movement. The thread, membrane and tension all influence whether the wing can
-								move smoothly.
+								This helped me understand that small material choices can affect mechanical performance. The motor, servo,
+								string and roller path are only part of the movement. The thread, membrane and tension all influence whether
+								the wing can move smoothly.
 							</p>
 						</div>
 
@@ -800,8 +820,8 @@
 							<h3>Interactive Movement Note</h3>
 							<p>
 								This interactive SVG model is a simplified Pterodactyl-style wing flap demonstration. The slider changes
-								the wing angle to illustrate how the membrane wings could move through an upstroke and downstroke using
-								roller-guided string movement in the current prototype, with servo actuation considered as a future improvement.
+								the wing angle to show how the membrane wings could move through an upstroke and downstroke. It represents
+								the idea of a guided string movement path, with servo-controlled string actuation considered as a future improvement.
 							</p>
 						</div>
 
@@ -987,10 +1007,10 @@
 						</p>
 
 						<p>
-							A stronger future direction would be to test the roller-guided string system on a smaller wing rig before
+							A stronger future direction would be to test the selected string and roller path on a smaller wing rig before
 							attaching the final skin. This would allow string tension, roller alignment, membrane resistance and wing
-							movement to be tested without risking damage to the full prototype. After that, servo actuation could be
-							explored as a more controlled movement method.
+							movement to be tested without risking damage to the full prototype. After that, servo-controlled string
+							actuation could be explored as a more repeatable movement method.
 						</p>
 
 						<p>
@@ -1005,8 +1025,8 @@
 							<p>
 								<strong>
 									Blender/CAD design → mechanism and skin planning → STL preparation → PETG 3D printing → risk assessment
-									and post-processing → spandex/fabric membrane planning → roller-guided string movement for the current
-									prototype → servo actuation as a future improvement.
+									and post-processing → spandex/fabric membrane planning → selected roller-guided string path for the current
+									prototype → servo-controlled string actuation as a future improvement.
 								</strong>
 							</p>
 						</div>
@@ -1049,7 +1069,7 @@
 						<div class="github-stl-grid">
 							<div class="github-stl-card">
 								<h3>Arm Mechanism Prototype 1</h3>
-								<script src="https://embed.github.com/view/3d/GG0316/GG0316.github.io/main/assets/3d/ArmMechanismProto1.stl"></script>
+								<script src="https://embed.github.com/view/3d/GG0316/GG0316.github.io/assets/3d/ArmMechanismProto1.stl"></script>
 								<p>
 									<a href="https://github.com/GG0316/GG0316.github.io/blob/main/assets/3d/ArmMechanismProto1.stl" target="_blank">
 										Open STL on GitHub
@@ -1060,7 +1080,7 @@
 
 							<div class="github-stl-card">
 								<h3>Arm Mechanism Prototype 2</h3>
-								<script src="https://embed.github.com/view/3d/GG0316/GG0316.github.io/main/assets/3d/ArmMechanismProto2.stl"></script>
+								<script src="https://embed.github.com/view/3d/GG0316/GG0316.github.io/assets/3d/ArmMechanismProto2.stl"></script>
 								<p>
 									<a href="https://github.com/GG0316/GG0316.github.io/blob/main/assets/3d/ArmMechanismProto2.stl" target="_blank">
 										Open STL on GitHub
@@ -1071,7 +1091,7 @@
 
 							<div class="github-stl-card">
 								<h3>Prototype Rails</h3>
-								<script src="https://embed.github.com/view/3d/GG0316/GG0316.github.io/main/assets/3d/PrototypeRails.stl"></script>
+								<script src="https://embed.github.com/view/3d/GG0316/GG0316.github.io/assets/3d/PrototypeRails.stl"></script>
 								<p>
 									<a href="https://github.com/GG0316/GG0316.github.io/blob/main/assets/3d/PrototypeRails.stl" target="_blank">
 										Open STL on GitHub
@@ -1105,7 +1125,7 @@
 					<div class="tab-buttons">
 						<button class="tab-btn active" data-tab="cad">Blender / CAD</button>
 						<button class="tab-btn" data-tab="printing">PETG 3D Printing</button>
-						<button class="tab-btn" data-tab="movement">Roller String / Servo</button>
+						<button class="tab-btn" data-tab="movement">String / Roller / Servo</button>
 						<button class="tab-btn" data-tab="skin">Skin / Membrane</button>
 						<button class="tab-btn" data-tab="scan">3D Scanning</button>
 						<button class="tab-btn" data-tab="mocap">Motion Capture</button>
@@ -1143,20 +1163,27 @@
 					</div>
 
 					<div class="tab-panel" id="tab-movement">
-						<h3>Roller-Guided String Movement and Servo Actuation</h3>
+						<h3>String-Roller Movement and Future Servo Actuation</h3>
+
 						<p>
-							A DC motor was considered, but it would require extra mechanisms to create flapping. A servo was preferred
-							for future movement because it can move between set angles and provide controlled actuation.
+							The movement approach was based on a string-guided system supported by rollers. The aim was to create a path
+							where the string could pull the wing with less friction and better alignment. A servo was considered as the
+							future actuator because it could pull or control the string through set angles, creating a more repeatable
+							wing-flapping motion.
 						</p>
+
 						<p>
-							For the current prototype, a roller-guided string system was more realistic because of the available development
-							time before submission. This improved the basic string idea because rollers can guide the string path, reduce
-							friction and make movement smoother.
+							Different routing ideas were explored before the selected roller system. The eye system could guide the string
+							but may increase friction at the contact points. The locking cuff method could help hold or secure the string,
+							but it may make tension adjustment harder. The selected roller system was more suitable because it gave the
+							string a smoother path and was easier to connect with future servo actuation.
 						</p>
+
 						<p>
-							The limitation is that the system still depends on careful string tension, roller alignment and secure attachment
-							points. In wider robotics, cable and pulley systems are useful when force needs to be transferred through a
-							compact structure.
+							The main limitation is that the system still depends on accurate roller alignment, careful string tension and
+							secure attachment points. In wider robotics and product development, cable, pulley and roller-guided systems
+							are useful when force needs to be transferred through a compact structure, but they must be tested carefully to
+							reduce friction and uneven movement.
 						</p>
 					</div>
 
@@ -1240,8 +1267,8 @@
 						<p>
 							The selected workflow was suitable because it matched the actual development stage. Blender/CAD supported virtual
 							design, PETG 3D printing supported physical prototyping, spandex and silicone planning supported the robotic skin,
-							and the roller-guided string system created a realistic current movement method. Servo actuation remains the stronger
-							future improvement.
+							and the selected string and roller system created a realistic current movement method. Servo-controlled string
+							actuation remains the stronger future improvement.
 						</p>
 					</div>
 
@@ -1271,8 +1298,8 @@
 
 					<p>
 						If I developed the project further, I would build a small wing test rig first. I would use it to compare the
-						roller-guided string system with servo actuation, test the spandex membrane tension, check friction in the rollers
-						and only apply the final silicone skin once the movement and access points were confirmed.
+						selected string and roller system with servo-controlled string actuation, test the spandex membrane tension, check
+						friction in the rollers and only apply the final silicone skin once the movement and access points were confirmed.
 					</p>
 
 					<p>
@@ -1333,7 +1360,7 @@
 							<div class="avatar me">G</div>
 							<h3>Ganesh</h3>
 							<span class="team-role">Wing Movement Research</span>
-							<p>My role focused on motors, servo actuation, roller-guided strings, elastic thread and practical wing movement.</p>
+							<p>My role focused on motors, servo actuation, string routing, elastic thread and practical wing movement.</p>
 						</div>
 					</div>
 				</div>
