@@ -12,7 +12,7 @@
 		<title>Pterodactyl Robotic Skin Prototype Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="Individual reflective portfolio for a Pterodactyl-inspired robotic skin prototype." />
+		<meta name="description" content="Individual reflection portfolio for a Pterodactyl-inspired robotic skin prototype." />
 		<link rel="stylesheet" href="assets/css/main.css" />
 
 		<style>
@@ -170,13 +170,6 @@
 				font-size: 1.3rem;
 				cursor: pointer;
 				background: #fff;
-			}
-
-			.video-grid {
-				display: grid;
-				grid-template-columns: repeat(2, minmax(0, 1fr));
-				gap: 1.5rem;
-				margin: 2rem 0;
 			}
 
 			.video-card {
@@ -417,7 +410,6 @@
 			@media screen and (max-width: 980px) {
 				.phase-grid,
 				.gallery-grid,
-				.video-grid,
 				.team-grid,
 				.github-stl-grid {
 					grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -427,7 +419,6 @@
 			@media screen and (max-width: 736px) {
 				.phase-grid,
 				.gallery-grid,
-				.video-grid,
 				.team-grid,
 				.github-stl-grid {
 					grid-template-columns: 1fr;
@@ -443,11 +434,10 @@
 
 		<div id="page-wrapper">
 
-			<!-- Header -->
 			<section id="header" class="wrapper">
 				<div id="logo">
 					<h1><a href="index.html">Pterodactyl Robotic Skin Prototype</a></h1>
-					<p>Individual Reflective Portfolio | COMP60019 Robotic Modelling and Drone Skin Design</p>
+					<p>Individual Reflection Portfolio | COMP60019 Robotic Modelling and Drone Skin Design</p>
 				</div>
 
 				<nav id="nav">
@@ -466,7 +456,6 @@
 				</nav>
 			</section>
 
-			<!-- Intro -->
 			<section id="intro" class="wrapper style1">
 				<div class="title">The Portfolio</div>
 				<div class="container">
@@ -479,17 +468,17 @@
 
 					<p class="style3">
 						Our group discussed several possible ideas before selecting the Pterodactyl. I felt this was a suitable
-						direction because the wings gave the project more development potential than a static model. It allowed me
-						to think about flexible skin, membrane materials, internal support, roller-guided string movement and future
-						servo actuation. This portfolio is written as my individual reflection on what I explored, what decisions
-						made sense, and what I learned during the process.
+						direction because its wing structure connected naturally to the assignment theme of robotic skin, movement
+						and physical prototyping. It allowed me to think about flexible membrane materials, internal support,
+						roller-guided string movement and future servo actuation. This individual reflection portfolio explains
+						what I explored, what decisions made sense, and what I learned during the process.
 					</p>
 
 					<div class="badge-row">
 						<span class="project-badge">Blender / CAD</span>
 						<span class="project-badge">PETG 3D Print</span>
 						<span class="project-badge">Roller-Guided String System</span>
-						<span class="project-badge">Spandex / Silicone Skin</span>
+						<span class="project-badge">Spandex Membrane</span>
 						<span class="project-badge">Future Servo Actuation</span>
 					</div>
 
@@ -499,7 +488,6 @@
 				</div>
 			</section>
 
-			<!-- Main -->
 			<section id="main" class="wrapper style2">
 				<div class="title">Development Journey</div>
 				<div class="container">
@@ -523,27 +511,26 @@
 						<div class="phase-grid">
 							<div class="phase-card">
 								<h3>1. Concept Design</h3>
-								<p>Why the Pterodactyl concept was suitable and what early alternatives were considered.</p>
+								<p>Exploring why the Pterodactyl idea suited a robotic skin and movement-based prototype.</p>
 							</div>
 
 							<div class="phase-card">
 								<h3>2. Product Development</h3>
-								<p>Blender/CAD, mechanism sketches, roller system, skin planning, material choice and cost.</p>
+								<p>Comparing modelling, movement, thread, material, skin and cost decisions.</p>
 							</div>
 
 							<div class="phase-card">
 								<h3>3. Pre-Production</h3>
-								<p>STL preparation, PETG printing, risk assessment, support removal and physical evidence.</p>
+								<p>Moving from virtual design into PETG printing, risk assessment and physical checking.</p>
 							</div>
 
 							<div class="phase-card">
 								<h3>4. Post-Production</h3>
-								<p>Finishing, membrane application, testing, future servo actuation and design improvements.</p>
+								<p>Planning finishing, membrane testing, movement refinement and future servo actuation.</p>
 							</div>
 						</div>
 					</section>
 
-					<!-- Concept Design -->
 					<section id="concept-design">
 						<header class="style1">
 							<h2>1. Concept Design</h2>
@@ -557,30 +544,36 @@
 						<p>
 							At the concept design stage, different creature and movement ideas were discussed before the Pterodactyl
 							direction was selected. I understood the Pterodactyl to be a strong choice because it was not only visually
-							interesting, but also gave the project clear development challenges: large wings, a flexible membrane, an
-							outer skin, internal support structure and possible movement.
+							interesting, but also gave the project clear development challenges: large wings, a flexible membrane,
+							an outer skin, internal support structure and possible movement.
 						</p>
 
 						<p>
-							A static model would have been easier to produce because it would mainly involve shape and appearance.
-							However, it would not have allowed much exploration of movement or robotic skin behaviour. A fully rigid
-							3D printed wing was also possible, but it would not represent the flexible membrane of a Pterodactyl very
-							well. The selected direction was therefore a Pterodactyl body with wings that could later use flexible
-							material and a movement system.
+							At this stage, the useful comparison was between different ways of achieving movement, structure and skin
+							behaviour. A fully rigid printed wing could have made the structure easier to control, but it would not
+							represent the flexible membrane of a Pterodactyl very well. A flexible wing membrane was more suitable
+							because it created a stronger link between the creature concept, robotic skin design and future wing movement.
+						</p>
+
+						<p>
+							The Pterodactyl also created a useful design problem because the wing is not separate from the rest of the
+							body. The body shape, the wing frame, the membrane tension and the internal movement path all influence each
+							other. This made the concept more interesting to analyse because each choice created another question: how
+							would the skin attach, where could the string run, how much resistance would the wing membrane create, and
+							how could the internal mechanism remain accessible?
 						</p>
 
 						<div class="callout-box dark">
 							<h3>My Reflection</h3>
 							<p>
-								This stage helped me understand that a good concept is not only about how the final model looks. It should
-								also create opportunities for development, testing and decision-making. The Pterodactyl was suitable because
-								it allowed me to think about movement, wing skin, material tension and future actuation rather than only
-								producing a decorative model.
+								This stage helped me understand that a good concept should support the technical aims of the assignment.
+								The Pterodactyl was suitable because its wings naturally created questions about movement, flexible membrane
+								behaviour, skin attachment, material tension and future actuation. This made the concept useful for exploring
+								the route from virtual design to physical prototype.
 							</p>
 						</div>
 					</section>
 
-					<!-- Product Development -->
 					<section id="product-development">
 						<header class="style1">
 							<h2>2. Product Development</h2>
@@ -588,11 +581,18 @@
 						</header>
 
 						<p>
-							The product development stage was where the concept became more practical. Different parts of the project
-							were explored by different team members, including Blender/CAD modelling, 3D printing material choice, skin
-							research, risk planning and wing movement. My own contribution focused mainly on motors, servo actuation,
-							strings and elastic thread options. For the other areas, my reflection is based on understanding the decisions
-							and how they affected the overall prototype.
+							The product development stage was where the concept became more practical. The project explored Blender/CAD
+							modelling, 3D printing material choice, skin research, risk planning and wing movement. My main contribution
+							focused on motors, servo actuation, strings and elastic thread options, while the wider design decisions helped
+							me understand how each part affected the overall prototype.
+						</p>
+
+						<p>
+							This was the stage where I began to realise that the prototype could not be developed as separate pieces.
+							The body, skin and wing movement all depended on one another. If the wing membrane became too stiff, the
+							movement system would need more force. If the string path was poorly aligned, the wing could move unevenly.
+							If the skin was fixed too permanently, the internal mechanism would become difficult to adjust. These connections
+							made the development stage the most important part of the project for my learning.
 						</p>
 
 						<h3>Blender/CAD Modelling</h3>
@@ -612,24 +612,23 @@
 						<p>
 							Blender/CAD modelling was used to develop the Pterodactyl body and wing form before physical manufacture.
 							The advantage of this approach was that the shape could be viewed, adjusted and prepared digitally before
-							committing to a print. Blender was also suitable because it allowed more organic forms, which suited the
+							committing to a print. Blender was suitable because it allowed more organic forms, which suited the
 							Pterodactyl body better than simple block-based modelling.
 						</p>
 
 						<p>
-							An alternative would have been 3D scanning or haptic sculpting, but these were less suitable for the current
-							project because the design started digitally and there was no finished physical model to scan. Haptic sculpting
-							could have helped with fine skin texture, but the current priority was producing a manufacturable prototype
-							rather than detailed surface sculpting.
+							Other digital routes were also considered. 3D scanning would have been useful if there was already a hand-made
+							body or clay model that needed to be converted into a digital file. Haptic sculpting could have helped with
+							surface texture, wrinkles and more natural skin detail. However, the current project began with digital modelling,
+							so the priority was to produce a manufacturable form that could move towards 3D printing and mechanism planning.
 						</p>
 
 						<div class="callout-box dark">
 							<h3>My Reflection</h3>
 							<p>
-								Although I was not the main designer of the Blender model, reviewing the digital design helped me understand
-								why virtual prototyping matters. It allowed the body shape, wing layout and possible mechanism space to be
-								considered before printing. However, I also learned that a digital model alone cannot prove whether the
-								movement, material tension or post-processing will work in reality.
+								Reviewing the digital design helped me understand why virtual prototyping matters. It allowed the body shape,
+								wing layout and possible mechanism space to be considered before printing. However, I also learned that a
+								digital model alone cannot prove whether the movement, material tension or post-processing will work in reality.
 							</p>
 						</div>
 
@@ -638,9 +637,16 @@
 						<p>
 							My main contribution was researching possible ways to make the wings move. I compared a DC motor, servo motor,
 							simple string pulling and elastic thread support. A DC motor could provide continuous rotation, but the
-							disadvantage is that it would need an additional crank or linkage to convert rotation into a wing flap. A servo
-							motor was more suitable for controlled wing movement because it can rotate between set angles, making it easier
-							to create an up-and-down flapping motion.
+							disadvantage is that it would need an additional crank or linkage to convert rotation into a wing flap. This
+							would add more parts, more alignment issues and more chances for friction or failure.
+						</p>
+
+						<p>
+							A servo motor was more suitable for controlled wing movement because it can rotate between set angles. That
+							matches the idea of moving a wing through an upstroke and downstroke. However, servo actuation would still need
+							proper testing. The required torque would depend on wing size, membrane resistance, pivot friction and the weight
+							of the structure. This made me realise that choosing a servo is not enough by itself; the whole wing assembly
+							must be tested around it.
 						</p>
 
 						<p>
@@ -651,10 +657,10 @@
 						</p>
 
 						<p>
-							The roller-guided string system was developed as a refinement of the basic string idea. I did not design the
-							roller system by myself, but from reviewing the sketches I understood why it was a better direction. Rollers
-							can guide the string path, reduce friction and make the movement smoother than pulling a string directly across
-							the printed body.
+							The roller-guided string system was developed as a refinement of the basic string idea. The sketches helped me
+							understand why this was a better direction: rollers can guide the string path, reduce friction and make the
+							movement smoother than pulling a string directly across the printed body. This made the current movement concept
+							feel more like a designed mechanism rather than just a temporary pulling method.
 						</p>
 
 						<div class="gallery-grid">
@@ -705,10 +711,11 @@
 						</p>
 
 						<p>
-							Normal sewing thread would be easy to attach, but it has very little stretch, which could make the wing too
-							stiff or place more load on the movement system. Thin rubber cord would provide stretch, but it may be harder
-							to control neatly and could look less integrated with the wing membrane. Shirring elastic and thin elastic cord
-							were possible options because they are flexible, but I felt spandex elastic thread matched the wing skin better.
+							Normal sewing thread would be easy to attach and simple to source, but it has very little stretch. That could
+							make the wing too stiff or place more load on the movement system. Thin rubber cord would provide stretch, but
+							it may be harder to control neatly and could look less integrated with the wing membrane. Shirring elastic and
+							thin elastic cord were possible options because they are flexible, but I felt spandex elastic thread matched the
+							wing skin better.
 						</p>
 
 						<p>
@@ -811,23 +818,25 @@
 							PETG was selected for the current prototype because it offered a better balance between printability and
 							durability. It is easier to print than ABS while being tougher and less brittle than PLA. This made it suitable
 							for a handled prototype, especially because the model may need post-processing, demonstration and further development.
+							The trade-off is that PETG can sometimes require more careful post-processing than expected, but for this project
+							its toughness and handling strength were more valuable than producing a very fine surface finish immediately.
 						</p>
 
 						<div class="callout-box dark">
 							<h3>My Reflection</h3>
 							<p>
-								I did not lead the 3D printing material research, but reviewing the decision helped me understand that
-								material choice is part of product development. The selected filament affects strength, safety, handling
-								and post-processing, not just the appearance of the printed model.
+								Reviewing the material decision helped me understand that filament choice is part of product development.
+								The selected filament affects strength, safety, handling and post-processing, not just the appearance of the
+								printed model.
 							</p>
 						</div>
 
 						<h3>Cost Awareness</h3>
 
 						<p>
-							Cost was not the reason for rejecting motorised movement, because budget was available for the project.
-							However, recording material cost was still useful as part of product development. It helped show what was
-							used in the current prototype and how practical material decisions were being tracked.
+							Cost was tracked for awareness rather than as the reason for changing the movement approach. Recording the
+							material cost helped show what was used in the current prototype and how practical material decisions were being
+							tracked during development.
 						</p>
 
 						<div class="callout-box">
@@ -893,20 +902,20 @@
 							The disadvantage of silicone is that if it is applied too heavily or used to seal the model completely, it
 							could add weight and make the internal mechanism difficult to access. For that reason, selective adhesive
 							points, seam lines, hidden screws or magnetic panels were considered more practical than permanently sealing
-							the skin.
+							the skin. This was important because an early prototype needs to remain adjustable while movement and tension
+							are still being tested.
 						</p>
 
 						<div class="callout-box dark">
 							<h3>My Reflection</h3>
 							<p>
-								Although skin research was not my main role, it connected directly to my movement research. I learned that
-								the wing material affects how hard the mechanism has to work. A skin that looks realistic but is too stiff
-								or too tightly attached could make the wing movement unreliable.
+								The skin planning connected directly to my movement research because the wing material affects how hard the
+								mechanism has to work. A skin that looks realistic but is too stiff or too tightly attached could make the
+								wing movement unreliable.
 							</p>
 						</div>
 					</section>
 
-					<!-- Pre-Production -->
 					<section id="pre-production">
 						<header class="style1">
 							<h2>3. Pre-Production</h2>
@@ -919,16 +928,16 @@
 
 						<p>
 							Pre-production involved preparing the design for physical manufacture. The main route selected was PETG
-							3D printing because it allowed the digital model to become a physical prototype. An alternative would have
-							been to keep the project at only a virtual stage, but that would not reveal practical issues such as support
-							structures, sharp edges, surface finish or handling strength.
+							3D printing because it allowed the digital model to become a physical prototype. Remaining only at the
+							virtual stage would not reveal practical issues such as support structures, sharp edges, surface finish,
+							post-processing needs or handling strength.
 						</p>
 
 						<p>
 							The advantage of 3D printing was that it gave a real object that could be inspected and developed further.
 							The limitation was that the printed part still required post-processing, including support removal, sanding
-							and checking for weak or sharp areas. This showed that printing is not the end of the process; it is only
-							the start of physical evaluation.
+							and checking for weak or sharp areas. This showed that printing is not the end of the process; it is the
+							beginning of physical evaluation.
 						</p>
 
 						<a href="#pre-production" class="image featured">
@@ -965,7 +974,6 @@
 						</div>
 					</section>
 
-					<!-- Post-Production -->
 					<section id="post-production">
 						<header class="style1">
 							<h2>4. Post-Production and Future Development</h2>
@@ -973,9 +981,9 @@
 						</header>
 
 						<p>
-							Post-production is currently a planned next step rather than a fully completed stage. The first option would
-							be to focus only on finishing the printed model by removing supports, sanding sharp edges and improving the
-							surface. This would make the model presentable, but it would not fully test the wing movement idea.
+							Post-production is currently a planned next step rather than a fully completed stage. The first stage would
+							be removing supports, sanding sharp edges and improving the surface. This would make the model safer and more
+							presentable, but it would still need movement testing before the outer skin is fixed permanently.
 						</p>
 
 						<p>
@@ -1017,7 +1025,6 @@
 				</div>
 			</section>
 
-			<!-- 3D Files -->
 			<section id="artefacts" class="wrapper style3">
 				<div class="title">3D Files and Downloads</div>
 				<div class="container">
@@ -1040,7 +1047,6 @@
 						</p>
 
 						<div class="github-stl-grid">
-
 							<div class="github-stl-card">
 								<h3>Arm Mechanism Prototype 1</h3>
 								<script src="https://embed.github.com/view/3d/GG0316/GG0316.github.io/main/assets/3d/ArmMechanismProto1.stl"></script>
@@ -1073,7 +1079,6 @@
 								</p>
 								<p><a href="assets/3d/PrototypeRails.stl" download>Download PrototypeRails.stl</a></p>
 							</div>
-
 						</div>
 
 						<div class="callout-box dark">
@@ -1088,7 +1093,6 @@
 				</div>
 			</section>
 
-			<!-- Critical Appraisal -->
 			<section id="appraisal" class="wrapper style2">
 				<div class="title">Critical Appraisal</div>
 				<div class="container">
@@ -1105,6 +1109,7 @@
 						<button class="tab-btn" data-tab="skin">Skin / Membrane</button>
 						<button class="tab-btn" data-tab="scan">3D Scanning</button>
 						<button class="tab-btn" data-tab="mocap">Motion Capture</button>
+						<button class="tab-btn" data-tab="haptic">Haptic Sculpting</button>
 						<button class="tab-btn" data-tab="laser">Laser Cutting</button>
 						<button class="tab-btn" data-tab="resin">Resin / Composites</button>
 					</div>
@@ -1114,12 +1119,12 @@
 						<p>
 							Blender/CAD was suitable because the Pterodactyl needed controlled digital development before manufacture.
 							Blender supported organic shaping, while CAD-style modelling supported structure and fabrication planning.
-							I learned that digital modelling is useful for form and planning, but it cannot fully prove print quality,
-							strength, friction or handling.
+							The main advantage was that the form could be changed digitally before printing. The limitation was that a
+							digital model cannot fully prove print quality, joint friction, material tension or handling strength.
 						</p>
 						<p>
-							In wider industry, CAD and 3D modelling are essential for visualisation, revision, communication and
-							manufacturing preparation.
+							In wider product development, CAD and 3D modelling are valuable because they allow designers to revise,
+							communicate and prepare designs before committing to physical manufacture.
 						</p>
 					</div>
 
@@ -1127,13 +1132,13 @@
 						<h3>PETG 3D Printing</h3>
 						<p>
 							PETG 3D printing was suitable because it created a direct route from digital model to physical artefact.
-							I understood PETG to be a good choice because it is easier to print than ABS, less brittle than PLA, and
-							suitable for a handled prototype.
+							PETG was selected because it offered a practical balance between printability, toughness and durability.
+							Compared with PLA, it was less brittle. Compared with ABS, it was easier to print reliably.
 						</p>
 						<p>
-							The limitation is that printed parts still need support removal, post-processing and inspection. In industry,
-							3D printing is useful for rapid prototyping and custom parts, but material choice and print orientation are
-							important.
+							The limitation is that printed parts still need support removal, post-processing and inspection. In wider
+							industrial applications, 3D printing is useful for rapid prototyping and custom parts, but material choice,
+							print orientation and finishing still affect performance.
 						</p>
 					</div>
 
@@ -1144,39 +1149,39 @@
 							for future movement because it can move between set angles and provide controlled actuation.
 						</p>
 						<p>
-							For the current prototype, a roller-guided string system was more realistic because of the limited development
+							For the current prototype, a roller-guided string system was more realistic because of the available development
 							time before submission. This improved the basic string idea because rollers can guide the string path, reduce
 							friction and make movement smoother.
 						</p>
 						<p>
-							The limitation is that the system still depends on careful string tension, roller alignment and secure
-							attachment points. In wider robotics, cable and pulley systems are useful when force needs to be transferred
-							through a compact structure.
+							The limitation is that the system still depends on careful string tension, roller alignment and secure attachment
+							points. In wider robotics, cable and pulley systems are useful when force needs to be transferred through a
+							compact structure.
 						</p>
 					</div>
 
 					<div class="tab-panel" id="tab-skin">
 						<h3>Skin and Membrane Design</h3>
 						<p>
-							Spandex, fabric and silicone were considered for the skin and wing membrane. Spandex/fabric was suitable
-							because it is lightweight and flexible, while silicone could improve realism. A fully sealed silicone skin
-							was not ideal because it would block access to the mechanism.
+							Spandex, fabric and silicone were considered for the skin and wing membrane. Spandex/fabric was suitable because
+							it is lightweight and flexible, while silicone could improve realism. The trade-off is that silicone can add
+							weight, stiffness and access problems if applied too heavily.
 						</p>
 						<p>
-							I learned that the outer skin must support appearance without preventing repair. In wider product development,
-							access panels, seams and modular covers are often needed where internal systems require maintenance.
+							The selected direction was to keep the skin accessible through selective adhesive points, seams or removable
+							panels. This helped balance appearance with maintenance and mechanism access.
 						</p>
 					</div>
 
 					<div class="tab-panel" id="tab-scan">
 						<h3>3D Scanning</h3>
 						<p>
-							3D scanning was considered but not selected. It would have been useful if a clay or hand-made Pterodactyl
-							body needed to be digitised. It was less suitable here because the design started digitally.
+							3D scanning was considered as an alternative route from physical form to digital model. It would have been useful
+							if a clay, foam or handmade Pterodactyl body had already existed and needed to be digitised.
 						</p>
 						<p>
-							In industry, 3D scanning is useful for reverse engineering, inspection, medical modelling, heritage work and
-							custom-fit products.
+							It was less suitable for this project because the design began digitally. In wider industry, 3D scanning is useful
+							for reverse engineering, inspection, heritage work, medical modelling and custom-fit products.
 						</p>
 					</div>
 
@@ -1184,64 +1189,84 @@
 						<h3>Motion Capture</h3>
 						<p>
 							Motion capture was considered in relation to wing movement, but it was not needed for the current roller or
-							servo-assisted flap concept. A future version could use it to compare the wing path with biological movement.
+							servo-assisted flap concept. A future version could use motion capture to compare the prototype wing path with
+							biological wing motion.
 						</p>
 						<p>
-							In industry, motion capture is used in robotics, animation, biomechanics and movement analysis.
+							In wider industry, motion capture is valuable in animation, biomechanics, robotics and movement analysis, but it
+							would have added unnecessary complexity at the current prototype stage.
+						</p>
+					</div>
+
+					<div class="tab-panel" id="tab-haptic">
+						<h3>Haptic Sculpting</h3>
+						<p>
+							Haptic sculpting could have helped create organic surface detail, such as skin texture, wrinkles or more natural
+							body features. It was more relevant to aesthetic refinement than to the current mechanical and manufacturing stage.
+						</p>
+						<p>
+							For this project, the priority was the route from CAD/Blender to physical printing and movement planning. Haptic
+							sculpting could become more useful later if the prototype moved towards a more realistic final surface.
 						</p>
 					</div>
 
 					<div class="tab-panel" id="tab-laser">
 						<h3>Laser Cutting</h3>
 						<p>
-							Laser cutting was considered for flat ribs, rails or frame pieces. It was not selected as the main method
-							because the Pterodactyl body required organic 3D geometry. It could still be useful later for lightweight
-							internal wing ribs.
+							Laser cutting was considered for flat ribs, rails or frame pieces. Its advantage is accuracy and repeatability
+							for sheet materials. However, the Pterodactyl body required organic 3D geometry, making 3D printing more suitable
+							for the main structure.
+						</p>
+						<p>
+							Laser cutting could still be useful later for lightweight internal wing ribs or support plates under the membrane.
 						</p>
 					</div>
 
 					<div class="tab-panel" id="tab-resin">
 						<h3>Resin and Composite Methods</h3>
 						<p>
-							Resin and composites were considered as future options. Resin could improve detail and surface finish, while
-							composites could create lighter and stronger structures. They were not selected because PETG 3D printing was
-							more direct and practical for this stage.
+							Resin and composites were considered as future options. Resin could improve surface detail and finish, while
+							composites could create lighter and stronger structures. The trade-off is that they require more careful workshop
+							control, post-processing and planning.
+						</p>
+						<p>
+							For the current stage, PETG 3D printing was more direct and practical. Resin or composite methods would be more
+							suitable for a later refined version.
 						</p>
 					</div>
 
 					<div class="callout-box">
 						<h3>Appraisal Summary</h3>
 						<p>
-							The selected workflow was suitable because it matched the actual development stage. Blender/CAD supported
-							virtual design, PETG 3D printing supported physical prototyping, spandex and silicone planning supported the
-							robotic skin, and the roller-guided string system created a realistic current movement method. Servo actuation
-							remains the stronger future improvement.
+							The selected workflow was suitable because it matched the actual development stage. Blender/CAD supported virtual
+							design, PETG 3D printing supported physical prototyping, spandex and silicone planning supported the robotic skin,
+							and the roller-guided string system created a realistic current movement method. Servo actuation remains the stronger
+							future improvement.
 						</p>
 					</div>
 
 				</div>
 			</section>
 
-			<!-- Final Reflection -->
 			<section id="final-reflection" class="wrapper style3">
 				<div class="title">Final Reflection</div>
 				<div class="container">
 
 					<header class="style1">
 						<h2>Key Learning</h2>
-						<p>A short final reflection, because the main reflection is already built into each stage of the website.</p>
+						<p>A final reflection on the main lessons from the development process.</p>
 					</header>
 
 					<p>
-						Overall, this project helped me understand that a prototype is not only judged by whether it is finished, but
-						by how clearly the development process is understood. The Blender/CAD model helped plan the form, but the PETG
-						print made practical issues such as support removal, surface finish, sharp edges and post-processing much clearer.
+						Overall, this project helped me understand that a prototype is not only judged by whether it is finished, but by
+						how clearly the development process is understood. The Blender/CAD model helped plan the form, but the PETG print
+						made practical issues such as support removal, surface finish, sharp edges and post-processing much clearer.
 					</p>
 
 					<p>
 						My biggest learning was that wing movement depends on more than the actuator. At first, I focused mainly on motors
-						and servo movement, but I later realised that string routing, roller alignment, membrane tension, friction and
-						access points all affect whether the movement can work reliably.
+						and servo movement, but I later realised that string routing, roller alignment, membrane tension, friction and access
+						points all affect whether the movement can work reliably.
 					</p>
 
 					<p>
@@ -1250,16 +1275,22 @@
 						and only apply the final silicone skin once the movement and access points were confirmed.
 					</p>
 
+					<p>
+						The most important lesson I took from the project is that movement, material and access are connected. A wing mechanism
+						cannot be designed without thinking about the membrane, and the skin cannot be applied without thinking about maintenance.
+						This changed how I understand prototyping: the purpose is not just to make something look complete, but to reveal what
+						needs to be tested and improved next.
+					</p>
+
 				</div>
 			</section>
 
-			<!-- Acknowledgements -->
 			<section id="acknowledgements" class="wrapper style2">
 				<div class="title">Acknowledgements</div>
 				<div class="container">
 					<header class="style1">
 						<h2>Team Contributions</h2>
-						<p>This is my individual portfolio, but the artefact was developed through group work.</p>
+						<p>This is my individual reflection portfolio, but the artefact was developed through group work.</p>
 					</header>
 
 					<div class="team-grid">
@@ -1308,7 +1339,6 @@
 				</div>
 			</section>
 
-			<!-- Footer -->
 			<section id="footer" class="wrapper">
 				<div class="title">References and Submission</div>
 				<div class="container">
@@ -1323,14 +1353,14 @@
 							<section id="references">
 								<h3>Reference List</h3>
 								<ul class="reference-list">
-									<li>Arduino (2026) <em>Servo Library</em>. Available at: https://www.arduino.cc/en/reference/servo (Accessed: 14 May 2026).</li>
-									<li>Autodesk (2026) <em>CAD Software: 2D and 3D Computer-Aided Design</em>. Available at: https://www.autodesk.com/uk/solutions/cad-software (Accessed: 14 May 2026).</li>
-									<li>Formlabs (2026) <em>Guide to Post-Processing and Finishing SLA Resin 3D Prints</em>. Available at: https://formlabs.com/blog/post-processing-and-finishing-sla-prints/ (Accessed: 14 May 2026).</li>
-									<li>GitHub Docs (2026) <em>Getting started with GitHub Pages</em>. Available at: https://docs.github.com/en/pages/getting-started-with-github-pages (Accessed: 14 May 2026).</li>
+									<li>Arduino (n.d.) <em>Servo Library</em>. Available at: https://www.arduino.cc/en/reference/servo (Accessed: 14 May 2026).</li>
+									<li>Autodesk (n.d.) <em>CAD Software: 2D and 3D Computer-Aided Design</em>. Available at: https://www.autodesk.com/uk/solutions/cad-software (Accessed: 14 May 2026).</li>
+									<li>Formlabs (n.d.) <em>Guide to Post-Processing and Finishing SLA Resin 3D Prints</em>. Available at: https://formlabs.com/blog/post-processing-and-finishing-sla-prints/ (Accessed: 14 May 2026).</li>
+									<li>GitHub Docs (n.d.) <em>Getting started with GitHub Pages</em>. Available at: https://docs.github.com/en/pages/getting-started-with-github-pages (Accessed: 14 May 2026).</li>
 									<li>ISO/ASTM (2021) <em>ISO/ASTM 52900:2021 Additive manufacturing — General principles — Fundamentals and vocabulary</em>. Available at: https://www.iso.org/standard/74514.html (Accessed: 14 May 2026).</li>
-									<li>Prusa Research (2026) <em>Prusament PETG</em>. Available at: https://prusament.com/materials/prusament-petg/ (Accessed: 14 May 2026).</li>
-									<li>TWI (2026) <em>What is Laser Cutting? A Definitive Guide to the Process</em>. Available at: https://www.twi-global.com/technical-knowledge/faqs/what-is-laser-cutting (Accessed: 14 May 2026).</li>
-									<li>Vicon (2026) <em>Vicon Motion Capture for Engineering</em>. Available at: https://www.vicon.com/ (Accessed: 14 May 2026).</li>
+									<li>Prusa Research (n.d.) <em>Prusament PETG</em>. Available at: https://prusament.com/materials/prusament-petg/ (Accessed: 14 May 2026).</li>
+									<li>TWI (n.d.) <em>What is Laser Cutting? A Definitive Guide to the Process</em>. Available at: https://www.twi-global.com/technical-knowledge/faqs/what-is-laser-cutting (Accessed: 14 May 2026).</li>
+									<li>Vicon (n.d.) <em>Motion Capture for Engineering</em>. Available at: https://www.vicon.com/ (Accessed: 14 May 2026).</li>
 								</ul>
 							</section>
 						</div>
@@ -1372,8 +1402,8 @@
 										<section>
 											<h3 class="icon solid fa-link">Links.txt Content</h3>
 											<p>
-												Portfolio link: paste your GitHub Pages URL here<br />
-												Repository link: paste your GitHub repository URL here
+												Portfolio link: https://gg0316.github.io/<br />
+												Repository link: https://github.com/GG0316/GG0316.github.io
 											</p>
 										</section>
 									</div>
@@ -1395,7 +1425,6 @@
 
 		</div>
 
-		<!-- Lightbox -->
 		<div id="lightbox">
 			<button id="lightboxClose" aria-label="Close image preview">&times;</button>
 			<img id="lightboxImage" src="" alt="Expanded project artefact" />
@@ -1403,7 +1432,6 @@
 
 		<button id="backToTop" aria-label="Back to top">&#8593;</button>
 
-		<!-- Original template scripts -->
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.dropotron.min.js"></script>
 		<script src="assets/js/browser.min.js"></script>
@@ -1411,7 +1439,6 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 
-		<!-- Extra interactivity -->
 		<script>
 			const progressBar = document.getElementById("progressBar");
 			const backToTop = document.getElementById("backToTop");
