@@ -63,7 +63,8 @@
 			.phase-grid,
 			.gallery-grid,
 			.github-stl-grid,
-			.team-grid {
+			.team-grid,
+			.model-grid {
 				display: grid;
 				gap: 1rem;
 				margin: 2rem 0;
@@ -71,13 +72,15 @@
 
 			.phase-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 			.gallery-grid, .github-stl-grid, .team-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+			.model-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
 			.phase-card,
 			.github-stl-card,
 			.team-card,
 			.video-card,
 			.tab-panel,
-			.stl-viewer-wrap {
+			.stl-viewer-wrap,
+			.model-card {
 				background: #fff;
 				border-radius: 14px;
 				box-shadow: 0 10px 30px rgba(0,0,0,0.08);
@@ -164,7 +167,8 @@
 			.stl-viewer-wrap,
 			.github-stl-card,
 			.team-card,
-			.tab-panel {
+			.tab-panel,
+			.model-card {
 				padding: 1rem;
 			}
 
@@ -248,6 +252,14 @@
 				border: 1px solid #ddd;
 			}
 
+			model-viewer {
+				width: 100%;
+				height: 420px;
+				background: linear-gradient(135deg, #efe5d5, #f7f1e8);
+				border-radius: 12px;
+				border: 2px solid rgba(95,124,88,0.22);
+			}
+
 			.avatar {
 				width: 86px;
 				height: 86px;
@@ -266,7 +278,6 @@
 			.avatar.leader { background: linear-gradient(135deg, #34495e, #84a59d); }
 			.avatar.scribe { background: linear-gradient(135deg, #b56576, #e56b6f); }
 			.avatar.material { background: linear-gradient(135deg, #6d597a, #355070); }
-			.avatar.skin { background: linear-gradient(135deg, #588157, #a3b18a);(135deg, #6d597a, #355070); }
 			.avatar.skin { background: linear-gradient(135deg, #588157, #a3b18a); }
 			.avatar.risk { background: linear-gradient(135deg, #f77f00, #d62828); }
 			.avatar.me { background: linear-gradient(135deg, #1d3557, #457b9d); }
@@ -347,7 +358,8 @@
 				.phase-grid,
 				.gallery-grid,
 				.github-stl-grid,
-				.team-grid {
+				.team-grid,
+				.model-grid {
 					grid-template-columns: repeat(2, minmax(0, 1fr));
 				}
 			}
@@ -356,11 +368,16 @@
 				.phase-grid,
 				.gallery-grid,
 				.github-stl-grid,
-				.team-grid {
+				.team-grid,
+				.model-grid {
 					grid-template-columns: 1fr;
 				}
 
 				.gallery-item img { height: 200px; }
+
+				model-viewer {
+					height: 320px;
+				}
 			}
 
 			/* ==============================
@@ -505,7 +522,8 @@
 			.github-stl-card,
 			.team-card,
 			.tab-panel,
-			.stl-viewer-wrap {
+			.stl-viewer-wrap,
+			.model-card {
 				background: rgba(255,255,255,0.94);
 				border: 1px solid rgba(138,90,68,0.12);
 			}
@@ -549,6 +567,11 @@
 			}
 
 			.svg-ptero-wrap {
+				border: 2px solid rgba(95,124,88,0.22);
+			}
+
+			model-viewer {
+				background: linear-gradient(135deg, #efe5d5, #f7f1e8);
 				border: 2px solid rgba(95,124,88,0.22);
 			}
 
@@ -600,7 +623,8 @@
 			.gallery-item:hover,
 			.github-stl-card:hover,
 			.team-card:hover,
-			.video-card:hover {
+			.video-card:hover,
+			.model-card:hover {
 				box-shadow: 0 18px 42px rgba(31,36,33,0.18);
 			}
 
@@ -1083,35 +1107,99 @@
 				<div class="container">
 
 					<header class="style1">
-						<h2>STL Files and Supporting Downloads</h2>
-						<p>The main images and videos are shown within the relevant development sections. This section is kept for STL previews and downloadable project files.</p>
+						<h2>3D Model Files and Supporting Downloads</h2>
+						<p>
+							The main images and videos are shown within the relevant development sections. This section is kept for interactive 3D previews and downloadable project files.
+						</p>
 					</header>
 
 					<div class="stl-viewer-wrap">
-						<h3>STL Files and 3D Model Evidence</h3>
+						<h3>Interactive GLB Models</h3>
+						<p>
+							These GLB files support the virtual prototype stage by allowing the body and stand to be viewed interactively in the browser. They show how the digital design was developed before moving towards physical prototyping.
+						</p>
+
+						<div class="model-grid">
+							<div class="model-card">
+								<h3>Pterodactyl Body Model</h3>
+								<model-viewer
+									src="assets/3D/ptBody.glb"
+									alt="Interactive 3D model of the Pterodactyl body"
+									camera-controls
+									auto-rotate
+									shadow-intensity="1"
+									exposure="1">
+								</model-viewer>
+								<p>
+									This model shows the main Pterodactyl body form used during the virtual design stage.
+								</p>
+								<p><a href="assets/3D/ptBody.glb" download>Download ptBody.glb</a></p>
+							</div>
+
+							<div class="model-card">
+								<h3>Pterodactyl Stand Model</h3>
+								<model-viewer
+									src="assets/3D/ptStand.glb"
+									alt="Interactive 3D model of the Pterodactyl stand"
+									camera-controls
+									auto-rotate
+									shadow-intensity="1"
+									exposure="1">
+								</model-viewer>
+								<p>
+									This model shows the supporting stand considered as part of the wider prototype presentation.
+								</p>
+								<p><a href="assets/3D/ptStand.glb" download>Download ptStand.glb</a></p>
+							</div>
+						</div>
+
+						<h3>STL Files and Mechanism Evidence</h3>
 						<p>
 							These STL files represent the file-to-fabrication stage. They show how the digital development moved beyond visual modelling towards parts prepared for physical prototyping.
 						</p>
 
 						<div class="github-stl-grid">
-							
-
 							<div class="github-stl-card">
 								<h3>Arm Mechanism Prototype 2</h3>
 								<script src="https://embed.github.com/view/3d/GG0316/GG0316.github.io/main/assets/3D/ArmMechanismProto2.stl"></script>
-								
-								<p><a href="assets/3D/" download>Download ArmMechanismProto2.stl</a></p>
+								<p>
+									<a href="https://github.com/GG0316/GG0316.github.io/blob/main/assets/3D/ArmMechanismProto2.stl" target="_blank">
+										Open STL on GitHub
+									</a>
+								</p>
+								<p><a href="assets/3D/ArmMechanismProto2.stl" download>Download ArmMechanismProto2.stl</a></p>
 							</div>
 
 							<div class="github-stl-card">
 								<h3>Prototype Rails</h3>
 								<script src="https://embed.github.com/view/3d/GG0316/GG0316.github.io/main/assets/3D/PrototypeRails.stl"></script>
-								
+								<p>
+									<a href="https://github.com/GG0316/GG0316.github.io/blob/main/assets/3D/PrototypeRails.stl" target="_blank">
+										Open STL on GitHub
+									</a>
+								</p>
 								<p><a href="assets/3D/PrototypeRails.stl" download>Download PrototypeRails.stl</a></p>
+							</div>
+
+							<div class="github-stl-card">
+								<h3>Additional Arm Mechanism STL</h3>
+								<script src="https://embed.github.com/view/3d/GG0316/GG0316.github.io/main/assets/3D/ptarmArm2.stl"></script>
+								<p>
+									<a href="https://github.com/GG0316/GG0316.github.io/blob/main/assets/3D/ptarmArm2.stl" target="_blank">
+										Open STL on GitHub
+									</a>
+								</p>
+								<p><a href="assets/3D/ptarmArm2.stl" download>Download ptarmArm2.stl</a></p>
 							</div>
 						</div>
 
-						
+						<div class="callout-box dark">
+							<h3>3D File Access Note</h3>
+							<p>
+								If an embedded STL viewer does not load, the direct GitHub link or download link can still be used to access the file. The GLB models should load directly in the browser once they are uploaded to the correct assets/3D folder.
+							</p>
+						</div>
+					</div>
 
 				</div>
 			</section>
@@ -1344,6 +1432,7 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
 		<script>
 			const progressBar = document.getElementById("progressBar");
