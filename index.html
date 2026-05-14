@@ -266,6 +266,7 @@
 			.avatar.leader { background: linear-gradient(135deg, #34495e, #84a59d); }
 			.avatar.scribe { background: linear-gradient(135deg, #b56576, #e56b6f); }
 			.avatar.material { background: linear-gradient(135deg, #6d597a, #355070); }
+			.avatar.skin { background: linear-gradient(135deg, #588157, #a3b18a);(135deg, #6d597a, #355070); }
 			.avatar.skin { background: linear-gradient(135deg, #588157, #a3b18a); }
 			.avatar.risk { background: linear-gradient(135deg, #f77f00, #d62828); }
 			.avatar.me { background: linear-gradient(135deg, #1d3557, #457b9d); }
@@ -360,6 +361,252 @@
 				}
 
 				.gallery-item img { height: 200px; }
+			}
+
+			/* ==============================
+			   Prehistoric Tech Theme Override
+			   ============================== */
+
+			:root {
+				--prehistoric-dark: #1f2421;
+				--forest-green: #3f5f46;
+				--moss-green: #5f7c58;
+				--clay-brown: #8a5a44;
+				--sand-beige: #d8c3a5;
+				--amber: #f2a65a;
+				--cream: #f7f1e8;
+				--stone: #ebe2d3;
+				--ink: #2b2b2b;
+			}
+
+			body {
+				background: var(--prehistoric-dark);
+				color: var(--ink);
+			}
+
+			#progressBar {
+				background: linear-gradient(90deg, var(--forest-green), var(--amber), var(--clay-brown));
+			}
+
+			#header {
+				background:
+					linear-gradient(rgba(31,36,33,0.78), rgba(31,36,33,0.88)),
+					radial-gradient(circle at 20% 20%, rgba(242,166,90,0.22), transparent 35%),
+					linear-gradient(135deg, var(--prehistoric-dark), var(--forest-green));
+				border-bottom: 5px solid var(--amber);
+			}
+
+			#logo h1 a {
+				color: var(--cream) !important;
+				text-shadow: 0 4px 18px rgba(0,0,0,0.45);
+			}
+
+			#logo p {
+				color: var(--sand-beige) !important;
+			}
+
+			#nav > ul > li > a {
+				color: var(--cream) !important;
+			}
+
+			#nav > ul > li.current > a,
+			#nav > ul > li > a:hover {
+				background: var(--amber) !important;
+				color: var(--prehistoric-dark) !important;
+			}
+
+			.wrapper .title {
+				background: var(--clay-brown) !important;
+				color: var(--cream) !important;
+				box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+			}
+
+			.wrapper .title:before,
+			.wrapper .title:after {
+				border-top-color: var(--clay-brown) !important;
+			}
+
+			.wrapper.style1 {
+				background:
+					linear-gradient(rgba(63,95,70,0.93), rgba(31,36,33,0.94)),
+					radial-gradient(circle at top left, rgba(242,166,90,0.22), transparent 38%);
+				color: var(--cream);
+			}
+
+			.wrapper.style1 .style1,
+			.wrapper.style1 .style2,
+			.wrapper.style1 .style3 {
+				color: var(--cream) !important;
+			}
+
+			.wrapper.style1 .style2 {
+				text-shadow: 0 5px 20px rgba(0,0,0,0.35);
+			}
+
+			.wrapper.style1 .style3 {
+				color: var(--stone) !important;
+			}
+
+			.wrapper.style2 {
+				background: var(--cream);
+			}
+
+			.wrapper.style3 {
+				background:
+					linear-gradient(rgba(216,195,165,0.92), rgba(247,241,232,0.96)),
+					radial-gradient(circle at 70% 20%, rgba(95,124,88,0.18), transparent 35%);
+			}
+
+			header.style1 h2,
+			h2,
+			h3 {
+				color: var(--prehistoric-dark);
+			}
+
+			header.style1 p {
+				color: var(--clay-brown);
+			}
+
+			.button,
+			input[type="submit"],
+			input[type="reset"],
+			button {
+				transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+			}
+
+			.button.style3,
+			.button.style1,
+			input[type="submit"] {
+				background: var(--amber) !important;
+				color: var(--prehistoric-dark) !important;
+				box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+			}
+
+			.button.style3:hover,
+			.button.style1:hover,
+			input[type="submit"]:hover {
+				background: var(--sand-beige) !important;
+				transform: translateY(-3px);
+			}
+
+			.project-badge {
+				background: rgba(247,241,232,0.14);
+				border-color: rgba(216,195,165,0.45);
+				color: var(--cream);
+			}
+
+			.project-badge:hover {
+				background: rgba(242,166,90,0.28);
+			}
+
+			.phase-card,
+			.callout-box,
+			.video-card,
+			.github-stl-card,
+			.team-card,
+			.tab-panel,
+			.stl-viewer-wrap {
+				background: rgba(255,255,255,0.94);
+				border: 1px solid rgba(138,90,68,0.12);
+			}
+
+			.phase-card {
+				border-top-color: var(--forest-green);
+			}
+
+			.callout-box {
+				border-left-color: var(--clay-brown);
+			}
+
+			.callout-box.dark {
+				background: #efe5d5;
+				border-left-color: var(--forest-green);
+			}
+
+			.gallery-item {
+				border: 3px solid rgba(216,195,165,0.55);
+			}
+
+			.gallery-item span {
+				background: linear-gradient(90deg, rgba(31,36,33,0.9), rgba(63,95,70,0.9));
+				color: var(--cream);
+			}
+
+			.tab-btn {
+				background: #e6dccb;
+				color: var(--prehistoric-dark);
+			}
+
+			.tab-btn.active,
+			.tab-btn:hover {
+				background: var(--forest-green);
+				color: var(--cream);
+			}
+
+			.wing-simulator {
+				background: linear-gradient(135deg, #efe5d5, #f7f1e8);
+				border: 1px solid rgba(138,90,68,0.18);
+			}
+
+			.svg-ptero-wrap {
+				border: 2px solid rgba(95,124,88,0.22);
+			}
+
+			th {
+				background: var(--forest-green);
+				color: var(--cream);
+			}
+
+			tr:last-child {
+				background: #efe5d5;
+			}
+
+			#footer {
+				background:
+					linear-gradient(rgba(31,36,33,0.94), rgba(31,36,33,0.97)),
+					radial-gradient(circle at 80% 10%, rgba(242,166,90,0.18), transparent 35%);
+				color: var(--stone);
+			}
+
+			#footer h2,
+			#footer h3 {
+				color: var(--cream);
+			}
+
+			#footer p,
+			#footer li {
+				color: var(--stone);
+			}
+
+			#footer a {
+				color: var(--amber);
+			}
+
+			#copyright {
+				border-top-color: rgba(216,195,165,0.25);
+			}
+
+			#backToTop {
+				background: var(--forest-green);
+				color: var(--cream);
+			}
+
+			#backToTop:hover {
+				background: var(--amber);
+				color: var(--prehistoric-dark);
+			}
+
+			.phase-card:hover,
+			.gallery-item:hover,
+			.github-stl-card:hover,
+			.team-card:hover,
+			.video-card:hover {
+				box-shadow: 0 18px 42px rgba(31,36,33,0.18);
+			}
+
+			::selection {
+				background: var(--amber);
+				color: var(--prehistoric-dark);
 			}
 		</style>
 	</head>
