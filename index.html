@@ -5,14 +5,14 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
 	Edited for COMP60019 Robotic Modelling and Drone Skin Design Portfolio
-	Project: Pterodactyl Robotic Skin and Wing Mechanism Prototype
+	Project: Pterodactyl Robotic Skin Prototype
 -->
 <html>
 	<head>
 		<title>Pterodactyl Robotic Skin Prototype Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="Individual portfolio for a Pterodactyl-inspired robotic skin and wing mechanism prototype." />
+		<meta name="description" content="Individual portfolio for a Pterodactyl-inspired robotic skin prototype using Blender/CAD, PETG 3D printing, spandex/silicone skin planning, string-assisted movement and proposed servo actuation." />
 		<link rel="stylesheet" href="assets/css/main.css" />
 
 		<style>
@@ -100,9 +100,40 @@
 				margin-bottom: 0.25rem;
 			}
 
+			.phase-grid {
+				display: grid;
+				grid-template-columns: repeat(5, minmax(0, 1fr));
+				gap: 1rem;
+				margin: 2rem 0;
+			}
+
+			.phase-card {
+				background: #fff;
+				border-radius: 14px;
+				padding: 1.1rem;
+				box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+				border-top: 5px solid #e97770;
+				transition: transform 0.25s ease, box-shadow 0.25s ease;
+			}
+
+			.phase-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 16px 35px rgba(0,0,0,0.12);
+			}
+
+			.phase-card h3 {
+				font-size: 1.05rem;
+				margin-bottom: 0.5rem;
+			}
+
+			.phase-card p {
+				font-size: 0.92rem;
+				line-height: 1.55;
+			}
+
 			.timeline {
 				display: grid;
-				grid-template-columns: 280px 1fr;
+				grid-template-columns: 290px 1fr;
 				gap: 1.5rem;
 				margin: 2rem 0;
 			}
@@ -438,6 +469,84 @@
 				display: block;
 			}
 
+			.team-grid {
+				display: grid;
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+				gap: 1.5rem;
+				margin: 2rem 0;
+			}
+
+			.team-card {
+				background: #fff;
+				border-radius: 16px;
+				padding: 1.5rem;
+				text-align: center;
+				box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+				transition: transform 0.25s ease, box-shadow 0.25s ease;
+				border-top: 6px solid #e97770;
+			}
+
+			.team-card:hover {
+				transform: translateY(-6px);
+				box-shadow: 0 18px 40px rgba(0,0,0,0.14);
+			}
+
+			.avatar {
+				width: 86px;
+				height: 86px;
+				border-radius: 50%;
+				margin: 0 auto 1rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 2rem;
+				font-weight: 900;
+				color: #fff;
+				background: linear-gradient(135deg, #e97770, #f6bd60);
+				box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+			}
+
+			.avatar.leader {
+				background: linear-gradient(135deg, #34495e, #84a59d);
+			}
+
+			.avatar.scribe {
+				background: linear-gradient(135deg, #b56576, #e56b6f);
+			}
+
+			.avatar.material {
+				background: linear-gradient(135deg, #6d597a, #355070);
+			}
+
+			.avatar.skin {
+				background: linear-gradient(135deg, #588157, #a3b18a);
+			}
+
+			.avatar.risk {
+				background: linear-gradient(135deg, #f77f00, #d62828);
+			}
+
+			.avatar.me {
+				background: linear-gradient(135deg, #1d3557, #457b9d);
+			}
+
+			.team-role {
+				display: inline-block;
+				margin-bottom: 1rem;
+				padding: 0.35rem 0.75rem;
+				border-radius: 999px;
+				background: #f2f2f2;
+				font-size: 0.85rem;
+				font-weight: 800;
+				color: #555;
+			}
+
+			.team-card p {
+				text-align: left;
+				font-size: 0.95rem;
+				line-height: 1.65;
+			}
+
 			.reference-list {
 				font-size: 0.95rem;
 				line-height: 1.7;
@@ -471,7 +580,12 @@
 			@media screen and (max-width: 980px) {
 				.mini-grid,
 				.gallery-grid,
-				.video-grid {
+				.video-grid,
+				.team-grid {
+					grid-template-columns: repeat(2, minmax(0, 1fr));
+				}
+
+				.phase-grid {
 					grid-template-columns: repeat(2, minmax(0, 1fr));
 				}
 
@@ -483,7 +597,9 @@
 			@media screen and (max-width: 736px) {
 				.mini-grid,
 				.gallery-grid,
-				.video-grid {
+				.video-grid,
+				.team-grid,
+				.phase-grid {
 					grid-template-columns: 1fr;
 				}
 
@@ -533,17 +649,21 @@
 					<ul>
 						<li class="current"><a href="#intro">Home</a></li>
 						<li>
-							<a href="#development">Development</a>
+							<a href="#process">Process</a>
 							<ul>
-								<li><a href="#overview">Project Overview</a></li>
-								<li><a href="#virtual">Virtual Prototype</a></li>
-								<li><a href="#physical">Physical Prototype</a></li>
-								<li><a href="#servo">Servo Proposal</a></li>
+								<li><a href="#concept">Concept Design</a></li>
+								<li><a href="#design-development">Design Development</a></li>
+								<li><a href="#detailed-development">Detailed Development</a></li>
+								<li><a href="#preproduction">Preproduction</a></li>
+								<li><a href="#production-plan">Production Plan</a></li>
 							</ul>
 						</li>
+						<li><a href="#prototype">Prototype</a></li>
+						<li><a href="#skin-movement">Skin & Movement</a></li>
 						<li><a href="#artefacts">Artefacts</a></li>
-						<li><a href="#appraisal">Critical Appraisal</a></li>
+						<li><a href="#appraisal">Appraisal</a></li>
 						<li><a href="#reflection">Reflection</a></li>
+						<li><a href="#acknowledgements">Acknowledgements</a></li>
 						<li><a href="#references">References</a></li>
 					</ul>
 				</nav>
@@ -557,28 +677,28 @@
 					<p class="style1">A reflective individual portfolio based on a group product development project.</p>
 
 					<p class="style2">
-						From CAD Design to Physical Prototype:<br class="mobile-hide" />
-						Pterodactyl Wing and Mechanism Development
+						From Virtual Model to Physical Prototype:<br class="mobile-hide" />
+						Pterodactyl Robotic Skin Development
 					</p>
 
 					<p class="style3">
-						This portfolio presents my individual reflection on the development of a Pterodactyl-inspired robotic skin
-						prototype. The project was completed within a group context, but this website focuses on my own understanding
-						of the design process, the methods explored, the decisions made, and the improvements that could be made in a
-						future iteration. The current development route focuses on CAD and 3D modelling, STL component development,
-						3D printing, spandex wing skin selection, and a proposed servo-based wing actuation system.
+						This portfolio presents my individual reflection on a group project to develop a Pterodactyl-inspired
+						robotic skin prototype. The project explores how a virtual Blender/CAD model can move towards a physical
+						PETG 3D printed artefact, while also considering skin design, wing membrane materials, string-assisted
+						movement, and future servo-based actuation. The website is written from my own perspective, so it focuses
+						on what I learned about product development, design decisions, alternative methods, and future improvements.
 					</p>
 
 					<div class="badge-row">
-						<span class="project-badge">CAD and 3D Modelling</span>
-						<span class="project-badge">STL Artefacts</span>
-						<span class="project-badge">3D Printed Component</span>
-						<span class="project-badge">Spandex Wing Skin</span>
-						<span class="project-badge">Proposed Servo Actuation</span>
+						<span class="project-badge">Blender / CAD</span>
+						<span class="project-badge">STL Development</span>
+						<span class="project-badge">PETG 3D Print</span>
+						<span class="project-badge">Spandex / Silicone Skin</span>
+						<span class="project-badge">String + Servo Movement</span>
 					</div>
 
 					<ul class="actions">
-						<li><a href="#overview" class="button style3 large">Explore Development</a></li>
+						<li><a href="#process" class="button style3 large">Explore Development</a></li>
 					</ul>
 				</div>
 			</section>
@@ -589,8 +709,8 @@
 				<div class="container">
 
 					<!-- Hero Image -->
-					<a href="#virtual" class="image featured">
-						<img src="images/pterodactyl-cad-body.png" alt="CAD model of the Pterodactyl body concept" />
+					<a href="#prototype" class="image featured">
+						<img src="images/pterodactyl-cad-body.png" alt="CAD and Blender model of the Pterodactyl body concept" />
 					</a>
 
 					<!-- Overview -->
@@ -601,359 +721,449 @@
 						</header>
 
 						<p>
-							The project explored the development of a Pterodactyl-inspired robotic skin prototype. The wider group aim
-							was to create a dinosaur-like artefact that could eventually support wing movement, using a combination of
-							virtual design, physical prototyping, and mechanism planning. Although the final artefact belongs to the
-							group project, this portfolio is written from my individual perspective and focuses on what I learned about
-							moving from virtual prototypes to physical prototypes.
+							The group project aimed to develop a Pterodactyl-inspired robotic skin or exoskeletal prototype. The
+							concept was chosen because the Pterodactyl has a strong visual identity and a natural connection to wings,
+							membranes, and movement. This made it suitable for a module focused on robotic modelling and drone skin
+							design, as the artefact required both an outer form and an internal development strategy.
 						</p>
 
 						<p>
-							The current prototype stage is best understood as an early product development iteration. The group created
-							CAD and 3D model designs, developed STL files for mechanism parts and support rails, and produced a 3D
-							printed wing or mechanism component. The project also investigated material and actuation decisions for a
-							later functional version. In particular, spandex was selected as the preferred wing skin material because
-							it is lightweight and flexible, while servo actuation was identified as the most suitable future mechanism
-							for controlled wing flapping.
+							At the time of writing, the prototype is in the final printing and preparation stage. This means the
+							portfolio does not present the artefact as a completed production model. Instead, it presents the current
+							development stage as part of a structured product development process. The evidence includes Blender/CAD
+							designs, mechanism layouts, STL files, PETG 3D printing evidence, risk assessment work, skin and membrane
+							planning, and my own research into wing movement methods.
 						</p>
 
 						<p>
-							From my individual perspective, the most important learning point was that prototype development is not
-							only about producing a finished object. It is a process of exploring alternatives, comparing methods,
-							testing partial solutions, and justifying why certain techniques are selected over others. The project
-							therefore became a useful case study in product development decision-making, even though the current
-							iteration is not a fully actuated final model.
+							My individual role focused on finding ways to make the Pterodactyl wings move. I investigated multiple
+							options including motors, servo actuation, strings, elastic thread and material tension. Originally, the
+							motor or servo route was the main direction because it offered controlled movement. However, after
+							considering budget and time constraints, string-assisted movement became a more practical current option,
+							while servo actuation remained the preferred future improvement.
 						</p>
 
 						<div class="mini-grid">
 							<div class="metric-card">
 								<strong>01</strong>
-								CAD body concept
+								Concept design
 							</div>
 							<div class="metric-card">
 								<strong>02</strong>
-								Mechanism layout
+								Digital model
 							</div>
 							<div class="metric-card">
 								<strong>03</strong>
-								3D printed component
+								PETG printing
 							</div>
 							<div class="metric-card">
 								<strong>04</strong>
-								Future servo actuation
+								Future movement
 							</div>
 						</div>
 
 						<div class="callout-box">
 							<h3>Individual Position Statement</h3>
 							<p>
-								My individual reflection focused on how the Pterodactyl idea could move from a virtual CAD concept
-								towards a physical prototype. I considered the suitability of CAD, 3D modelling, 3D printing, spandex
-								wing skin, and servo actuation. I also compared these choices with alternative techniques introduced
-								during the module, including 3D scanning, motion capture, haptic sculpting, laser cutting, resin
-								production, and composite workshop methods.
+								My portfolio focuses on the learning process rather than only the final group output. I reflected on
+								how the design moved from virtual modelling into physical prototyping, how the group compared different
+								manufacturing and skin options, and how my own movement research influenced the future direction of the
+								wing mechanism. This helped me understand that product development is a staged process of selection,
+								testing, revision and justification.
 							</p>
 						</div>
 					</section>
 
-					<!-- Requirements -->
-					<section id="features">
+					<!-- Product Development Process -->
+					<section id="process">
 						<header class="style1">
-							<h2>Design Aim and Prototype Requirements</h2>
-							<p>The design needed to balance visual identity, manufacturability, material choice, and future movement.</p>
+							<h2>Product Development Process</h2>
+							<p>The project was structured around five development phases: concept, design development, detailed development, preproduction and production planning.</p>
 						</header>
 
-						<div class="feature-list">
-							<div class="row">
-								<div class="col-6 col-12-medium">
-									<section>
-										<h3 class="icon fa-comment">Recognisable Pterodactyl Form</h3>
-										<p>
-											The prototype needed to communicate the Pterodactyl idea clearly through its head shape, body
-											form, wing or arm layout, and overall silhouette. This was important because the design had to
-											function as a visual artefact as well as a potential robotic mechanism.
-										</p>
-									</section>
-								</div>
-
-								<div class="col-6 col-12-medium">
-									<section>
-										<h3 class="icon solid fa-cube">Virtual-to-Physical Workflow</h3>
-										<p>
-											The project needed to demonstrate a clear route from virtual design to physical output. CAD
-											and 3D modelling were used to plan the form and mechanism, while STL files and 3D printing
-											allowed selected components to become physical artefacts.
-										</p>
-									</section>
-								</div>
-
-								<div class="col-6 col-12-medium">
-									<section>
-										<h3 class="icon solid fa-cog">Mechanism Exploration</h3>
-										<p>
-											The red and grey mechanism layouts were used to explore how separate parts, rails, and pivot
-											points could support future movement. This helped connect the visual dinosaur form with the
-											mechanical requirements of a moving prototype.
-										</p>
-									</section>
-								</div>
-
-								<div class="col-6 col-12-medium">
-									<section>
-										<h3 class="icon solid fa-sync">Proposed Servo Actuation</h3>
-										<p>
-											A servo was selected as the preferred future actuation method because it can move between
-											controlled angles. This makes it more suitable for wing flapping than a continuously rotating
-											DC motor, especially for a small demonstration prototype.
-										</p>
-									</section>
-								</div>
-
-								<div class="col-6 col-12-medium">
-									<section>
-										<h3 class="icon solid fa-feather">Spandex Wing Skin</h3>
-										<p>
-											Spandex was selected for the wing skin because it is lightweight, flexible, and suitable for
-											creating a stretched membrane over a wing frame. This fits the Pterodactyl concept better
-											than a fully rigid printed wing surface.
-										</p>
-									</section>
-								</div>
-
-								<div class="col-6 col-12-medium">
-									<section>
-										<h3 class="icon solid fa-check">Reflective Evaluation</h3>
-										<p>
-											The success of this portfolio is not only based on the final object. It is based on how well
-											the design process, alternative techniques, selected workflow, limitations, and future
-											improvements are explained and justified.
-										</p>
-									</section>
-								</div>
+						<div class="phase-grid">
+							<div class="phase-card">
+								<h3>1. Concept Design</h3>
+								<p>High-level ideation, choosing the Pterodactyl form, and identifying the wing movement challenge.</p>
+							</div>
+							<div class="phase-card">
+								<h3>2. Design Development</h3>
+								<p>Mechanical ideas, material comparison, cost constraints, Blender/CAD modelling, and movement options.</p>
+							</div>
+							<div class="phase-card">
+								<h3>3. Detailed Development</h3>
+								<p>Refining files for fabrication, STL preparation, skin seams, access points, and print planning.</p>
+							</div>
+							<div class="phase-card">
+								<h3>4. Preproduction</h3>
+								<p>Physical samples, PETG 3D printing, risk assessment, support removal, and prototype evaluation.</p>
+							</div>
+							<div class="phase-card">
+								<h3>5. Production Plan</h3>
+								<p>Future workflow for final post-processing, skin application, movement testing and improved actuation.</p>
 							</div>
 						</div>
-					</section>
-
-					<!-- Interactive Timeline -->
-					<section id="development">
-						<header class="style1">
-							<h2>Interactive Development Timeline</h2>
-							<p>Click each stage to see how the project moved from concept to physical prototyping.</p>
-						</header>
 
 						<div class="timeline">
 							<div class="timeline-buttons">
-								<button class="timeline-btn active" data-stage="concept">1. Concept Direction</button>
-								<button class="timeline-btn" data-stage="cad">2. CAD and 3D Modelling</button>
-								<button class="timeline-btn" data-stage="mechanism">3. Mechanism Exploration</button>
-								<button class="timeline-btn" data-stage="print">4. 3D Printing</button>
-								<button class="timeline-btn" data-stage="skin">5. Spandex Wing Skin</button>
-								<button class="timeline-btn" data-stage="servo">6. Servo Proposal</button>
+								<button class="timeline-btn active" data-stage="concept">1. Concept Design</button>
+								<button class="timeline-btn" data-stage="design">2. Design Development</button>
+								<button class="timeline-btn" data-stage="detailed">3. Detailed Development</button>
+								<button class="timeline-btn" data-stage="preproduction">4. Preproduction</button>
+								<button class="timeline-btn" data-stage="production">5. Production Plan</button>
 							</div>
 
 							<div class="timeline-panel">
-								<h3 id="timelineTitle">1. Concept Direction</h3>
+								<h3 id="timelineTitle">1. Concept Design</h3>
 								<p id="timelineText">
-									The group selected a Pterodactyl-inspired concept because it had a strong visual identity and a
-									natural connection to wing movement. From my perspective, this concept was suitable because it
-									required both creative modelling and mechanical thinking. It was not enough for the artefact to look
-									like a dinosaur; it also needed a realistic development path towards movement and physical
-									prototyping.
+									The first phase was high-level ideation. The group selected a Pterodactyl because it gave the
+									project a recognisable form and a clear wing movement challenge. From my perspective, the main
+									concept question was how the wings could eventually move while still looking like a realistic
+									Pterodactyl membrane.
 								</p>
 							</div>
 						</div>
 					</section>
 
-					<!-- Virtual Prototype -->
-					<section id="virtual">
+					<!-- Phase 1 -->
+					<section id="concept">
 						<header class="style1">
-							<h2>Virtual Prototyping: CAD and 3D Modelling</h2>
-							<p>Using digital design to explore the Pterodactyl form before physical manufacturing.</p>
+							<h2>Phase 1: Concept Design</h2>
+							<p>High-level ideation and selection of the Pterodactyl as the main prototype direction.</p>
+						</header>
+
+						<p>
+							The concept design phase was the starting point of the project. At this stage, the group considered the
+							prototype from a high-level perspective rather than as a finished technical model. The Pterodactyl was
+							chosen because it had a clear connection to wings, flight and membrane-based anatomy. This made it more
+							suitable for robotic skin design than a static creature with fewer moving features.
+						</p>
+
+						<p>
+							Several early directions were possible. The group could have created a static display model, manually
+							moved wings, motorised wings, servo-controlled wings, or string-assisted wings. A fully rigid 3D printed
+							wing was also possible, but this would not represent the flexible membrane-like structure of a Pterodactyl
+							as effectively. Therefore, the concept moved towards a body that could be 3D printed, with wings and skin
+							planned as flexible or semi-flexible elements.
+						</p>
+
+						<p>
+							From my individual perspective, this phase helped me understand the importance of choosing a concept that
+							has enough design potential. The Pterodactyl allowed the group to discuss form, structure, material,
+							movement, access and maintenance. This meant the project could be evaluated as a product development
+							process rather than only as a decorative model.
+						</p>
+					</section>
+
+					<!-- Phase 2 -->
+					<section id="design-development">
+						<header class="style1">
+							<h2>Phase 2: Design Development</h2>
+							<p>Connecting the creative concept with mechanical design, cost and material decisions.</p>
+						</header>
+
+						<p>
+							The design development phase connected the creative Pterodactyl idea with mechanical and practical
+							considerations. Blender and CAD-based modelling were used to develop the body form, while the mechanism
+							layouts explored possible support rails, moving arms and pivot positions. This stage was important because
+							the prototype needed to work as both a visual dinosaur form and a future moving system.
+						</p>
+
+						<p>
+							Movement alternatives were also considered during this phase. A DC motor was one possible option because it
+							can provide continuous rotation, but it would need additional linkages or control to convert that rotation
+							into a repeated wing flap. A servo was more suitable from a technical point of view because it can move
+							between controlled angles, which matches the up-and-down movement of a wing. However, budget and time
+							constraints meant that string-assisted movement became more realistic for the current prototype stage.
+						</p>
+
+						<p>
+							Material alternatives were also compared. PLA was easy to print but more brittle. ABS could be tougher but
+							is harder to print reliably. PETG was selected because it provided a practical balance: easier to print
+							than ABS, less brittle than PLA, and more suitable for a handled prototype. This decision was especially
+							relevant because the group discussed a possible school-style demonstration environment where durability
+							and safety would matter.
+						</p>
+					</section>
+
+					<!-- Phase 3 -->
+					<section id="detailed-development">
+						<header class="style1">
+							<h2>Phase 3: Detailed Development</h2>
+							<p>Refining the design for file-to-fabrication, skin planning and future maintenance.</p>
+						</header>
+
+						<p>
+							The detailed development phase focused on turning the design into something that could be manufactured and
+							maintained. This included preparing STL files, considering print orientation, support structures, overhangs
+							and post-processing. It also included more detailed thinking about how the outer skin and wing membrane
+							would attach to the frame.
+						</p>
+
+						<p>
+							A fully sealed skin was considered, but this would make internal mechanisms difficult to access. Instead,
+							the group discussed selective adhesive points, seam lines, possible magnet panels and hidden screws. This
+							would allow the skin to overlap naturally around areas such as the midsection while still allowing access
+							for maintenance. This is important because any future wing movement mechanism may need to be adjusted,
+							repaired or tested.
+						</p>
+
+						<p>
+							The wing membrane was planned as fabric or spandex with a thin silicone layer. Applying adhesive everywhere
+							was rejected because it would make the structure inaccessible and could make the membrane too stiff. A more
+							suitable solution was to apply adhesive at selected points and reinforce stress areas only where testing
+							showed weakness.
+						</p>
+					</section>
+
+					<!-- Phase 4 -->
+					<section id="preproduction">
+						<header class="style1">
+							<h2>Phase 4: Preproduction</h2>
+							<p>Physical samples, PETG 3D printing, risk assessment and early prototype validation.</p>
 						</header>
 
 						<a href="#artefacts" class="image featured">
-							<img src="images/pterodactyl-cad-body.png" alt="Virtual CAD model of Pterodactyl body and wing structure" />
+							<img src="images/pterodactyl-3d-print.webp" alt="PETG 3D printed Pterodactyl prototype on the printer bed" />
 						</a>
 
 						<p>
-							The virtual prototype stage was the foundation of the project. The CAD model allowed the group to explore
-							the overall Pterodactyl form, including the body, head, wing or arm layout, and general proportions. This
-							was important because the prototype needed to look visually recognisable while also allowing space for
-							mechanical development.
+							The preproduction phase is where the project moved from digital design into physical sampling. The PETG
+							3D print represents the main physical prototype evidence. At the time of writing, the prototype is still
+							in the printing and final preparation stage, with the most recent print image included as evidence of the
+							virtual-to-physical transition.
 						</p>
 
 						<p>
-							From my individual perspective, CAD and 3D modelling were the most suitable starting methods because the
-							Pterodactyl was being designed from scratch rather than copied from an existing object. The digital model
-							allowed the design to be controlled, adjusted, and discussed before any material was used. It also created
-							a clear route into 3D printing because parts could be exported as STL files for manufacturing.
+							The value of this stage is that the design can now be judged as a real object rather than only as a model
+							on screen. The printed artefact can be assessed for scale, surface quality, support material, strength,
+							sharp edges and post-processing needs. These details are difficult to evaluate fully in Blender or CAD
+							alone.
 						</p>
 
 						<p>
-							The limitation of the virtual model was that it could not fully prove physical performance. A design can
-							look correct on screen but still create problems when manufactured. For example, a wing or mechanism part
-							may become too heavy, too weak, or difficult to assemble once printed. This showed me that CAD is strongest
-							when it is used as part of an iterative process rather than as a final answer.
-						</p>
-
-						<div class="callout-box dark">
-							<h3>Design Decision</h3>
-							<p>
-								CAD and 3D modelling were selected as the main virtual prototyping methods because they allowed the
-								Pterodactyl form and mechanism layout to be developed intentionally. This was more suitable than 3D
-								scanning because there was no finished physical object to capture. The design needed to be created and
-								controlled from the beginning.
-							</p>
-						</div>
-					</section>
-
-					<!-- Mechanism Exploration -->
-					<section id="mechanism">
-						<header class="style1">
-							<h2>Mechanism Exploration</h2>
-							<p>Early digital layouts for support rails, moving arms, and future actuation.</p>
-						</header>
-
-						<div class="gallery-grid">
-							<button class="gallery-item" data-img="images/mechanism-layout-front.webp">
-								<img src="images/mechanism-layout-front.webp" alt="Front view of mechanism concept in CAD" />
-								<span>Mechanism Layout View</span>
-							</button>
-
-							<button class="gallery-item" data-img="images/mechanism-layout-angle.webp">
-								<img src="images/mechanism-layout-angle.webp" alt="Angled view of mechanism concept in CAD" />
-								<span>Pivot and Rail Exploration</span>
-							</button>
-
-							<button class="gallery-item" data-img="images/pterodactyl-cad-body.png">
-								<img src="images/pterodactyl-cad-body.png" alt="Pterodactyl body model with wing structure" />
-								<span>Body and Wing Form</span>
-							</button>
-						</div>
-
-						<p>
-							The mechanism layouts show an early exploration of how separate parts could support movement. The red and
-							grey components represent possible arms, rails, and support structures that could later be linked to an
-							actuator. This stage was useful because it connected the visual Pterodactyl concept with the practical
-							requirements of a moving model.
-						</p>
-
-						<p>
-							From my individual perspective, the mechanism exploration was important because it showed that a robotic
-							skin or dinosaur form cannot be designed only from the outside. The internal structure and movement path
-							also affect the success of the prototype. A visually attractive body would not be useful if the mechanism
-							could not fit inside or connect to the wing structure.
-						</p>
-
-						<p>
-							The mechanism shown in the CAD images should be understood as an exploratory prototype rather than a final
-							production-ready system. Its purpose was to help evaluate possible support points, movement paths, and
-							component relationships. In a later iteration, these parts would need to be tested with actual servo
-							movement, stronger joints, and a defined wing linkage.
+							A risk assessment was also part of this phase. It identified hazards linked to 3D printing, post-processing
+							and handling, including hot printer parts, heated beds, fumes, damaged cables, filament handling, sharp
+							tools, support removal, trip hazards and sharp edges on the finished model. This showed me that physical
+							prototyping requires safety planning as well as design planning.
 						</p>
 					</section>
 
-					<!-- Physical Prototype -->
-					<section id="physical">
+					<!-- Phase 5 -->
+					<section id="production-plan">
 						<header class="style1">
-							<h2>Physical Prototyping: 3D Printed Component</h2>
-							<p>Turning selected STL designs into physical evidence for evaluation.</p>
+							<h2>Phase 5: Production and Future Production Planning</h2>
+							<p>Using the current prototype as a foundation for a more refined functional version.</p>
 						</header>
 
 						<p>
-							The physical prototype stage created the clearest link between virtual and physical development. A 3D
-							printed wing or mechanism component was produced from the digital design. This allowed the group to assess
-							how the CAD geometry translated into a real manufactured part.
+							The production phase is presented as a future development plan rather than as a completed final product.
+							The current prototype provides a foundation for a more refined version. A future production-ready iteration
+							would include support removal, sanding sharp edges, applying a flexible spandex or fabric wing membrane,
+							adding a thin silicone skin layer, using removable seams or access panels, and testing the wing movement
+							system.
 						</p>
 
 						<p>
-							The value of the printed component was that it made the design easier to evaluate. On screen, a part can
-							look suitable, but a physical print reveals practical issues such as scale, surface finish, rigidity,
-							thickness, and handling. These are important factors for a future moving prototype because any part linked
-							to a servo or wing mechanism must be strong enough to function but light enough to avoid overloading the
-							actuator.
-						</p>
-
-						<p>
-							3D printing was selected because it offered a direct route from CAD to physical artefact. It was suitable
-							for producing custom shapes without needing moulds, casting, or complex workshop preparation. However, it
-							also has limitations. A printed part may require sanding, revision, or redesign before it is suitable for
-							repeated movement. For that reason, this stage should be treated as physical validation rather than a final
-							production solution.
-						</p>
-
-						<div class="video-grid">
-							<div class="video-card">
-								<video controls>
-									<source src="assets/videos/blender-mechanism-demo.mkv" type="video/x-matroska" />
-									Your browser does not support this video. Use the download link below.
-								</video>
-								<h3>Digital Development Video</h3>
-								<p>
-									This video is used as evidence of the CAD/3D modelling process and mechanism exploration.
-								</p>
-								<p><a href="assets/videos/blender-mechanism-demo.mkv" download>Download digital development video</a></p>
-							</div>
-
-							<div class="video-card">
-								<video controls>
-									<source src="assets/videos/printed-component-demo.mov" type="video/quicktime" />
-									Your browser does not support this video. Use the download link below.
-								</video>
-								<h3>Physical Prototype Video</h3>
-								<p>
-									This video provides evidence of the physical 3D printed component produced from the digital design.
-								</p>
-								<p><a href="assets/videos/printed-component-demo.mov" download>Download physical prototype video</a></p>
-							</div>
-						</div>
-					</section>
-
-					<!-- Spandex -->
-					<section id="spandex">
-						<header class="style1">
-							<h2>Material Selection: Spandex Wing Skin</h2>
-							<p>Choosing a flexible membrane rather than a fully rigid printed wing surface.</p>
-						</header>
-
-						<p>
-							For the wing skin, the group decided to use spandex as the preferred flexible material. This was selected
-							because the Pterodactyl wing needed a lightweight membrane rather than a fully rigid surface. Spandex is
-							suitable because it can stretch over a wing frame, create a smooth skin-like appearance, and add less
-							weight than thicker fabric or solid printed material.
-						</p>
-
-						<p>
-							This material decision was important because any future servo-actuated wing movement would be affected by
-							the weight and resistance of the wing surface. A fully 3D printed wing could provide a fixed shape, but it
-							would increase mass and place more load on the actuator. Spandex better represents the membrane-like form
-							of a Pterodactyl wing while also supporting the practical aim of keeping the moving structure lightweight.
-						</p>
-
-						<p>
-							The limitation of spandex is that it must be tensioned carefully. If it is too loose, the wing may lose its
-							shape and look unfinished. If it is too tight, it may resist movement and increase stress on the frame or
-							servo linkage. Therefore, a future version would need a suitable frame, ribs, or elastic thread support to
-							control the shape of the membrane.
+							For the current prototype, string-assisted movement is the more achievable method because it reduces cost
+							and complexity. For a future functional iteration, servo actuation would be preferred because it could
+							provide more controlled and repeatable movement. The improved workflow would therefore test the string or
+							servo mechanism separately before integrating it into the full Pterodactyl body.
 						</p>
 
 						<div class="callout-box">
-							<h3>Material Decision</h3>
+							<h3>Final Selected Workflow</h3>
 							<p>
-								The final material direction combined rigid and flexible thinking: 3D printed parts were suitable for
-								mechanism, rail, or support components, while spandex was more suitable for the wing skin. This
-								combination allowed the prototype to be considered as a robotic skin system rather than only a static
-								3D printed dinosaur model.
+								The selected development workflow was:
+								<strong>Blender/CAD virtual design → mechanism and skin planning → STL file preparation → PETG 3D printing → risk assessment and post-processing planning → spandex/fabric membrane with silicone skin planning → string and elastic thread movement option for the current prototype → servo actuation proposed for a future functional iteration.</strong>
+							</p>
+							<p>
+								This workflow was chosen because it matched the actual stage and constraints of the project. It also
+								shows a clear path from virtual design to physical prototype, while still explaining how the design
+								could develop into a more production-ready solution.
 							</p>
 						</div>
 					</section>
 
-					<!-- Servo -->
-					<section id="servo">
+				</div>
+			</section>
+
+			<!-- Prototype -->
+			<section id="prototype" class="wrapper style3">
+				<div class="title">Virtual and Physical Prototype Evidence</div>
+				<div class="container">
+
+					<header class="style1">
+						<h2>Blender/CAD, Mechanism Layout and PETG Printing</h2>
+						<p>Evidence of the project moving from a digital model towards a physical artefact.</p>
+					</header>
+
+					<div class="gallery-grid">
+						<button class="gallery-item" data-img="images/pterodactyl-cad-body.png">
+							<img src="images/pterodactyl-cad-body.png" alt="Pterodactyl CAD and Blender body concept" />
+							<span>Blender / CAD Body Concept</span>
+						</button>
+
+						<button class="gallery-item" data-img="images/mechanism-layout-front.webp">
+							<img src="images/mechanism-layout-front.webp" alt="Front view of mechanism layout" />
+							<span>Mechanism Layout</span>
+						</button>
+
+						<button class="gallery-item" data-img="images/mechanism-layout-angle.webp">
+							<img src="images/mechanism-layout-angle.webp" alt="Angled view of pivot and rail mechanism" />
+							<span>Pivot and Rail Exploration</span>
+						</button>
+
+						<button class="gallery-item" data-img="images/pterodactyl-3d-print.webp">
+							<img src="images/pterodactyl-3d-print.webp" alt="PETG 3D printed Pterodactyl prototype" />
+							<span>PETG 3D Printed Prototype</span>
+						</button>
+
+						<button class="gallery-item" data-img="images/risk-assessment.webp">
+							<img src="images/risk-assessment.webp" alt="Risk assessment for the 3D printing process" />
+							<span>Risk Assessment</span>
+						</button>
+
+						<button class="gallery-item" data-img="images/skin-membrane-plan.webp">
+							<img src="images/skin-membrane-plan.webp" alt="Skin and wing membrane planning diagram" />
+							<span>Skin and Membrane Plan</span>
+						</button>
+					</div>
+
+					<div class="video-grid">
+						<div class="video-card">
+							<video controls>
+								<source src="assets/videos/blender-body-development.mp4" type="video/mp4" />
+								Your browser does not support this video. Use the download link below.
+							</video>
+							<h3>Blender Body Development Video</h3>
+							<p>
+								This video shows the Pterodactyl model being reviewed digitally before physical manufacturing.
+								It supports the virtual prototyping stage by showing how the form was developed and checked before
+								printing.
+							</p>
+							<p><a href="assets/videos/blender-body-development.mp4" download>Download Blender development video</a></p>
+						</div>
+
+						<div class="video-card">
+							<video controls>
+								<source src="assets/videos/printed-component-demo.mov" type="video/quicktime" />
+								Your browser does not support this video. Use the download link below.
+							</video>
+							<h3>Physical Prototype Video</h3>
+							<p>
+								This video provides evidence of the physical printed component and supports the transition from
+								digital design into physical prototyping.
+							</p>
+							<p><a href="assets/videos/printed-component-demo.mov" download>Download physical prototype video</a></p>
+						</div>
+					</div>
+
+					<div class="callout-box">
+						<h3>Prototype Evidence Summary</h3>
+						<p>
+							The CAD images show the virtual prototype and mechanism planning. The STL files show preparation for
+							fabrication. The PETG print image shows the design moving into physical manufacture. The risk assessment
+							and skin planning diagram show that the physical prototype was also considered in relation to safety,
+							maintenance and future development.
+						</p>
+					</div>
+
+				</div>
+			</section>
+
+			<!-- Skin and Movement -->
+			<section id="skin-movement" class="wrapper style2">
+				<div class="title">Skin, Membrane and Movement</div>
+				<div class="container">
+
+					<section id="skin">
 						<header class="style1">
-							<h2>Proposed Servo-Based Wing Actuation</h2>
-							<p>Servo control was selected as the preferred future mechanism for wing flapping.</p>
+							<h2>Skin and Wing Membrane Design</h2>
+							<p>Developing the outer skin strategy for realism, flexibility and access to internal mechanisms.</p>
 						</header>
+
+						<a href="#artefacts" class="image featured">
+							<img src="images/skin-membrane-plan.webp" alt="Pterodactyl skin and wing membrane planning diagram" />
+						</a>
+
+						<p>
+							The skin design was important because the project was not only about producing a rigid dinosaur shape.
+							It also needed to consider how an outer skin or membrane could sit over a mechanical structure. Silicone
+							was considered as a possible skin material because it could create a more realistic surface finish and
+							allow a flexible outer layer. For areas where direct silicone placement would be difficult, foam or a
+							similar material was considered as an underlayer to smooth the body shape, round rough edges and support
+							layer-by-layer skin application.
+						</p>
+
+						<p>
+							The wing membrane was planned as fabric or spandex with a thin silicone layer. Fabric or spandex could
+							provide a lightweight flexible base, while silicone could improve realism and create a more skin-like
+							finish. The membrane would wrap around the bone or frame edge once or twice, with adhesive applied only
+							at selected points. Applying adhesive everywhere was rejected because it would make the structure
+							inaccessible and could make the membrane too stiff.
+						</p>
+
+						<p>
+							The annotated skin plan shows different design considerations. The blue points represent possible adhesive
+							locations for the membrane fabric, while the red lines represent possible seam positions for access.
+							These seams could be supported by hidden screws or magnetic panels, especially around natural overlap
+							areas such as the midsection. This was important because the internal mechanism would need to remain
+							accessible for testing, adjustment and future servo integration.
+						</p>
+
+						<p>
+							Colour was also considered. Grey, brown and dull green tones were discussed because they would create a
+							more natural Pterodactyl appearance. Tinting silicone could provide a realistic base skin tone, while
+							painted details could be added later if the surface finish was suitable. Darker details around stress
+							points could also make the skin look more realistic.
+						</p>
+
+						<div class="callout-box">
+							<h3>Skin Design Decision</h3>
+							<p>
+								The preferred skin strategy was a flexible membrane system using fabric or spandex, selective adhesive
+								points, and a thin silicone surface layer. This was chosen because it supported the Pterodactyl wing
+								shape while still allowing access to joints and internal mechanisms. Extra fabric reinforcement could
+								be added at stress points if testing showed that the membrane was not strong enough.
+							</p>
+						</div>
+					</section>
+
+					<section id="thread">
+						<header class="style1">
+							<h2>String, Thread and Actuation Method Selection</h2>
+							<p>Comparing movement options and selecting a practical current method with a stronger future route.</p>
+						</header>
+
+						<p>
+							My individual contribution focused on investigating how the Pterodactyl wings could move. The movement
+							options considered included a DC motor, servo motor, strings, shirring elastic thread, thin elastic cord,
+							lycra or spandex elastic thread, thin rubber cord and normal sewing thread. Each option had different
+							advantages and limitations.
+						</p>
+
+						<p>
+							A motorised route was attractive because it could make the prototype more interactive. A DC motor could
+							provide continuous rotation, but this would require a linkage or crank system to convert the rotation into
+							a flapping movement. A servo was more suitable for controlled wing movement because it can rotate between
+							set angles. This matches the up-and-down motion needed for a flapping wing.
+						</p>
+
+						<p>
+							However, due to budget and time constraints, string-assisted movement became more practical for the
+							current prototype stage. This decision was not simply a weaker option; it was a realistic response to the
+							project constraints. A string-assisted system can demonstrate the movement concept with less cost,
+							complexity and risk than a fully integrated motorised system.
+						</p>
+
+						<p>
+							For the thread material, I proposed spandex elastic thread as the most suitable choice because the wing
+							skin was also planned to use spandex. Since both materials are stretchy, they should move together more
+							naturally and allow the wing membrane to flex without becoming too stiff. The main limitation is tension:
+							if the thread is too tight, it could make the wing resist movement; if it is too loose, the wing may not
+							hold its shape properly.
+						</p>
 
 						<div class="wing-simulator">
 							<div class="dino-stage">
@@ -970,35 +1180,13 @@
 							</div>
 						</div>
 
-						<p>
-							As part of the mechanism development, I investigated servo actuation as the preferred method for creating
-							wing-flapping movement in a future functional iteration. A servo motor was considered suitable because it
-							can rotate to controlled angles. This is more appropriate for flapping movement than a continuously
-							rotating DC motor because the wing needs to move between defined upper and lower positions rather than
-							spin continuously.
-						</p>
-
-						<p>
-							The current prototype stage focused on CAD development, mechanism layout, 3D printed component validation,
-							and material selection. Full servo integration would be the next functional stage. This is still a valid
-							product development route because it separates form validation from actuation testing. First, the shape
-							and components are developed; then the mechanism is tested; then the final moving assembly can be refined.
-						</p>
-
-						<p>
-							The main issue with servo actuation is torque. A Pterodactyl wing can create load because the wing is long
-							compared with the body. Even if the wing skin is lightweight spandex, the servo must still overcome the
-							distance from the pivot, friction in the joint, and resistance from the stretched material. Therefore, a
-							future iteration should test servo strength, linkage length, wing weight, and pivot friction before the
-							mechanism is fixed inside the body.
-						</p>
-
 						<div class="callout-box dark">
-							<h3>Interactive Demonstration Note</h3>
+							<h3>Interactive Movement Note</h3>
 							<p>
-								The slider above is a simplified representation of the proposed servo principle. It does not calculate
-								real torque or mechanical stress, but it shows the basic idea of controlled angular movement being
-								translated into wing movement.
+								The slider above is a simplified representation of wing angle movement. It does not calculate real
+								torque, string tension or mechanical stress. It is included to help explain the principle that a wing
+								can be moved between upper and lower positions, either manually through strings or in a future version
+								through servo actuation.
 							</p>
 						</div>
 					</section>
@@ -1008,36 +1196,20 @@
 
 			<!-- Artefacts -->
 			<section id="artefacts" class="wrapper style3">
-				<div class="title">Designs and Artefacts</div>
+				<div class="title">Designs, Videos and 3D Artefacts</div>
 				<div class="container">
+
 					<header class="style1">
-						<h2>2D, 3D and Physical Evidence</h2>
-						<p>These artefacts support the development narrative and show the project moving from virtual design to physical output.</p>
+						<h2>Portfolio Artefacts</h2>
+						<p>These assets provide visual and technical evidence for the development narrative.</p>
 					</header>
-
-					<div class="gallery-grid">
-						<button class="gallery-item" data-img="images/pterodactyl-cad-body.png">
-							<img src="images/pterodactyl-cad-body.png" alt="CAD model of the Pterodactyl body" />
-							<span>Overall CAD Body Concept</span>
-						</button>
-
-						<button class="gallery-item" data-img="images/mechanism-layout-front.webp">
-							<img src="images/mechanism-layout-front.webp" alt="Front CAD mechanism view" />
-							<span>Mechanism Layout</span>
-						</button>
-
-						<button class="gallery-item" data-img="images/mechanism-layout-angle.webp">
-							<img src="images/mechanism-layout-angle.webp" alt="Angled CAD mechanism view" />
-							<span>Pivot and Rail Exploration</span>
-						</button>
-					</div>
 
 					<div class="stl-viewer-wrap">
 						<h3>Interactive STL Preview</h3>
 						<p>
-							The viewer below displays the STL artefacts developed during the project. These files are evidence of the
-							3D model-to-manufacturing workflow. If the preview does not load in a local browser, open the website
-							through GitHub Pages and use the download links.
+							The viewer below displays the STL artefacts developed during the project. These files are evidence of
+							the 3D model-to-manufacturing workflow. If the preview does not load from a local browser, open the
+							website through GitHub Pages and use the download links.
 						</p>
 
 						<div id="stlViewer">
@@ -1058,14 +1230,16 @@
 					</div>
 
 					<div class="callout-box">
-						<h3>Artefact Summary</h3>
+						<h3>How the Artefacts Support the Marking Criteria</h3>
 						<p>
-							The CAD images show the virtual prototype and mechanism planning. The STL files show that the design was
-							prepared for manufacturing. The videos show the digital development process and the physical 3D printed
-							component. Together, these artefacts demonstrate a clear route from virtual design to early physical
-							prototyping.
+							The Blender/CAD images support the virtual prototype stage. The STL files support detailed development
+							and file-to-fabrication planning. The PETG print image supports the physical prototype stage. The risk
+							assessment supports workshop planning and safe prototyping. The skin plan supports the robotic skin
+							design aspect of the module. Together, these artefacts show a structured route from virtual prototype to
+							physical artefact.
 						</p>
 					</div>
+
 				</div>
 			</section>
 
@@ -1073,198 +1247,215 @@
 			<section id="appraisal" class="wrapper style2">
 				<div class="title">Critical Appraisal</div>
 				<div class="container">
+
 					<header class="style1">
-						<h2>Alternatives Considered and Final Method Selection</h2>
-						<p>Techniques used and not used are evaluated in relation to the Pterodactyl prototype and wider industrial use.</p>
+						<h2>Techniques Used, Considered and Rejected</h2>
+						<p>Each method is appraised for suitability in this project and wider industrial product development.</p>
 					</header>
 
 					<div class="tab-buttons">
-						<button class="tab-btn active" data-tab="cad">CAD / 3D Modelling</button>
-						<button class="tab-btn" data-tab="printing">3D Printing</button>
-						<button class="tab-btn" data-tab="spandex">Spandex Skin</button>
-						<button class="tab-btn" data-tab="servo">Servo Actuation</button>
+						<button class="tab-btn active" data-tab="cad">Blender / CAD</button>
+						<button class="tab-btn" data-tab="printing">PETG 3D Printing</button>
+						<button class="tab-btn" data-tab="skin">Skin / Membrane</button>
+						<button class="tab-btn" data-tab="movement">String / Servo Movement</button>
 						<button class="tab-btn" data-tab="scan">3D Scanning</button>
 						<button class="tab-btn" data-tab="mocap">Motion Capture</button>
+						<button class="tab-btn" data-tab="haptic">Haptic Sculpting</button>
 						<button class="tab-btn" data-tab="laser">Laser Cutting</button>
 						<button class="tab-btn" data-tab="resin">Resin / Composites</button>
-						<button class="tab-btn" data-tab="haptic">Haptic Sculpting</button>
 					</div>
 
 					<div class="tab-panel active" id="tab-cad">
-						<h3>CAD and 3D Modelling</h3>
+						<h3>Blender, CAD and 3D Modelling</h3>
 						<p>
-							CAD and 3D modelling were selected as the main virtual prototyping methods. They were suitable because
-							the Pterodactyl was being designed from scratch and needed controlled digital development. CAD allowed
-							the form, scale, wing layout, and mechanism ideas to be planned before physical manufacture.
+							Blender/CAD and 3D modelling were selected as the main virtual prototyping methods. They were suitable
+							because the Pterodactyl was designed from scratch and required control over body form, wing placement and
+							mechanism layout. Blender was especially useful for organic modelling because the Pterodactyl body is not
+							a simple geometric shape.
 						</p>
 						<p>
-							The main advantage was control. Unlike 3D scanning, which captures an existing object, CAD allowed the
-							design to be created intentionally. It also connected directly with 3D printing because the model could be
-							exported as STL files. The limitation was that CAD alone could not prove material behaviour, component
-							strength, or joint friction.
+							The limitation is that a digital model cannot fully prove physical performance. It cannot reliably show
+							print quality, joint friction, material strength or how easily the final object can be handled. In wider
+							industry, CAD and 3D modelling are essential for product development because they support visualisation,
+							design communication, revision and manufacturing preparation. In this project, they were the correct
+							starting point, but they needed to be followed by physical printing and testing.
 						</p>
 					</div>
 
 					<div class="tab-panel" id="tab-printing">
-						<h3>3D Printing</h3>
+						<h3>PETG 3D Printing</h3>
 						<p>
-							3D printing was chosen as the main physical prototyping method because it provided a direct route from
-							virtual design to physical artefact. It allowed custom parts to be manufactured without moulds or complex
-							tooling. This made it suitable for an educational prototype with limited time.
+							3D printing was selected as the main physical prototyping method because it created a direct route from
+							digital model to physical artefact. PETG was chosen because it offered a better balance of durability and
+							printability than some alternatives. Compared with ABS, it is easier to print. Compared with PLA, it is
+							less brittle and offers better impact resistance, temperature resistance and layer adhesion.
 						</p>
 						<p>
-							The limitation is that printed parts may not always be strong, light, or smooth enough for final use.
-							Moving components may need redesign, sanding, stronger material, or different print orientation. For this
-							project, 3D printing was suitable for early physical validation rather than a complete production-ready
-							solution.
-						</p>
-					</div>
-
-					<div class="tab-panel" id="tab-spandex">
-						<h3>Spandex Wing Skin</h3>
-						<p>
-							Spandex was selected as the preferred wing skin because it is lightweight and flexible. This makes it more
-							suitable for a Pterodactyl-style membrane than a fully rigid printed wing. It also reduces the load that a
-							future servo mechanism would need to move.
-						</p>
-						<p>
-							The limitation is that spandex depends on correct tensioning. Too loose, and the wing loses shape; too
-							tight, and it may resist motion. A future version would need a frame or rib structure to hold the spandex
-							in the correct shape while still allowing smooth wing movement.
+							The limitation is that 3D printed parts still require support removal, post-processing and possible
+							redesign. They may not be suitable for repeated mechanical movement without testing. In wider industry,
+							3D printing is valuable for rapid prototyping, custom components and low-volume production, but material
+							selection and print orientation must be considered carefully.
 						</p>
 					</div>
 
-					<div class="tab-panel" id="tab-servo">
-						<h3>Servo Actuation</h3>
+					<div class="tab-panel" id="tab-skin">
+						<h3>Skin and Membrane Design</h3>
 						<p>
-							Servo actuation was selected as the preferred future mechanism because it provides controlled angular
-							movement. This is suitable for wing flapping because the wing needs to move between defined positions.
-							Compared with a continuous DC motor, a servo is easier to control for a small demonstration prototype.
+							Spandex, fabric and silicone were considered for the outer skin and wing membrane. Spandex/fabric was
+							suitable because it is lightweight and flexible, while silicone could improve realism and skin-like
+							appearance. A fully rigid printed wing was rejected because it would be heavier and less realistic as a
+							membrane.
 						</p>
 						<p>
-							The limitation is torque. The servo must be strong enough to move the wing structure and overcome friction
-							and material resistance. Therefore, future testing should compare servo strength, wing length, linkage
-							geometry, and pivot design before the mechanism is built into the final body.
+							A fully sealed silicone skin was also not ideal for the current prototype because it would make internal
+							mechanisms difficult to access. Selective adhesive points, seams, possible magnet panels and hidden screws
+							were preferred because they support maintenance. In industrial product development, this reflects a common
+							issue: outer casing or skin must improve appearance and protection without preventing repair or inspection.
+						</p>
+					</div>
+
+					<div class="tab-panel" id="tab-movement">
+						<h3>String-Assisted Movement and Servo Actuation</h3>
+						<p>
+							Several movement methods were considered. A DC motor could provide continuous rotation, but it would need
+							additional mechanisms to convert rotation into flapping. A servo motor was more suitable for controlled
+							angular movement because it can move between set positions. This made servo actuation the preferred future
+							method for wing movement.
+						</p>
+						<p>
+							For the current prototype, string-assisted movement was more practical because it reduced cost, complexity
+							and time. Spandex elastic thread was proposed because it would work with the spandex wing skin and allow
+							flexible movement. The limitation is that string tension must be controlled carefully. In wider robotics,
+							both cable-driven mechanisms and servo systems are useful, but they require careful testing of friction,
+							load, torque and repeatability.
 						</p>
 					</div>
 
 					<div class="tab-panel" id="tab-scan">
 						<h3>3D Scanning</h3>
 						<p>
-							3D scanning was considered as an alternative method for capturing organic dinosaur-like forms. It would be
-							useful if a clay, foam, or hand-sculpted Pterodactyl body already existed and needed to be converted into
-							a digital model.
+							3D scanning was considered but not selected as a main method. It would have been useful if the group had
+							first created a clay, foam or hand-made Pterodactyl body and needed to convert that physical model into a
+							digital file. Its strength is capturing existing organic shapes quickly.
 						</p>
 						<p>
-							It was not selected because the project was designed digitally from the beginning. There was no existing
-							physical model to scan. In wider industry, 3D scanning is useful for reverse engineering, inspection,
-							custom-fit products, and heritage preservation, but for this project CAD was more suitable.
+							It was not suitable for the current project because the Pterodactyl was created digitally from the
+							beginning. There was no finished physical object to scan. In industry, 3D scanning is valuable for reverse
+							engineering, quality inspection, medical modelling, heritage preservation and custom-fit products.
 						</p>
 					</div>
 
 					<div class="tab-panel" id="tab-mocap">
 						<h3>Motion Capture</h3>
 						<p>
-							Motion capture was considered in relation to wing movement. It could be useful in a more advanced version
-							if the aim was to compare the prototype’s wing movement with real bird or bat motion.
+							Motion capture was considered in relation to wing movement, but it was not selected for the current stage.
+							The planned movement was a simple string or servo-assisted wing flap, not a detailed biological motion
+							study. Motion capture would have added complexity without directly improving the first physical prototype.
 						</p>
 						<p>
-							It was not selected for the current stage because the planned movement was a simple servo-actuated flap,
-							not a detailed biological motion study. Motion capture would have added complexity without directly
-							improving the first physical prototype.
-						</p>
-					</div>
-
-					<div class="tab-panel" id="tab-laser">
-						<h3>Laser Cutting</h3>
-						<p>
-							Laser cutting was considered for flat support pieces, rails, wing ribs, or lightweight internal frame
-							components. It is accurate, repeatable, and useful for sheet materials.
-						</p>
-						<p>
-							It was not selected as the main method because the Pterodactyl form and wing components required more
-							organic 3D geometry. However, laser cutting could be useful in a future version for producing a lightweight
-							frame under the spandex wing skin.
-						</p>
-					</div>
-
-					<div class="tab-panel" id="tab-resin">
-						<h3>Resin Production and Composite Methods</h3>
-						<p>
-							Resin production and composite methods were considered as future development options. Resin could improve
-							surface detail for the head or body, while composites could create lightweight and strong wing structures.
-						</p>
-						<p>
-							They were not selected for the current stage because they require more preparation, post-processing, and
-							workshop control. For the first development iteration, CAD and 3D printing were more direct and practical.
+							In a future research version, motion capture could be useful for analysing real bird or bat wing movement
+							and comparing it with the mechanical wing path. In industry, motion capture is used in robotics,
+							biomechanics, animation, game development and autonomous system testing where accurate movement data is
+							required.
 						</p>
 					</div>
 
 					<div class="tab-panel" id="tab-haptic">
 						<h3>Haptic Sculpting</h3>
 						<p>
-							Haptic sculpting was considered as a way to create more organic dinosaur features such as the head, body
-							curves, or skin texture. It could be useful because a Pterodactyl is not purely geometric.
+							Haptic sculpting was considered as an alternative for creating organic dinosaur features such as the head,
+							body surface, wrinkles or skin texture. It would be useful where tactile feedback helps a designer sculpt
+							complex curved forms.
 						</p>
 						<p>
-							It was not selected as the main method because the current stage focused on wing geometry, mechanism
-							layout, and manufacturable parts. Haptic sculpting would be more suitable in a later aesthetic refinement
-							stage once the functional structure has been tested.
+							It was not selected as the main method because the current stage focused on manufacturable geometry,
+							mechanism layout and 3D printing rather than high-detail surface sculpting. It would be more suitable in
+							a later aesthetic refinement stage after the body, movement system and access panels have been tested.
+						</p>
+					</div>
+
+					<div class="tab-panel" id="tab-laser">
+						<h3>Laser Cutting</h3>
+						<p>
+							Laser cutting was considered for flat support pieces, wing ribs, rails or lightweight frame components.
+							It is accurate and repeatable for sheet materials, so it could be useful for making symmetrical internal
+							structures.
+						</p>
+						<p>
+							It was not selected as the main method because the Pterodactyl body and mechanism required more organic
+							3D geometry. However, laser cutting could be useful in a later version for producing a lightweight frame
+							under the spandex membrane. In industry, laser cutting is widely used for sheet material manufacturing,
+							signage, packaging, architectural models and precision fabrication.
+						</p>
+					</div>
+
+					<div class="tab-panel" id="tab-resin">
+						<h3>Resin Production and Composite Methods</h3>
+						<p>
+							Resin printing and composite methods were considered as future development options. Resin could improve
+							the detail and surface finish of parts such as the head or claws. Composite methods could create stronger
+							and lighter wing or body shells.
+						</p>
+						<p>
+							They were not selected for the current prototype stage because they require more post-processing, workshop
+							control and preparation. For the first physical iteration, PETG 3D printing was more direct and practical.
+							In industry, resin and composites are useful where high surface finish, durability or lightweight strength
+							are required, such as aerospace, automotive, medical modelling and product design.
 						</p>
 					</div>
 
 					<div class="callout-box">
-						<h3>Final Chosen Workflow</h3>
+						<h3>Critical Appraisal Summary</h3>
 						<p>
-							After comparing the available options, the selected workflow was:
-							<strong>CAD and 3D modelling → STL component development → 3D printing → spandex wing skin selection →
-							physical evaluation → proposed servo actuation for a future functional iteration.</strong>
-						</p>
-						<p>
-							This was chosen because it matched the current prototype stage. CAD and 3D modelling supported controlled
-							virtual development. 3D printing created the first physical evidence. Spandex was selected for the future
-							wing membrane because of its low weight and flexibility. Servo actuation was selected as the most suitable
-							next step for controlled wing movement.
+							The project did not use every technique explored in the module, but each technique was considered in
+							relation to suitability. Blender/CAD, STL preparation and PETG 3D printing were selected because they best
+							supported the current virtual-to-physical prototype stage. Spandex, fabric, silicone, seams and string
+							movement were selected because they supported a practical skin and movement strategy. 3D scanning, motion
+							capture, haptic sculpting, laser cutting, resin and composite methods were appraised as alternatives or
+							future options rather than ignored.
 						</p>
 					</div>
+
 				</div>
 			</section>
 
 			<!-- Reflection -->
 			<section id="reflection" class="wrapper style3">
-				<div class="title">Reflection and Future Development</div>
+				<div class="title">Individual Reflection</div>
 				<div class="container">
+
 					<div class="row aln-center">
 						<div class="col-4 col-12-medium">
 							<section class="highlight">
-								<a href="#virtual" class="image featured"><img src="images/pterodactyl-cad-body.png" alt="CAD model reflection" /></a>
-								<h3><a href="#virtual">What Worked Well</a></h3>
+								<a href="#process" class="image featured"><img src="images/pterodactyl-cad-body.png" alt="CAD model reflection" /></a>
+								<h3><a href="#process">What Worked Well</a></h3>
 								<p>
-									CAD and 3D modelling worked well because they gave the group a clear visual direction and supported
-									the creation of STL files. The project had a visible route from virtual design into physical
-									prototyping.
+									The virtual-to-physical route was clear. Blender/CAD created the design, STL files prepared it for
+									fabrication, and PETG printing produced physical evidence. The process also included material,
+									skin, movement and risk planning.
 								</p>
 							</section>
 						</div>
 
 						<div class="col-4 col-12-medium">
 							<section class="highlight">
-								<a href="#mechanism" class="image featured"><img src="images/mechanism-layout-angle.webp" alt="Mechanism reflection" /></a>
-								<h3><a href="#mechanism">Main Limitations</a></h3>
+								<a href="#skin-movement" class="image featured"><img src="images/skin-membrane-plan.webp" alt="Skin planning reflection" /></a>
+								<h3><a href="#skin-movement">Main Limitations</a></h3>
 								<p>
-									The current stage does not yet include a complete working servo wing system. The mechanism still
-									needs physical testing for torque, pivot friction, wing load, and spandex tension.
+									The prototype is still in the printing and preparation stage, so full movement testing is not yet
+									complete. String tension, servo torque, spandex behaviour, seam access and post-processing still
+									need practical testing.
 								</p>
 							</section>
 						</div>
 
 						<div class="col-4 col-12-medium">
 							<section class="highlight">
-								<a href="#servo" class="image featured"><img src="images/mechanism-layout-front.webp" alt="Future servo development" /></a>
-								<h3><a href="#servo">Future Improvements</a></h3>
+								<a href="#appraisal" class="image featured"><img src="images/mechanism-layout-angle.webp" alt="Future development reflection" /></a>
+								<h3><a href="#appraisal">Future Improvements</a></h3>
 								<p>
-									A future version should test the servo and wing linkage separately before final assembly. The wing
-									frame, spandex membrane, and printed mechanism parts should then be refined together.
+									A future version should test a small wing rig first, then refine the string or servo mechanism,
+									adjust membrane tension, improve access panels and apply the skin after mechanical testing.
 								</p>
 							</section>
 						</div>
@@ -1275,36 +1466,49 @@
 							<button class="accordion-title">Reflection: What I learned about virtual-to-physical development</button>
 							<div class="accordion-content">
 								<p>
-									This project helped me understand that product development is not always a straight path from idea
-									to final working model. The CAD model made the Pterodactyl concept visible, but the physical 3D
-									printed component gave more useful feedback about scale, form, and manufacturability. This showed
-									me that virtual prototypes and physical prototypes should support each other rather than be treated
-									as separate tasks.
+									This project helped me understand that product development does not move directly from idea to final
+									production. The virtual model gave the group a clear design direction, but the physical print provided
+									different information about scale, supports, surface finish, post-processing and handling. This showed
+									me that virtual and physical prototypes should work together as part of an iterative process.
 								</p>
 							</div>
 						</div>
 
 						<div class="accordion-item">
-							<button class="accordion-title">Reflection: Why the selected workflow was appropriate</button>
+							<button class="accordion-title">Reflection: What I learned from movement research</button>
 							<div class="accordion-content">
 								<p>
-									The selected workflow was appropriate because it matched the current development stage. CAD and 3D
-									modelling allowed the design to be controlled, STL files prepared the parts for manufacturing, and
-									3D printing produced physical evidence. Spandex and servo actuation were then selected as the most
-									suitable future material and movement choices. This made the workflow realistic rather than
-									overcomplicated.
+									My movement research showed that actuation is not only about choosing a motor. The wing material,
+									string tension, joint friction, cost, time and access to the mechanism all affect whether the movement
+									system is realistic. A servo is technically suitable for controlled wing movement, but string-assisted
+									movement is more achievable for the current prototype. This helped me understand that design choices
+									must respond to project constraints.
 								</p>
 							</div>
 						</div>
 
 						<div class="accordion-item">
-							<button class="accordion-title">Reflection: How I would improve the next iteration</button>
+							<button class="accordion-title">Reflection: What I learned from skin and maintenance planning</button>
 							<div class="accordion-content">
 								<p>
-									If I developed the project further, I would first create a small test rig for the servo mechanism
-									instead of immediately integrating it into the full body. This would allow the wing load, pivot
-									friction, linkage length, and spandex tension to be tested separately. After that, the mechanism
-									could be integrated into the Pterodactyl body with more confidence.
+									The skin planning stage helped me understand that a prototype can fail even if the mechanical idea is
+									good. If the skin is permanently attached, the mechanism may be difficult to repair. If too much
+									adhesive is used on the membrane, the wing may become stiff and inaccessible. Therefore, selective
+									adhesive points, seams, possible magnetic access panels and reinforced stress points were more
+									practical design choices.
+								</p>
+							</div>
+						</div>
+
+						<div class="accordion-item">
+							<button class="accordion-title">Improved workflow for the next iteration</button>
+							<div class="accordion-content">
+								<p>
+									If I developed the project further, I would first print smaller test pieces before committing to the
+									full body. I would then build a small wing test rig to compare string-assisted movement and servo
+									actuation. After testing, I would refine the CAD model, add stronger pivot points, test spandex
+									tension, apply silicone only after mechanical access had been confirmed, and use removable seams or
+									panels for maintenance.
 								</p>
 							</div>
 						</div>
@@ -1313,18 +1517,114 @@
 							<button class="accordion-title">Conclusion</button>
 							<div class="accordion-content">
 								<p>
-									The Pterodactyl prototype reached a valuable early product development stage. The project produced
-									CAD designs, mechanism layouts, STL files, and a 3D printed component, while also selecting spandex
-									and servo actuation for a future functional version. From my individual perspective, the most
-									important learning outcome was understanding how different prototyping methods should be selected
-									based on suitability, not simply because they are available. The project demonstrates a clear route
-									from virtual design to physical prototyping and provides a strong foundation for later wing
-									actuation and robotic skin development.
+									The Pterodactyl project reached a valuable preproduction prototype stage. It produced Blender/CAD
+									models, mechanism layouts, STL files, PETG 3D printing evidence, risk assessment work and skin/membrane
+									planning. From my individual perspective, the most important learning outcome was understanding that
+									prototyping methods should be selected based on suitability. The project demonstrates a clear route
+									from virtual prototype to physical artefact, while also identifying a realistic future workflow for
+									wing movement and robotic skin development.
 								</p>
 							</div>
 						</div>
 					</div>
 
+				</div>
+			</section>
+
+			<!-- Acknowledgements -->
+			<section id="acknowledgements" class="wrapper style2">
+				<div class="title">Acknowledgements</div>
+				<div class="container">
+					<header class="style1">
+						<h2>Team Contributions</h2>
+						<p>
+							This portfolio is written as my individual reflection, but the artefact was developed within a group project.
+							The following section acknowledges the contribution of each team member.
+						</p>
+					</header>
+
+					<div class="team-grid">
+
+						<div class="team-card">
+							<div class="avatar leader">T</div>
+							<h3>Taran</h3>
+							<span class="team-role">Team Leader / Main Designer</span>
+							<p>
+								Taran was the main designer for the project. He created both the prototype and final model designs using
+								Blender, drawing on his familiarity with the software. He also acted as team leader by helping organise
+								the group, making sure members understood their roles and helping the project move forward efficiently.
+							</p>
+						</div>
+
+						<div class="team-card">
+							<div class="avatar scribe">👩‍💻</div>
+							<h3>MJ</h3>
+							<span class="team-role">Scribe / Documentation</span>
+							<p>
+								MJ acted as the scribe for the group. She documented progress whenever a team member completed a task
+								or contributed a new idea. This helped the group keep track of the development process, compare possible
+								options and identify which decisions were most viable for the final prototype.
+							</p>
+						</div>
+
+						<div class="team-card">
+							<div class="avatar material">T</div>
+							<h3>Tom</h3>
+							<span class="team-role">3D Printing Material Research</span>
+							<p>
+								Tom researched the most suitable material for the 3D printed prototype. Based on his previous experience
+								with 3D printers and printed parts, he considered how the material would affect durability, handling,
+								impact resistance and suitability for the intended environment.
+							</p>
+						</div>
+
+						<div class="team-card">
+							<div class="avatar skin">D</div>
+							<h3>Dami</h3>
+							<span class="team-role">University Resources / Skin Research</span>
+							<p>
+								Dami used university resources to identify which departments and facilities could support the development
+								of the artefact. He also investigated different skin options so that the Pterodactyl could appear more
+								realistic while still being practical as a prototype.
+							</p>
+						</div>
+
+						<div class="team-card">
+							<div class="avatar risk">A</div>
+							<h3>Adriano</h3>
+							<span class="team-role">Communication / Risk Assessment</span>
+							<p>
+								Adriano was responsible for communication. He used information gathered by the group to contact relevant
+								individuals who could support the model development. He also created the risk assessment chart, helping
+								the group identify hazards and plan controls to reduce the chance of injury.
+							</p>
+						</div>
+
+						<div class="team-card">
+							<div class="avatar me">G</div>
+							<h3>Ganesh</h3>
+							<span class="team-role">Wing Movement / Actuation Research</span>
+							<p>
+								My role focused on researching ways to make the Pterodactyl wings move. I looked into multiple methods,
+								including motors, servo-based actuation, strings and elastic thread support. Motorised movement was
+								initially my main direction, but due to budget and time restrictions, string-assisted movement became
+								the practical current option, while servo actuation remained the preferred route for a future functional
+								iteration.
+							</p>
+						</div>
+
+					</div>
+
+					<div class="callout-box">
+						<h3>Individual Reflection on Teamwork</h3>
+						<p>
+							Working in a group helped me understand that product development depends on different types of contribution.
+							The project required design work, documentation, material research, workshop planning, communication, risk
+							assessment and mechanism research. From my individual perspective, this showed that a prototype is not
+							created only through modelling or manufacturing; it also depends on planning, communication, safety and
+							justified decision-making.
+						</p>
+					</div>
 				</div>
 			</section>
 
@@ -1336,8 +1636,7 @@
 					<header class="style1">
 						<h2>Harvard References and Portfolio Notes</h2>
 						<p>
-							The portfolio uses Harvard-style references to support the discussion of CAD, 3D printing, actuation,
-							material selection, and prototyping methods.
+							This section includes references and the final submission checklist for the GitHub Pages portfolio.
 						</p>
 					</header>
 
@@ -1348,38 +1647,43 @@
 								<ul class="reference-list">
 									<li>
 										Arduino (2026) <em>Servo Library</em>. Available at:
-										https://www.arduino.cc/reference/en/libraries/servo/
-										(Accessed: 13 May 2026).
+										https://www.arduino.cc/en/reference/servo
+										(Accessed: 14 May 2026).
 									</li>
 									<li>
 										Autodesk (2026) <em>CAD Software: 2D and 3D Computer-Aided Design</em>. Available at:
 										https://www.autodesk.com/uk/solutions/cad-software
-										(Accessed: 13 May 2026).
+										(Accessed: 14 May 2026).
 									</li>
 									<li>
 										Formlabs (2026) <em>Guide to Post-Processing and Finishing SLA Resin 3D Prints</em>.
 										Available at: https://formlabs.com/blog/post-processing-and-finishing-sla-prints/
-										(Accessed: 13 May 2026).
+										(Accessed: 14 May 2026).
 									</li>
 									<li>
 										GitHub Docs (2026) <em>Getting started with GitHub Pages</em>. Available at:
 										https://docs.github.com/en/pages/getting-started-with-github-pages
-										(Accessed: 13 May 2026).
+										(Accessed: 14 May 2026).
 									</li>
 									<li>
 										ISO/ASTM (2021) <em>ISO/ASTM 52900:2021 Additive manufacturing — General principles —
 										Fundamentals and vocabulary</em>. Available at: https://www.iso.org/standard/74514.html
-										(Accessed: 13 May 2026).
+										(Accessed: 14 May 2026).
+									</li>
+									<li>
+										Prusa Research (2026) <em>Prusament PETG</em>. Available at:
+										https://prusament.com/materials/prusament-petg/
+										(Accessed: 14 May 2026).
 									</li>
 									<li>
 										TWI (2026) <em>What is Laser Cutting? A Definitive Guide to the Process</em>. Available at:
 										https://www.twi-global.com/technical-knowledge/faqs/what-is-laser-cutting
-										(Accessed: 13 May 2026).
+										(Accessed: 14 May 2026).
 									</li>
 									<li>
-										Vicon (2026) <em>What is Motion Capture?</em> Available at:
+										Vicon (2026) <em>Vicon Motion Capture for Engineering</em>. Available at:
 										https://www.vicon.com/
-										(Accessed: 13 May 2026).
+										(Accessed: 14 May 2026).
 									</li>
 								</ul>
 							</section>
@@ -1413,7 +1717,7 @@
 										<section>
 											<h3 class="icon solid fa-user">Student Details</h3>
 											<p>
-												<strong>Name:</strong> Replace with your name<br />
+												<strong>Name:</strong> Ganesh<br />
 												<strong>Module:</strong> COMP60019 Robotic Modelling and Drone Skin Design<br />
 												<strong>Portfolio:</strong> Individual reflection on Pterodactyl robotic skin development
 											</p>
@@ -1436,7 +1740,7 @@
 
 					<div id="copyright">
 						<ul>
-							<li>&copy; Replace with your name. Individual academic portfolio.</li>
+							<li>&copy; Ganesh. Individual academic portfolio.</li>
 							<li>Design base: <a href="http://html5up.net">HTML5 UP</a></li>
 							<li>Edited for COMP60019 portfolio submission.</li>
 						</ul>
@@ -1488,28 +1792,24 @@
 
 			const timelineContent = {
 				concept: {
-					title: "1. Concept Direction",
-					text: "The group selected a Pterodactyl-inspired concept because it had a strong visual identity and a natural connection to wing movement. From my perspective, this concept was suitable because it required both creative modelling and mechanical thinking. It was not enough for the artefact to look like a dinosaur; it also needed a realistic development path towards movement and physical prototyping."
+					title: "1. Concept Design",
+					text: "The first phase was high-level ideation. The group selected a Pterodactyl because it gave the project a recognisable form and a clear wing movement challenge. From my perspective, the main concept question was how the wings could eventually move while still looking like a realistic Pterodactyl membrane."
 				},
-				cad: {
-					title: "2. CAD and 3D Modelling",
-					text: "CAD and 3D modelling were used to develop the Pterodactyl body, wing layout, and mechanism concept. This stage was selected because the design was being created from scratch and needed digital control before physical manufacturing."
+				design: {
+					title: "2. Design Development",
+					text: "The second phase connected the creative concept with mechanical design and cost decisions. Blender/CAD was used to model the form, while movement options such as motors, servos, strings and elastic thread were compared. PETG was also selected as the preferred print material because it balanced durability and printability."
 				},
-				mechanism: {
-					title: "3. Mechanism Exploration",
-					text: "The red and grey mechanism layouts explored possible rails, arms, supports, and pivot points. This helped connect the visual dinosaur design with a practical route towards future wing movement."
+				detailed: {
+					title: "3. Detailed Development",
+					text: "The third phase focused on file-to-fabrication decisions. STL files, support structures, print planning, skin seams, adhesive points, access panels and stress areas were considered so the design could move from a visual model into a manufacturable and maintainable prototype."
 				},
-				print: {
-					title: "4. 3D Printing",
-					text: "Selected components were exported as STL files and developed for 3D printing. The printed component provided physical evidence of the virtual-to-physical workflow and allowed the design to be evaluated as a real object."
+				preproduction: {
+					title: "4. Preproduction",
+					text: "The fourth phase moved the project into physical sampling. The PETG print provides evidence of the virtual-to-physical transition. Risk assessment and post-processing planning were also important because physical prototyping introduces practical workshop risks."
 				},
-				skin: {
-					title: "5. Spandex Wing Skin",
-					text: "Spandex was selected as the preferred wing skin material because it is lightweight, flexible, and suitable for creating a stretched membrane. This was more appropriate for a Pterodactyl wing than a fully rigid printed surface."
-				},
-				servo: {
-					title: "6. Servo Proposal",
-					text: "Servo actuation was selected as the preferred future movement method because it provides controlled angular motion. This makes it suitable for repeated wing flapping, although future testing is needed to check torque, friction, linkage length, and wing load."
+				production: {
+					title: "5. Production Plan",
+					text: "The fifth phase is presented as future production planning. The current prototype can be improved through support removal, sanding, skin application, string or servo movement testing, removable seams and a more refined final finish."
 				}
 			};
 
@@ -1667,7 +1967,7 @@
 					},
 					undefined,
 					function () {
-						viewer.innerHTML = "<p style='color:white; padding:1rem;'>STL preview could not load. Use the download links below or open through GitHub Pages.</p>";
+						viewer.innerHTML = "<p style='color:white; padding:1rem;'>STL preview could not load. Use the download links below or open the portfolio through GitHub Pages.</p>";
 					}
 				);
 			}
