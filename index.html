@@ -731,6 +731,32 @@
 						</div>
 					</section>
 
+					<section id="project-timeline">
+						<header class="style1">
+							<h2>Project Timeline and Development Planning</h2>
+							<p>Using a Gantt chart to organise the movement from concept to physical prototype.</p>
+						</header>
+
+						<a href="#project-timeline" class="image featured">
+							<img src="images/gantt-chart.webp" alt="Gantt chart showing the Pterodactyl prototype development timeline from concept to production" />
+						</a>
+
+						<p>
+							The Gantt chart helped organise the project into clear stages, including concept work, design development, model development, prototype preparation and production. This was useful because the project involved different activities happening across the group, such as creature research, target environment identification, model prototyping, monitoring progress, identifying useful departments and facilities, printing the prototype and planning testing.
+						</p>
+
+						<p>
+							From my perspective, the timeline made the development process easier to understand because it showed that the prototype was not produced in one step. The early stages focused on idea selection and research, while the later stages moved towards modelling, mechanism decisions, 3D printing and testing. This helped me see how virtual design decisions gradually moved towards physical prototyping.
+						</p>
+
+						<div class="callout-box dark">
+							<h3>Planning Reflection</h3>
+							<p>
+								The Gantt chart also showed me why time management matters in prototyping. Some tasks, such as CAD/model development and printing, depend on earlier decisions being clear. If the concept or mechanism direction changes too late, it can affect the printing stage and reduce the time available for testing or finishing. This made planning an important part of the product development process rather than just an administrative task.
+							</p>
+						</div>
+					</section>
+
 					<section id="concept-design">
 						<header class="style1">
 							<h2>1. Concept Design</h2>
@@ -746,7 +772,15 @@
 						</p>
 
 						<p>
-							The useful comparison at this stage was between different ways of achieving movement and skin behaviour. A fully rigid printed wing could make the structure easier to control, but it would not represent the flexible membrane of a Pterodactyl very well. A flexible membrane was more suitable because it connected the creature concept with robotic skin design and future wing movement.
+							At this stage, I looked at the concept as a product development problem rather than only a visual design task. The chosen form needed to be recognisable, but it also needed to create opportunities for prototyping decisions. The Pterodactyl worked well because its silhouette is easy to understand, while the wing area creates a clear technical challenge. A creature with smaller or less visible moving features would have given fewer opportunities to discuss membrane behaviour, internal routing and physical testing.
+						</p>
+
+						<p>
+							The concept also created a useful balance between realism and manufacturability. A completely realistic creature would require detailed skin texture, complex joints and more advanced actuation, but the assignment needed a prototype that could be developed through practical methods. Therefore, the early concept was treated as a simplified representation of a Pterodactyl, where the most important features were the long wing span, central body, membrane surface and possible movement path. This helped keep the design achievable while still giving enough depth for development.
+						</p>
+
+						<p>
+							The useful comparison at this stage was between different ways of achieving movement and skin behaviour. A more rigid wing structure could make the design easier to control, but it would not represent the flexible membrane of a Pterodactyl very well. A flexible membrane was more suitable because it connected the creature concept with robotic skin design and future wing movement.
 						</p>
 
 						<div class="callout-box dark">
@@ -769,6 +803,14 @@
 
 						<p>
 							I realised that the body, skin and movement system could not be treated separately. If the wing membrane was too stiff, the movement system would need more force. If the string path was poorly aligned, the wing could move unevenly. If the skin was fixed too permanently, the internal mechanism would become difficult to adjust.
+						</p>
+
+						<p>
+							One important development decision was to avoid treating the movement system as a separate add-on. The body shape had to leave enough space for routing, the wing layout had to allow attachment points, and the skin plan had to avoid covering areas that might later need adjustment. This meant the prototype had to be designed with access in mind. In a finished product, hidden mechanisms are useful for appearance, but in a development prototype, being able to inspect and change the mechanism is more valuable.
+						</p>
+
+						<p>
+							The product development stage also showed the difference between an idea that works in principle and an idea that can be built. For example, a servo-controlled wing movement sounds straightforward, but the quality of movement depends on the path the string follows, the friction in the guide points, and the amount of resistance caused by the wing surface. This changed how I judged the movement system. Instead of only asking “which motor is best?”, I started asking whether the whole route from actuator to wing could be controlled, adjusted and tested.
 						</p>
 
 						<h3>Blender/CAD Modelling</h3>
@@ -843,6 +885,33 @@
 								<img src="images/internal-rollers-sketch.png" alt="Internal rollers sketch for guided string path" />
 								<span>Internal Roller Path</span>
 							</button>
+						</div>
+
+						<p>
+							After the roller-guided movement idea was explored, physical printed mechanism parts were produced to check how the wing and guide structure could work outside the digital model. These parts were useful because they made the design easier to judge in real scale. Instead of only looking at sketches or CAD views, the printed pieces allowed the group to see the channel shape, guide areas, surface finish and possible string path more clearly.
+						</p>
+
+						<p>
+							From my perspective, this was an important step in the development process because it showed how a movement idea begins to change once it becomes a physical object. The roller system may look simple in theory, but the real printed part raises practical questions about alignment, friction, clearance, part strength and whether the string would move smoothly through the guide path.
+						</p>
+
+						<div class="gallery-grid">
+							<button class="gallery-item" data-img="images/wing-roller-print-1.webp">
+								<img src="images/wing-roller-print-1.webp" alt="Physical 3D printed wing and roller guide mechanism held in hand" />
+								<span>Printed Wing/Roller Mechanism</span>
+							</button>
+
+							<button class="gallery-item" data-img="images/wing-roller-print-2.webp">
+								<img src="images/wing-roller-print-2.webp" alt="Second view of physical 3D printed wing and roller guide mechanism" />
+								<span>Printed Roller Guide Detail</span>
+							</button>
+						</div>
+
+						<div class="callout-box dark">
+							<h3>Physical Development Note</h3>
+							<p>
+								These printed parts helped bridge the gap between virtual design and physical prototyping. They provided evidence for checking whether the movement path was realistic, whether the part could be handled safely, and what may need to be adjusted before adding final wing skin or future servo actuation.
+							</p>
 						</div>
 
 						<div class="callout-box dark">
@@ -921,6 +990,7 @@
 									<rect x="420" y="230" width="8" height="78" rx="4" fill="#b44d46" transform="rotate(6 424 230)"/>
 									<rect x="472" y="230" width="8" height="78" rx="4" fill="#b44d46" transform="rotate(-6 476 230)"/>
 									<rect x="405" y="305" width="28" height="5" rx="3" fill="#666"/>
+									<rect x="468" y="405" y="305" width="28" height="5" rx="3" fill="#666"/>
 									<rect x="468" y="305" width="28" height="5" rx="3" fill="#666"/>
 								</svg>
 							</div>
@@ -1040,8 +1110,20 @@
 						</p>
 
 						<p>
-							The advantage of 3D printing was that it created a real object that could be inspected and developed further. The limitation was that the printed part still required support removal, sanding and checking for weak or sharp areas. This showed me that printing is not the end of the process; it is the beginning of physical evaluation.
+							The advantage of 3D printing was that it created a real object that could be inspected and developed further. The limitation was that the printed part still required support removal, sanding and checking for weak or sharp areas. This helped me understand that 3D printing is not simply a final output stage; it is a point where the design can be checked, handled and improved before further assembly.
 						</p>
+
+						<p>
+							The file-to-fabrication stage made the project feel more realistic because the digital design had to face physical constraints. In a virtual model, thin parts, edges and internal spaces can appear acceptable, but once printed they may become fragile, difficult to clean or hard to access. This is where the prototype started to become a design review tool. The print was not only evidence of progress; it also helped identify what would need to be revised before a more functional version could be built.
+						</p>
+
+						<p>
+							The test plan supported this stage by turning the prototype into something that could be evaluated methodically. Instead of judging the print only by appearance, the plan considered practical checks such as support removal, edge safety, alignment, string path smoothness, roller movement and tension control. This gave the physical prototype a clearer purpose: to reveal problems early, before adding more complex features such as servo control or final skin finishing.
+						</p>
+
+						<a href="#pre-production" class="image featured">
+							<img src="images/test-plan.png" alt="Pterodactyl prototype test plan for print quality, movement, tension, servo feasibility and future spandex membrane testing" />
+						</a>
 
 						<a href="#pre-production" class="image featured">
 							<img src="images/risk-assessment.webp" alt="Risk assessment for the Pterodactyl 3D printing project" />
@@ -1050,15 +1132,6 @@
 						<p>
 							The risk assessment identified hazards linked to printer setup, heated parts, fumes, damaged cables, filament handling, support removal, sharp tools and finished model handling. This made the physical stage more realistic because it considered whether the prototype could be handled and developed safely.
 						</p>
-
-						<div class="video-card">
-							<video controls>
-								<source src="assets/videos/printed-component-demo.mov" type="video/quicktime" />
-								Your browser does not support this video.
-							</video>
-							<h3>Physical Prototype Video</h3>
-							<p>This video supports the pre-production stage by showing the transition from digital design into a physical printed prototype.</p>
-						</div>
 
 						<div class="callout-box dark">
 							<h3>My Reflection</h3>
@@ -1080,6 +1153,55 @@
 
 						<p>
 							A future servo could then be used to pull the guided string path more consistently. For the final finish, spandex or fabric could be attached first, followed by selective silicone coating if needed. Grey, brown and dull green tones were considered for a natural Pterodactyl appearance.
+						</p>
+
+						<h3>Final Physical Prototype</h3>
+
+						<p>
+							The final prototype photographs show the printed Pterodactyl body with the wing structures attached. This stage was useful because the prototype could now be judged as a complete physical object rather than only as separate sketches, CAD files or mechanism ideas. The photos show the overall proportions, wing placement, printed surface finish and how the mechanism sits within the body.
+						</p>
+
+						<p>
+							One important issue noticed in the final printed prototype was the amount of support material required during printing. Because of the shape of the Pterodactyl body and wing areas, the current design required quite a lot of supports. This left visible scarring underneath the model, which would be difficult to remove fully without spending more time on sanding and finishing. In a later version, this could be improved either through careful painting and surface treatment, or by revising the print orientation and support strategy before printing.
+						</p>
+
+						<div class="gallery-grid">
+							<button class="gallery-item" data-img="images/final-prototype-1.webp">
+								<img src="images/final-prototype-1.webp" alt="Front view of the final 3D printed Pterodactyl prototype" />
+								<span>Final Prototype - Front View</span>
+							</button>
+
+							<button class="gallery-item" data-img="images/final-prototype-2.webp">
+								<img src="images/final-prototype-2.webp" alt="Side view of the final 3D printed Pterodactyl prototype" />
+								<span>Final Prototype - Side View</span>
+							</button>
+
+							<button class="gallery-item" data-img="images/final-prototype-3.webp">
+								<img src="images/final-prototype-3.webp" alt="Top view of the final 3D printed Pterodactyl prototype" />
+								<span>Final Prototype - Top View</span>
+							</button>
+						</div>
+
+						<div class="gallery-grid">
+							<button class="gallery-item" data-img="images/final-prototype-4.webp">
+								<img src="images/final-prototype-4.webp" alt="Angled view of the final 3D printed Pterodactyl prototype showing body, wings and mechanism layout" />
+								<span>Final Prototype - Angled View</span>
+							</button>
+						</div>
+
+						<div class="callout-box dark">
+							<h3>Post-Production Reflection</h3>
+							<p>
+								Seeing the final prototype helped me understand why physical prototyping is important in the development process. The model showed what worked well, such as the recognisable Pterodactyl form and the attached wing structure, but it also revealed practical finishing issues such as support scarring, surface texture and areas that would need refinement. This made the prototype useful not only as a final outcome, but also as evidence for what should be improved in the next design cycle.
+							</p>
+						</div>
+
+						<p>
+							Post-production would be the stage where test results guide revisions. If the string path catches or feels heavy, the roller position would need to be adjusted before any servo is added. If the wing moves unevenly, the attachment points or left-right tension would need to be reviewed. If the printed body flexes too much, reinforcement or a small redesign may be needed. This approach would make the next version more controlled because each improvement would respond to a specific test result rather than guesswork.
+						</p>
+
+						<p>
+							The future servo version would also need to be developed carefully. Adding a servo too early could make the prototype look more advanced, but it would not solve poor routing or excess friction. A better sequence would be manual movement testing first, then tension adjustment, then servo mounting, and finally membrane testing. This helped me understand that post-production is not only finishing and presentation; it is also the stage where the prototype becomes evidence for the next design cycle.
 						</p>
 
 						<div class="callout-box">
