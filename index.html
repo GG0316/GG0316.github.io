@@ -380,10 +380,6 @@
 				}
 			}
 
-			/* ==============================
-			   Prehistoric Tech Theme Override
-			   ============================== */
-
 			:root {
 				--prehistoric-dark: #1f2421;
 				--forest-green: #3f5f46;
@@ -656,6 +652,7 @@
 						<li><a href="#artefacts">3D Files</a></li>
 						<li><a href="#appraisal">Appraisal</a></li>
 						<li><a href="#final-reflection">Reflection</a></li>
+						<li><a href="#cost-summary">Cost</a></li>
 						<li><a href="#acknowledgements">Acknowledgements</a></li>
 						<li><a href="#references">References</a></li>
 					</ul>
@@ -742,7 +739,7 @@
 						</a>
 
 						<p>
-							The Gantt chart helped organise the project into clear stages, including concept work, design development, model development, prototype preparation and production. This was useful because the project involved different activities happening across the group, such as creature research, target environment identification, model prototyping, monitoring progress, identifying useful departments and facilities, printing the prototype and planning testing.
+							The Gantt chart helped organise the project into clear stages, including concept work, design development, model development, prototype preparation and production. This was useful because the project involved different activities happening across the group, such as creature research, target environment identification, model prototyping, monitoring progress, identifying useful departments and facilities, printing the prototype and planning testing. Gantt charts are commonly used to visualise project tasks against time, while product development research also highlights the importance of selecting and planning development approaches carefully (Association for Project Management, n.d.; Lishner and Shtub, 2023).
 						</p>
 
 						<p>
@@ -888,7 +885,7 @@
 						</div>
 
 						<p>
-							After the roller-guided movement idea was explored, physical printed mechanism parts were produced to check how the wing and guide structure could work outside the digital model. These parts were useful because they made the design easier to judge in real scale. Instead of only looking at sketches or CAD views, the printed pieces allowed the group to see the channel shape, guide areas, surface finish and possible string path more clearly.
+							After the roller-guided movement idea was explored, physical printed mechanism parts were produced to check how the wing and guide structure could work outside the digital model. These parts were useful because they made the design easier to judge in real scale, supporting the idea that physical models can help validate and refine design decisions (Di Stefano and Paciotti, 2024). Instead of only looking at sketches or CAD views, the printed pieces allowed the group to see the channel shape, guide areas, surface finish and possible string path more clearly.
 						</p>
 
 						<p>
@@ -949,12 +946,10 @@
 											<stop offset="70%" stop-color="#f9fcff"/>
 											<stop offset="100%" stop-color="#ffffff"/>
 										</linearGradient>
-
 										<linearGradient id="wingGrad" x1="0" y1="0" x2="1" y2="1">
 											<stop offset="0%" stop-color="#d8c395"/>
 											<stop offset="100%" stop-color="#b89d6c"/>
 										</linearGradient>
-
 										<linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="1">
 											<stop offset="0%" stop-color="#9a947f"/>
 											<stop offset="100%" stop-color="#78725f"/>
@@ -965,16 +960,14 @@
 									<ellipse cx="450" cy="355" rx="135" ry="18" fill="rgba(0,0,0,0.12)"/>
 
 									<g id="leftWingGroup" transform="rotate(0 390 155)">
-										<path d="M390 155 C325 150, 255 160, 190 190 C120 222, 70 250, 30 286 C88 270, 140 252, 200 235 C262 217, 325 198, 390 180 Z"
-											fill="url(#wingGrad)" stroke="#8c6d47" stroke-width="2"/>
+										<path d="M390 155 C325 150, 255 160, 190 190 C120 222, 70 250, 30 286 C88 270, 140 252, 200 235 C262 217, 325 198, 390 180 Z" fill="url(#wingGrad)" stroke="#8c6d47" stroke-width="2"/>
 										<line x1="390" y1="160" x2="110" y2="262" stroke="#8b6c46" stroke-width="4" opacity="0.7"/>
 										<line x1="340" y1="174" x2="155" y2="246" stroke="#8b6c46" stroke-width="3" opacity="0.55"/>
 										<line x1="285" y1="186" x2="192" y2="226" stroke="#8b6c46" stroke-width="2.5" opacity="0.45"/>
 									</g>
 
 									<g id="rightWingGroup" transform="rotate(0 510 155)">
-										<path d="M510 155 C575 150, 645 160, 710 190 C780 222, 830 250, 870 286 C812 270, 760 252, 700 235 C638 217, 575 198, 510 180 Z"
-											fill="url(#wingGrad)" stroke="#8c6d47" stroke-width="2"/>
+										<path d="M510 155 C575 150, 645 160, 710 190 C780 222, 830 250, 870 286 C812 270, 760 252, 700 235 C638 217, 575 198, 510 180 Z" fill="url(#wingGrad)" stroke="#8c6d47" stroke-width="2"/>
 										<line x1="510" y1="160" x2="790" y2="262" stroke="#8b6c46" stroke-width="4" opacity="0.7"/>
 										<line x1="560" y1="174" x2="745" y2="246" stroke="#8b6c46" stroke-width="3" opacity="0.55"/>
 										<line x1="615" y1="186" x2="708" y2="226" stroke="#8b6c46" stroke-width="2.5" opacity="0.45"/>
@@ -990,7 +983,6 @@
 									<rect x="420" y="230" width="8" height="78" rx="4" fill="#b44d46" transform="rotate(6 424 230)"/>
 									<rect x="472" y="230" width="8" height="78" rx="4" fill="#b44d46" transform="rotate(-6 476 230)"/>
 									<rect x="405" y="305" width="28" height="5" rx="3" fill="#666"/>
-									<rect x="468" y="405" y="305" width="28" height="5" rx="3" fill="#666"/>
 									<rect x="468" y="305" width="28" height="5" rx="3" fill="#666"/>
 								</svg>
 							</div>
@@ -1019,58 +1011,6 @@
 							<p>
 								Reviewing the material decision helped me understand that filament choice affects strength, handling, safety and post-processing, not just appearance.
 							</p>
-						</div>
-
-						<h3>Cost Awareness</h3>
-
-						<p>
-							Cost was tracked for awareness rather than as the reason for changing the movement approach. The current prototype cost was recorded as follows.
-						</p>
-
-						<div class="callout-box">
-							<h3>Prototype Cost Breakdown</h3>
-							<table>
-								<thead>
-									<tr>
-										<th>Material</th>
-										<th>Cost per unit (£)</th>
-										<th>No. unit</th>
-										<th>Total Cost (£)</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Prototype 3D print</td>
-										<td>4.50</td>
-										<td>1</td>
-										<td>4.50</td>
-									</tr>
-									<tr>
-										<td>Spandex wing membrane</td>
-										<td>10.00</td>
-										<td>1</td>
-										<td>10.00</td>
-									</tr>
-									<tr>
-										<td>Glue</td>
-										<td>5.60</td>
-										<td>1</td>
-										<td>5.60</td>
-									</tr>
-									<tr>
-										<td>PETG filament</td>
-										<td>2.00</td>
-										<td>1</td>
-										<td>2.00</td>
-									</tr>
-									<tr>
-										<td>Final Cost</td>
-										<td></td>
-										<td></td>
-										<td>22.10</td>
-									</tr>
-								</tbody>
-							</table>
 						</div>
 
 						<h3>Skin and Wing Membrane Planning</h3>
@@ -1114,7 +1054,7 @@
 						</p>
 
 						<p>
-							The file-to-fabrication stage made the project feel more realistic because the digital design had to face physical constraints. In a virtual model, thin parts, edges and internal spaces can appear acceptable, but once printed they may become fragile, difficult to clean or hard to access. This is where the prototype started to become a design review tool. The print was not only evidence of progress; it also helped identify what would need to be revised before a more functional version could be built.
+							The file-to-fabrication stage made the project feel more realistic because the digital design had to face physical constraints. In a virtual model, thin parts, edges and internal spaces can appear acceptable, but once printed they may become fragile, difficult to clean or hard to access. Additive manufacturing is useful for rapid prototyping and design validation, but it also reveals practical production challenges once the part becomes physical (Ben Said et al., 2025). This is where the prototype started to become a design review tool. The print was not only evidence of progress; it also helped identify what would need to be revised before a more functional version could be built.
 						</p>
 
 						<p>
@@ -1162,29 +1102,29 @@
 						</p>
 
 						<p>
-							One important issue noticed in the final printed prototype was the amount of support material required during printing. Because of the shape of the Pterodactyl body and wing areas, the current design required quite a lot of supports. This left visible scarring underneath the model, which would be difficult to remove fully without spending more time on sanding and finishing. In a later version, this could be improved either through careful painting and surface treatment, or by revising the print orientation and support strategy before printing.
+							One important issue noticed in the final printed prototype was the amount of support material required during printing. Because of the shape of the Pterodactyl body and wing areas, the current design required quite a lot of supports. This left visible scarring underneath the model, which would be difficult to remove fully without spending more time on sanding and finishing. Support structures are a known additive manufacturing challenge because they affect material use, removal work and final surface quality (Su et al., 2025). In a later version, this could be improved either through careful painting and surface treatment, or by revising the print orientation and support strategy before printing.
 						</p>
 
 						<div class="gallery-grid">
-							<button class="gallery-item" data-img="images/final-prototype-1.webp">
-								<img src="images/final-prototype-1.webp" alt="Front view of the final 3D printed Pterodactyl prototype" />
+							<button class="gallery-item" data-img="images/final-artefact-1.webp">
+								<img src="images/final-artefact-1.webp" alt="Front view of the final 3D printed Pterodactyl prototype" />
 								<span>Final Prototype - Front View</span>
 							</button>
 
-							<button class="gallery-item" data-img="images/final-prototype-2.webp">
-								<img src="images/final-prototype-2.webp" alt="Side view of the final 3D printed Pterodactyl prototype" />
+							<button class="gallery-item" data-img="images/final-artefact-2.webp">
+								<img src="images/final-artefact-2.webp" alt="Side view of the final 3D printed Pterodactyl prototype" />
 								<span>Final Prototype - Side View</span>
 							</button>
 
-							<button class="gallery-item" data-img="images/final-prototype-3.webp">
-								<img src="images/final-prototype-3.webp" alt="Top view of the final 3D printed Pterodactyl prototype" />
+							<button class="gallery-item" data-img="images/final-artefact-3.webp">
+								<img src="images/final-artefact-3.webp" alt="Top view of the final 3D printed Pterodactyl prototype" />
 								<span>Final Prototype - Top View</span>
 							</button>
 						</div>
 
 						<div class="gallery-grid">
-							<button class="gallery-item" data-img="images/final-prototype-4.webp">
-								<img src="images/final-prototype-4.webp" alt="Angled view of the final 3D printed Pterodactyl prototype showing body, wings and mechanism layout" />
+							<button class="gallery-item" data-img="images/final-artefact-4.webp">
+								<img src="images/final-artefact-4.webp" alt="Angled view of the final 3D printed Pterodactyl prototype showing body, wings and mechanism layout" />
 								<span>Final Prototype - Angled View</span>
 							</button>
 						</div>
@@ -1341,7 +1281,7 @@
 					<div class="tab-panel" id="tab-printing">
 						<h3>PETG 3D Printing</h3>
 						<p>
-							PETG 3D printing created a direct route from digital model to physical artefact. PETG was suitable because it balanced printability and durability. The limitation is that printed parts still need support removal, finishing and inspection.
+							PETG 3D printing created a direct route from digital model to physical prototype. PETG was suitable because it balanced printability and durability. The limitation is that printed parts still need support removal, finishing and inspection.
 						</p>
 					</div>
 
@@ -1421,12 +1361,80 @@
 				</div>
 			</section>
 
+			<section id="cost-summary" class="wrapper style2">
+				<div class="title">Cost Summary</div>
+				<div class="container">
+
+					<header class="style1">
+						<h2>Prototype Cost Breakdown</h2>
+						<p>A final summary of the material cost recorded during the project.</p>
+					</header>
+
+					<p>
+						The cost breakdown was included near the end of the portfolio because it gives a final overview of the resources used for the prototype. Cost was tracked for transparency and planning, rather than being the reason for changing the movement approach. The main cost came from the spandex wing membrane and supporting materials, while the printed prototype itself remained relatively low cost.
+					</p>
+
+					<div class="callout-box">
+						<table>
+							<thead>
+								<tr>
+									<th>Material</th>
+									<th>Cost per unit (£)</th>
+									<th>No. unit</th>
+									<th>Total Cost (£)</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Prototype 3D print</td>
+									<td>4.50</td>
+									<td>1</td>
+									<td>4.50</td>
+								</tr>
+								<tr>
+									<td>Spandex wing membrane</td>
+									<td>10.00</td>
+									<td>1</td>
+									<td>10.00</td>
+								</tr>
+								<tr>
+									<td>Glue</td>
+									<td>5.60</td>
+									<td>1</td>
+									<td>5.60</td>
+								</tr>
+								<tr>
+									<td>PETG filament</td>
+									<td>2.00</td>
+									<td>1</td>
+									<td>2.00</td>
+								</tr>
+								<tr>
+									<td>Final Cost</td>
+									<td></td>
+									<td></td>
+									<td>22.10</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="callout-box dark">
+						<h3>Cost Reflection</h3>
+						<p>
+							The final recorded cost showed that the prototype could be developed using affordable materials, while still allowing practical exploration of 3D printing, wing structure, membrane planning and movement development. This helped me understand that cost tracking is useful even when budget is not the main limitation, because it shows whether the design could be repeated, improved or scaled in a realistic way.
+						</p>
+					</div>
+
+				</div>
+			</section>
+
 			<section id="acknowledgements" class="wrapper style2">
 				<div class="title">Acknowledgements</div>
 				<div class="container">
 					<header class="style1">
 						<h2>Team Contributions</h2>
-						<p>This is my individual reflection portfolio, but the artefact was developed through group work.</p>
+						<p>This is my individual reflection portfolio, but the prototype was developed through group work.</p>
 					</header>
 
 					<div class="team-grid">
@@ -1481,7 +1489,7 @@
 
 					<header class="style1">
 						<h2>Harvard References and Student Details</h2>
-						<p>References used to support the discussion of modelling, prototyping, movement and materials.</p>
+						<p>References used to support the discussion of modelling, prototyping, movement, materials and website presentation.</p>
 					</header>
 
 					<div class="row">
@@ -1489,11 +1497,20 @@
 							<section id="references">
 								<h3>Reference List</h3>
 								<ul class="reference-list">
-									<li>Ambaye, G., Boldsaikhan, E. and Krishnan, K. (2024) ‘Soft Robot Design, Manufacturing, and Operation Challenges: A Review’, <em>Journal of Manufacturing and Materials Processing</em>, 8(2), 79.</li>
-									<li>Autodesk (n.d.) <em>CAD Software: 2D and 3D Computer-Aided Design</em>. Available at: https://www.autodesk.com/uk/solutions/cad-software (Accessed: 14 May 2026).</li>
-									<li>Jin, X., Zhang, H., Wang, L. and Li, Q. (2024) ‘Review on Control Strategies for Cable-Driven Parallel Robots with Model Uncertainties’, <em>Chinese Journal of Mechanical Engineering</em>, 37, 156.</li>
-									<li>Rafee Nekoo, S. <em>et al.</em> (2025) ‘A review on flapping-wing robots: Recent progress and challenges’, <em>The International Journal of Robotics Research</em>.</li>
-									<li>Stecuła, B., Sitko, J., Stecuła, K., Witkowski, M. and Orzeł, B. (2024) ‘Comparison of the strength of popular thermoplastic materials used in 3D printing – PLA, ABS and PET-G’, <em>Combustion Engines</em>, 199(4), pp. 97–103.</li>
+									<li>Ambaye, G., Boldsaikhan, E. and Krishnan, K. (2024) ‘Soft Robot Design, Manufacturing, and Operation Challenges: A Review’, <em>Journal of Manufacturing and Materials Processing</em>, 8(2), 79. doi: 10.3390/jmmp8020079.</li>
+									<li>Association for Project Management (n.d.) <em>What is a Gantt Chart?</em> Available at: https://www.apm.org.uk/resources/find-a-resource/gantt-chart/ (Accessed: 15 May 2026).</li>
+									<li>Autodesk (n.d.) <em>CAD Software: 2D and 3D Computer-Aided Design</em>. Available at: https://www.autodesk.com/uk/solutions/cad-software (Accessed: 15 May 2026).</li>
+									<li>Ben Said, L., Ayadi, B., Alharbi, S. and Dammak, F. (2025) ‘Recent Advances in Additive Manufacturing: A Review of Current Developments and Future Directions’, <em>Machines</em>, 13(9), 813. doi: 10.3390/machines13090813.</li>
+									<li>Di Stefano, A. and Paciotti, D. (2024) ‘The Physical Model as an Evolution of the Design Process: From the “Capostipite” to the Finished Product’, in Zanella, F. <em>et al.</em> (eds.) <em>Multidisciplinary Aspects of Design</em>. Cham: Springer, pp. 334–343. doi: 10.1007/978-3-031-49811-4_32.</li>
+									<li>GitHub (2013) <em>STL File Viewing</em>. Available at: https://github.blog/news-insights/product-news/stl-file-viewing/ (Accessed: 15 May 2026).</li>
+									<li>GitHub Docs (n.d.) <em>What is GitHub Pages?</em> Available at: https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages (Accessed: 15 May 2026).</li>
+									<li>Google (n.d.) <em>&lt;model-viewer&gt; Documentation</em>. Available at: https://modelviewer.dev/docs/ (Accessed: 15 May 2026).</li>
+									<li>HTML5 UP (n.d.) <em>The Creative Commons Attribution 3.0 License</em>. Available at: https://html5up.net/license (Accessed: 15 May 2026).</li>
+									<li>Jin, X., Zhang, H., Wang, L. and Li, Q. (2024) ‘Review on Control Strategies for Cable-Driven Parallel Robots with Model Uncertainties’, <em>Chinese Journal of Mechanical Engineering</em>, 37, 156. doi: 10.1186/s10033-024-01149-8.</li>
+									<li>Lishner, I. and Shtub, A. (2023) ‘Enhancing Strategic Planning of Projects: Selecting the Right Product Development Methodology’, <em>Information</em>, 14(12), 632. doi: 10.3390/info14120632.</li>
+									<li>Rafee Nekoo, S., Rashad, R., De Wagter, C., Fuller, S.B., de Croon, G.C.H.E., Stramigioli, S. and Ollero, A. (2025) ‘A review on flapping-wing robots: Recent progress and challenges’, <em>The International Journal of Robotics Research</em>. doi: 10.1177/02783649251343638.</li>
+									<li>Stecuła, B., Sitko, J., Stecuła, K., Witkowski, M. and Orzeł, B. (2024) ‘Comparison of the strength of popular thermoplastic materials used in 3D printing – PLA, ABS and PET-G’, <em>Combustion Engines</em>, 199(4), pp. 97–103. doi: 10.19206/CE-189386.</li>
+									<li>Su, J., Mo, Y., Shangguan, P., Panwisawas, C., Jiang, F. and Sing, S.L. (2025) ‘Additive manufacturing-by-design for support structures: a critical review’, <em>International Journal of Extreme Manufacturing</em>, 7(5), 052002. doi: 10.1088/2631-7990/add4d2.</li>
 								</ul>
 							</section>
 						</div>
@@ -1517,6 +1534,7 @@
 						<ul>
 							<li>&copy; Ganesh Goud Akula. Individual academic portfolio.</li>
 							<li>Design base: <a href="http://html5up.net">HTML5 UP</a></li>
+							<li>Website files hosted using GitHub Pages.</li>
 						</ul>
 					</div>
 
@@ -1527,7 +1545,7 @@
 
 		<div id="lightbox">
 			<button id="lightboxClose" aria-label="Close image preview">&times;</button>
-			<img id="lightboxImage" src="" alt="Expanded project artefact" />
+			<img id="lightboxImage" src="" alt="Expanded project image" />
 		</div>
 
 		<button id="backToTop" aria-label="Back to top">&#8593;</button>
